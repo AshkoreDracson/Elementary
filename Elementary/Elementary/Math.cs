@@ -591,11 +591,11 @@ namespace Elementary
         }
         public static float Round(this float value, MidpointRounding mode)
         {
-            return (float)System.Math.Round(value, mode);
+            return (float)System.Math.Round(value, (System.MidpointRounding)mode);
         }
         public static float Round(this float value, int digits, MidpointRounding mode)
         {
-            return (float)System.Math.Round(value, digits, mode);
+            return (float)System.Math.Round(value, digits, (System.MidpointRounding)mode);
         }
         public static double Round(this double value)
         {
@@ -607,11 +607,11 @@ namespace Elementary
         }
         public static double Round(this double value, MidpointRounding mode)
         {
-            return System.Math.Round(value, mode);
+            return System.Math.Round(value, (System.MidpointRounding)mode);
         }
         public static double Round(this double value, int digits, MidpointRounding mode)
         {
-            return System.Math.Round(value, digits, mode);
+            return System.Math.Round(value, digits, (System.MidpointRounding)mode);
         }
         public static decimal Round(this decimal value)
         {
@@ -623,11 +623,11 @@ namespace Elementary
         }
         public static decimal Round(this decimal value, MidpointRounding mode)
         {
-            return System.Math.Round(value, mode);
+            return System.Math.Round(value, (System.MidpointRounding)mode);
         }
         public static decimal Round(this decimal value, int digits, MidpointRounding mode)
         {
-            return System.Math.Round(value, digits, mode);
+            return System.Math.Round(value, digits, (System.MidpointRounding)mode);
         }
 
         public static sbyte Sign(this sbyte value)
