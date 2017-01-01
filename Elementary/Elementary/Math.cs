@@ -2,6 +2,10 @@
 
 namespace Elementary
 {
+    /*
+    Some functions are simple wrapper methods from System.Math, this ensures that you won't shouldn't need the two libraries as this could cause annoyance at worst. 
+    */
+
     public static class Math
     {
         private static Random rnd;
@@ -41,6 +45,60 @@ namespace Elementary
         public static decimal Abs(this decimal value)
         {
             return (value >= 0 ? value : -value);
+        }
+
+        public static float Acos(this float value)
+        {
+            return (float)System.Math.Acos(value);
+        }
+        public static double Acos(this double value)
+        {
+            return System.Math.Acos(value);
+        }
+
+        public static float Asin(this float value)
+        {
+            return (float)System.Math.Asin(value);
+        }
+        public static double Asin(this double value)
+        {
+            return System.Math.Asin(value);
+        }
+
+        public static float Atan(this float value)
+        {
+            return (float)System.Math.Atan(value);
+        }
+        public static double Atan(this double value)
+        {
+            return System.Math.Atan(value);
+        }
+
+        public static float Atan2(this float x, float y)
+        {
+            return (float)System.Math.Atan2(x, y);
+        }
+        public static double Atan2(this double x, double y)
+        {
+            return System.Math.Atan2(x, y);
+        }
+
+        public static long BigMul(this int a, int b)
+        {
+            return System.Math.BigMul(a, b);
+        }
+
+        public static float Ceiling(this float value)
+        {
+            return (float)System.Math.Ceiling(value);
+        }
+        public static double Ceiling(this double value)
+        {
+            return System.Math.Ceiling(value);
+        }
+        public static decimal Ceiling(this decimal value)
+        {
+            return System.Math.Ceiling(value);
         }
 
         public static sbyte Clamp(this sbyte value, sbyte min, sbyte max)
@@ -221,6 +279,33 @@ namespace Elementary
             return value;
         }
 
+        public static float Cos(this float value)
+        {
+            return (float)System.Math.Cos(value);
+        }
+        public static double Cos(this double value)
+        {
+            return System.Math.Cos(value);
+        }
+
+        public static float Cosh(this float value)
+        {
+            return (float)System.Math.Cosh(value);
+        }
+        public static double Cosh(this double value)
+        {
+            return System.Math.Cosh(value);
+        }
+
+        public static void DivRem(this int a, int b, out int result)
+        {
+            System.Math.DivRem(a, b, out result);
+        }
+        public static void DivRem(this long a, long b, out long result)
+        {
+            System.Math.DivRem(a, b, out result);
+        }
+
         public static float Lerp(float from, float to, float t)
         {
             return from + (to - from) * t;
@@ -261,16 +346,17 @@ namespace Elementary
         }
         public static float Random(float min, float max)
         {
-            return (float)(rnd.NextDouble().Remap(0, 1, min, max));
+            return (float)(rnd.NextDouble().Remap(0.0f, 1.0f, min, max));
         }
         public static double Random(double min, double max)
         {
-            return (rnd.NextDouble().Remap(0, 1, min, max));
+            return (rnd.NextDouble().Remap(0.0, 1.0, min, max));
         }
+        // Decimal random isn't perfect, it bases off as a double so precision in the lower numbers is lost.
         public static decimal Random(decimal min, decimal max)
         {
             // Using Convert because recasting detects it as a double.
-            return Convert.ToDecimal(rnd.NextDouble()).Remap(0, 1, min, max);
+            return Convert.ToDecimal(rnd.NextDouble()).Remap(0m, 1m, min, max);
         }
 
         public static float RandomFloat()
