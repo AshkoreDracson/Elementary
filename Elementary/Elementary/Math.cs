@@ -6,6 +6,9 @@ namespace Elementary
     {
         private static Random rnd;
 
+        public const double E = 2.7182818284590541;
+        public const double PI = 3.1415926535897931;
+
         static Math()
         {
             rnd = new Random();
@@ -189,17 +192,30 @@ namespace Elementary
             return value;
         }
 
-        public static float Lerp(float a, float b, float t)
+        public static float Lerp(float from, float to, float t)
         {
-            return a + (b - a) * t;
+            return from + (to - from) * t;
         }
-        public static double Lerp(double a, double b, double t)
+        public static double Lerp(double from, double to, double t)
         {
-            return a + (b - a) * t;
+            return from + (to - from) * t;
         }
-        public static decimal Lerp(decimal a, decimal b, decimal t)
+        public static decimal Lerp(decimal from, decimal to, decimal t)
         {
-            return a + (b - a) * t;
+            return from + (to - from) * t;
+        }
+
+        public static float InverseLerp(float from, float to, float value)
+        {
+            return (value - from) / (to - from);
+        }
+        public static double InverseLerp(double from, double to, double value)
+        {
+            return (value - from) / (to - from);
+        }
+        public static decimal InverseLerp(decimal from, decimal to, decimal value)
+        {
+            return (value - from) / (to - from);
         }
 
         public static int Random()
