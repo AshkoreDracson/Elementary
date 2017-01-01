@@ -11,7 +11,7 @@ namespace Elementary
             rnd = new Random();
         }
 
-        public static sbyte Clamp(sbyte value, sbyte min, sbyte max)
+        public static sbyte Clamp(this sbyte value, sbyte min, sbyte max)
         {
             if (value < min)
                 return min;
@@ -19,7 +19,7 @@ namespace Elementary
                 return max;
             return value;
         }
-        public static short Clamp(short value, short min, short max)
+        public static short Clamp(this short value, short min, short max)
         {
             if (value < min)
                 return min;
@@ -27,7 +27,7 @@ namespace Elementary
                 return max;
             return value;
         }
-        public static int Clamp(int value, int min, int max)
+        public static int Clamp(this int value, int min, int max)
         {
             if (value < min)
                 return min;
@@ -35,7 +35,7 @@ namespace Elementary
                 return max;
             return value;
         }
-        public static long Clamp(long value, long min, long max)
+        public static long Clamp(this long value, long min, long max)
         {
             if (value < min)
                 return min;
@@ -43,7 +43,7 @@ namespace Elementary
                 return max;
             return value;
         }
-        public static byte Clamp(byte value, byte min, byte max)
+        public static byte Clamp(this byte value, byte min, byte max)
         {
             if (value < min)
                 return min;
@@ -51,7 +51,7 @@ namespace Elementary
                 return max;
             return value;
         }
-        public static ushort Clamp(ushort value, ushort min, ushort max)
+        public static ushort Clamp(this ushort value, ushort min, ushort max)
         {
             if (value < min)
                 return min;
@@ -59,7 +59,7 @@ namespace Elementary
                 return max;
             return value;
         }
-        public static uint Clamp(uint value, uint min, uint max)
+        public static uint Clamp(this uint value, uint min, uint max)
         {
             if (value < min)
                 return min;
@@ -67,7 +67,7 @@ namespace Elementary
                 return max;
             return value;
         }
-        public static ulong Clamp(ulong value, ulong min, ulong max)
+        public static ulong Clamp(this ulong value, ulong min, ulong max)
         {
             if (value < min)
                 return min;
@@ -75,7 +75,7 @@ namespace Elementary
                 return max;
             return value;
         }
-        public static float Clamp(float value, float min, float max)
+        public static float Clamp(this float value, float min, float max)
         {
             if (value < min)
                 return min;
@@ -83,7 +83,7 @@ namespace Elementary
                 return max;
             return value;
         }
-        public static double Clamp(double value, double min, double max)
+        public static double Clamp(this double value, double min, double max)
         {
             if (value < min)
                 return min;
@@ -91,7 +91,7 @@ namespace Elementary
                 return max;
             return value;
         }
-        public static decimal Clamp(decimal value, decimal min, decimal max)
+        public static decimal Clamp(this decimal value, decimal min, decimal max)
         {
             if (value < min)
                 return min;
@@ -100,7 +100,7 @@ namespace Elementary
             return value;
         }
 
-        public static sbyte Clamp01(sbyte value)
+        public static sbyte Clamp01(this sbyte value)
         {
             if (value < 0)
                 return 0;
@@ -108,7 +108,7 @@ namespace Elementary
                 return 1;
             return value;
         }
-        public static short Clamp01(short value)
+        public static short Clamp01(this short value)
         {
             if (value < 0)
                 return 0;
@@ -116,7 +116,7 @@ namespace Elementary
                 return 1;
             return value;
         }
-        public static int Clamp01(int value)
+        public static int Clamp01(this int value)
         {
             if (value < 0)
                 return 0;
@@ -124,7 +124,7 @@ namespace Elementary
                 return 1;
             return value;
         }
-        public static long Clamp01(long value)
+        public static long Clamp01(this long value)
         {
             if (value < 0)
                 return 0;
@@ -132,7 +132,7 @@ namespace Elementary
                 return 1;
             return value;
         }
-        public static byte Clamp01(byte value)
+        public static byte Clamp01(this byte value)
         {
             if (value < 0)
                 return 0;
@@ -140,7 +140,7 @@ namespace Elementary
                 return 1;
             return value;
         }
-        public static ushort Clamp01(ushort value)
+        public static ushort Clamp01(this ushort value)
         {
             if (value < 0)
                 return 0;
@@ -148,7 +148,7 @@ namespace Elementary
                 return 1;
             return value;
         }
-        public static uint Clamp01(uint value)
+        public static uint Clamp01(this uint value)
         {
             if (value < 0)
                 return 0;
@@ -156,7 +156,7 @@ namespace Elementary
                 return 1;
             return value;
         }
-        public static ulong Clamp01(ulong value)
+        public static ulong Clamp01(this ulong value)
         {
             if (value < 0)
                 return 0;
@@ -164,7 +164,7 @@ namespace Elementary
                 return 1;
             return value;
         }
-        public static float Clamp01(float value)
+        public static float Clamp01(this float value)
         {
             if (value < 0)
                 return 0;
@@ -172,7 +172,7 @@ namespace Elementary
                 return 1;
             return value;
         }
-        public static double Clamp01(double value)
+        public static double Clamp01(this double value)
         {
             if (value < 0)
                 return 0;
@@ -180,7 +180,7 @@ namespace Elementary
                 return 1;
             return value;
         }
-        public static decimal Clamp01(decimal value)
+        public static decimal Clamp01(this decimal value)
         {
             if (value < 0)
                 return 0;
@@ -211,9 +211,17 @@ namespace Elementary
             return rnd.NextDouble();
         }
 
-        public static float Remap(float value, float inputMin, float inputMax, float outputMin, float outputMax)
+        public static float Remap(this float value, float inputMin, float inputMax, float outputMin, float outputMax)
         {
-            return value;
+            return (value - inputMin) / (outputMin - inputMin) * (outputMax - inputMax) + inputMax;
+        }
+        public static double Remap(this double value, double inputMin, double inputMax, double outputMin, double outputMax)
+        {
+            return (value - inputMin) / (outputMin - inputMin) * (outputMax - inputMax) + inputMax;
+        }
+        public static decimal Remap(this decimal value, decimal inputMin, decimal inputMax, decimal outputMin, decimal outputMax)
+        {
+            return (value - inputMin) / (outputMin - inputMin) * (outputMax - inputMax) + inputMax;
         }
     }
 }
