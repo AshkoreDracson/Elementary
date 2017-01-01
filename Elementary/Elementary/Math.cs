@@ -189,6 +189,19 @@ namespace Elementary
             return value;
         }
 
+        public static float Lerp(float a, float b, float t)
+        {
+            return a + (b - a) * t;
+        }
+        public static double Lerp(double a, double b, double t)
+        {
+            return a + (b - a) * t;
+        }
+        public static decimal Lerp(decimal a, decimal b, decimal t)
+        {
+            return a + (b - a) * t;
+        }
+
         public static int Random()
         {
             return rnd.Next();
