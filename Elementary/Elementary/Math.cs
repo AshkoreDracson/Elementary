@@ -259,6 +259,19 @@ namespace Elementary
         {
             return rnd.Next(min, max);
         }
+        public static float Random(float min, float max)
+        {
+            return (float)(rnd.NextDouble().Remap(0, 1, min, max));
+        }
+        public static double Random(double min, double max)
+        {
+            return (rnd.NextDouble().Remap(0, 1, min, max));
+        }
+        public static decimal Random(decimal min, decimal max)
+        {
+            // Using Convert because recasting detects it as a double.
+            return Convert.ToDecimal(rnd.NextDouble()).Remap(0, 1, min, max);
+        }
 
         public static float RandomFloat()
         {
