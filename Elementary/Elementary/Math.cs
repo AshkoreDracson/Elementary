@@ -523,6 +523,15 @@ namespace Elementary
             return b;
         }
 
+        public static float Pow(this float x, float y)
+        {
+            return (float)System.Math.Pow(x, y);
+        }
+        public static double Pow(this double x, double y)
+        {
+            return System.Math.Pow(x, y);
+        }
+
         public static int Random()
         {
             return rnd.Next();
@@ -570,6 +579,55 @@ namespace Elementary
         public static decimal Remap(this decimal value, decimal inputMin, decimal inputMax, decimal outputMin, decimal outputMax)
         {
             return (value - inputMin) / (outputMin - inputMin) * (outputMax - inputMax) + inputMax;
+        }
+
+        public static float Round(this float value)
+        {
+            return (float)System.Math.Round(value);
+        }
+        public static float Round(this float value, int digits)
+        {
+            return (float)System.Math.Round(value, digits);
+        }
+        public static float Round(this float value, MidpointRounding mode)
+        {
+            return (float)System.Math.Round(value, mode);
+        }
+        public static float Round(this float value, int digits, MidpointRounding mode)
+        {
+            return (float)System.Math.Round(value, digits, mode);
+        }
+        public static double Round(this double value)
+        {
+            return System.Math.Round(value);
+        }
+        public static double Round(this double value, int digits)
+        {
+            return System.Math.Round(value, digits);
+        }
+        public static double Round(this double value, MidpointRounding mode)
+        {
+            return System.Math.Round(value, mode);
+        }
+        public static double Round(this double value, int digits, MidpointRounding mode)
+        {
+            return System.Math.Round(value, digits, mode);
+        }
+        public static decimal Round(this decimal value)
+        {
+            return System.Math.Round(value);
+        }
+        public static decimal Round(this decimal value, int digits)
+        {
+            return System.Math.Round(value, digits);
+        }
+        public static decimal Round(this decimal value, MidpointRounding mode)
+        {
+            return System.Math.Round(value, mode);
+        }
+        public static decimal Round(this decimal value, int digits, MidpointRounding mode)
+        {
+            return System.Math.Round(value, digits, mode);
         }
 
         public static sbyte Sign(this sbyte value)
@@ -627,6 +685,64 @@ namespace Elementary
             else if (value < 0)
                 return -1;
             return 0;
+        }
+
+        public static float Sin(this float value)
+        {
+            return (float)System.Math.Sin(value);
+        }
+        public static double Sin(this double value)
+        {
+            return System.Math.Sin(value);
+        }
+
+        public static float Sinh(this float value)
+        {
+            return (float)System.Math.Sinh(value);
+        }
+        public static double Sinh(this double value)
+        {
+            return System.Math.Sinh(value);
+        }
+
+        public static float Sqrt(this float value)
+        {
+            return (float)System.Math.Sqrt(value);
+        }
+        public static double Sqrt(this double value)
+        {
+            return System.Math.Sqrt(value);
+        }
+
+        public static float Tan(this float value)
+        {
+            return (float)System.Math.Tan(value);
+        }
+        public static double Tan(this double value)
+        {
+            return System.Math.Tan(value);
+        }
+
+        public static float Tanh(this float value)
+        {
+            return (float)System.Math.Tanh(value);
+        }
+        public static double Tanh(this double value)
+        {
+            return System.Math.Tanh(value);
+        }
+
+        public static float Truncate(this float value)
+        {
+            return (float)System.Math.Truncate(value);
+        }
+        public static double Truncate(this double value)
+        {
+            return System.Math.Truncate(value);
+        }
+        public static decimal Truncate(this decimal value)
+        {
+            return System.Math.Truncate(value);
         }
     }
 }
