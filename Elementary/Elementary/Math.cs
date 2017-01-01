@@ -14,6 +14,35 @@ namespace Elementary
             rnd = new Random();
         }
 
+        public static sbyte Abs(this sbyte value)
+        {
+            return (sbyte)(value >= 0 ? value : -value);
+        }
+        public static short Abs(this short value)
+        {
+            return (short)(value >= 0 ? value : -value);
+        }
+        public static int Abs(this int value)
+        {
+            return (value >= 0 ? value : -value);
+        }
+        public static long Abs(this long value)
+        {
+            return (value >= 0 ? value : -value);
+        }
+        public static float Abs(this float value)
+        {
+            return (value >= 0 ? value : -value);
+        }
+        public static double Abs(this double value)
+        {
+            return (value >= 0 ? value : -value);
+        }
+        public static decimal Abs(this decimal value)
+        {
+            return (value >= 0 ? value : -value);
+        }
+
         public static sbyte Clamp(this sbyte value, sbyte min, sbyte max)
         {
             if (value < min)
@@ -251,6 +280,63 @@ namespace Elementary
         public static decimal Remap(this decimal value, decimal inputMin, decimal inputMax, decimal outputMin, decimal outputMax)
         {
             return (value - inputMin) / (outputMin - inputMin) * (outputMax - inputMax) + inputMax;
+        }
+
+        public static sbyte Sign(this sbyte value)
+        {
+            if (value > 0)
+                return 1;
+            else if (value < 0)
+                return -1;
+            return 0;
+        }
+        public static sbyte Sign(this short value)
+        {
+            if (value > 0)
+                return 1;
+            else if (value < 0)
+                return -1;
+            return 0;
+        }
+        public static sbyte Sign(this int value)
+        {
+            if (value > 0)
+                return 1;
+            else if (value < 0)
+                return -1;
+            return 0;
+        }
+        public static sbyte Sign(this long value)
+        {
+            if (value > 0)
+                return 1;
+            else if (value < 0)
+                return -1;
+            return 0;
+        }
+        public static sbyte Sign(this float value)
+        {
+            if (value > 0)
+                return 1;
+            else if (value < 0)
+                return -1;
+            return 0;
+        }
+        public static sbyte Sign(this double value)
+        {
+            if (value > 0)
+                return 1;
+            else if (value < 0)
+                return -1;
+            return 0;
+        }
+        public static sbyte Sign(this decimal value)
+        {
+            if (value > 0)
+                return 1;
+            else if (value < 0)
+                return -1;
+            return 0;
         }
     }
 }
