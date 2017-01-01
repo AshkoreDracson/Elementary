@@ -306,17 +306,35 @@ namespace Elementary
             System.Math.DivRem(a, b, out result);
         }
 
-        public static float Lerp(float from, float to, float t)
+        public static float Exp(this float value)
         {
-            return from + (to - from) * t;
+            return (float)System.Math.Exp(value);
         }
-        public static double Lerp(double from, double to, double t)
+        public static double Exp(this double value)
         {
-            return from + (to - from) * t;
+            return System.Math.Exp(value);
         }
-        public static decimal Lerp(decimal from, decimal to, decimal t)
+
+        public static float Floor(this float value)
         {
-            return from + (to - from) * t;
+            return (float)System.Math.Floor(value);
+        }
+        public static double Floor(this double value)
+        {
+            return System.Math.Floor(value);
+        }
+        public static decimal Floor(this decimal value)
+        {
+            return System.Math.Floor(value);
+        }
+
+        public static float IEEERemainder(this float x, float y)
+        {
+            return (float)System.Math.IEEERemainder(x, y);
+        }
+        public static double IEEERemainder(this double x, double y)
+        {
+            return System.Math.IEEERemainder(x, y);
         }
 
         public static float InverseLerp(float from, float to, float value)
@@ -330,6 +348,179 @@ namespace Elementary
         public static decimal InverseLerp(decimal from, decimal to, decimal value)
         {
             return (value - from) / (to - from);
+        }
+
+        public static float Log(this float value)
+        {
+            return (float)System.Math.Log(value);
+        }
+        public static float Log(this float value, float newBase)
+        {
+            return (float)System.Math.Log(value, newBase);
+        }
+        public static double Log(this double value)
+        {
+            return System.Math.Log(value);
+        }
+        public static double Log(this double value, double newBase)
+        {
+            return System.Math.Log(value, newBase);
+        }
+
+        public static float Log10(this float value)
+        {
+            return (float)System.Math.Log10(value);
+        }
+        public static double Log10(this double value)
+        {
+            return System.Math.Log10(value);
+        }
+
+        public static float Lerp(float from, float to, float t)
+        {
+            return from + (to - from) * t;
+        }
+        public static double Lerp(double from, double to, double t)
+        {
+            return from + (to - from) * t;
+        }
+        public static decimal Lerp(decimal from, decimal to, decimal t)
+        {
+            return from + (to - from) * t;
+        }
+
+        public static sbyte Max(this sbyte a, sbyte b)
+        {
+            if (a < b)
+                return b;
+            return a;
+        }
+        public static short Max(this short a, short b)
+        {
+            if (a < b)
+                return b;
+            return a;
+        }
+        public static int Max(this int a, int b)
+        {
+            if (a < b)
+                return b;
+            return a;
+        }
+        public static long Max(this long a, long b)
+        {
+            if (a < b)
+                return b;
+            return a;
+        }
+        public static byte Max(this byte a, byte b)
+        {
+            if (a < b)
+                return b;
+            return a;
+        }
+        public static ushort Max(this ushort a, ushort b)
+        {
+            if (a < b)
+                return b;
+            return a;
+        }
+        public static uint Max(this uint a, uint b)
+        {
+            if (a < b)
+                return b;
+            return a;
+        }
+        public static ulong Max(this ulong a, ulong b)
+        {
+            if (a < b)
+                return b;
+            return a;
+        }
+        public static float Max(this float a, float b)
+        {
+            if (a < b)
+                return b;
+            return a;
+        }
+        public static double Max(this double a, double b)
+        {
+            if (a < b)
+                return b;
+            return a;
+        }
+        public static decimal Max(this decimal a, decimal b)
+        {
+            if (a < b)
+                return b;
+            return a;
+        }
+
+        public static sbyte Min(this sbyte a, sbyte b)
+        {
+            if (a < b)
+                return a;
+            return b;
+        }
+        public static short Min(this short a, short b)
+        {
+            if (a < b)
+                return a;
+            return b;
+        }
+        public static int Min(this int a, int b)
+        {
+            if (a < b)
+                return a;
+            return b;
+        }
+        public static long Min(this long a, long b)
+        {
+            if (a < b)
+                return a;
+            return b;
+        }
+        public static byte Min(this byte a, byte b)
+        {
+            if (a < b)
+                return a;
+            return b;
+        }
+        public static ushort Min(this ushort a, ushort b)
+        {
+            if (a < b)
+                return a;
+            return b;
+        }
+        public static uint Min(this uint a, uint b)
+        {
+            if (a < b)
+                return a;
+            return b;
+        }
+        public static ulong Min(this ulong a, ulong b)
+        {
+            if (a < b)
+                return a;
+            return b;
+        }
+        public static float Min(this float a, float b)
+        {
+            if (a < b)
+                return a;
+            return b;
+        }
+        public static double Min(this double a, double b)
+        {
+            if (a < b)
+                return a;
+            return b;
+        }
+        public static decimal Min(this decimal a, decimal b)
+        {
+            if (a < b)
+                return a;
+            return b;
         }
 
         public static int Random()
