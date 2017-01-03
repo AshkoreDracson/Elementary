@@ -25,10 +25,16 @@ namespace Elementary
         /// </summary>
         /// <seealso cref="Register(object)"/>
         /// <param name="o">The instance of the object to inject all dependencies to</param>
+        /// <param name="baseType">Should we inject at the base type of the object?</param>
         /// <returns>A boolean stating if the injection was successful</returns>
-        public static bool Inject(this object o)
+        public static bool Inject(this object o, bool baseType = false)
         {
-            MethodInfo methodInfo = o.GetType().GetMethod("OnInject", BindingFlags.Instance | BindingFlags.NonPublic);
+            Type type = o.GetType();
+
+            if (baseType)
+                type = type.BaseType;
+
+            MethodInfo methodInfo = type.GetMethod("OnInject", BindingFlags.Instance | BindingFlags.NonPublic);
 
             if (methodInfo == null) return false;
 
