@@ -67,7 +67,7 @@ namespace Elementary
         static void LogFile(object o, LogLevel logLevel = LogLevel.Debug)
         {
             if (_fileStream == null)
-                _fileStream = new FileStream(string.Format(FileOutputPath, DateTime.Now.ToString("yyyy-dd-M--HH-mm-ss")), FileMode.Create, FileAccess.Write);
+                _fileStream = new FileStream(string.Format(FileOutputPath, DateTime.Now.ToString("yyyy-M-dd--HH-mm-ss")), FileMode.Create, FileAccess.Write);
 
             byte[] bytes = Encoding.UTF8.GetBytes(o.ToString() + "\r\n");
             _fileStream.Write(bytes, 0, bytes.Length);
@@ -82,7 +82,7 @@ namespace Elementary
                 strArr[0] = now.ToShortDateString();
 
             if (IncludeTime)
-                strArr[1] = now.ToShortTimeString();
+                strArr[1] = now.ToString("HH:mm:ss.fff");
 
             return string.Join(" ", strArr).Trim();
         }
