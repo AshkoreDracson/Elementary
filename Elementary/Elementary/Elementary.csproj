@@ -37,6 +37,9 @@
     <Compile Include="ArrayExtension.cs" />
     <Compile Include="DependencyInjector.cs" />
     <Compile Include="ListExtension.cs" />
+    <Compile Include="LogLevel.cs" />
+    <Compile Include="Logman.cs" />
+    <Compile Include="LogOptions.cs" />
     <Compile Include="Math.cs" />
     <Compile Include="MidpointRounding.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
