@@ -10,7 +10,13 @@ namespace Elementary
     {
         private static Random rnd;
 
+        /// <summary>
+        /// e mathematical constant
+        /// </summary>
         public const double E = 2.7182818284590541;
+        /// <summary>
+        /// π mathematical constant
+        /// </summary>
         public const double PI = 3.1415926535897931;
 
         static Math()

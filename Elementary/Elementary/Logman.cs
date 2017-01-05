@@ -9,23 +9,55 @@ namespace Elementary
     {
         private static FileStream _fileStream;
 
+        /// <summary>
+        /// The console color to use when logging debug messages
+        /// </summary>
         public static ConsoleColor DebugLogColor { get; set; } = ConsoleColor.DarkGray;
+        /// <summary>
+        /// The console color to use when logging information messages
+        /// </summary>
         public static ConsoleColor InformationLogColor { get; set; } = ConsoleColor.Gray;
+        /// <summary>
+        /// The console color to use when logging warning messages
+        /// </summary>
         public static ConsoleColor WarningLogColor { get; set; } = ConsoleColor.Yellow;
+        /// <summary>
+        /// The console color to use when logging error messages
+        /// </summary>
         public static ConsoleColor ErrorLogColor { get; set; } = ConsoleColor.Red;
 
+        /// <summary>
+        /// The file output path when logging towards a file, you can use {0} for string formatting, it'll automatically supply the date and time
+        /// </summary>
         public static string FileOutputPath { get; set; } = "./log {0}.txt";
 
+        /// <summary>
+        /// Includes the date in the log messages
+        /// </summary>
         public static bool IncludeDate { get; set; }
+        /// <summary>
+        /// Includes the time in the log messages
+        /// </summary>
         public static bool IncludeTime { get; set; } = true;
 
+        /// <summary>
+        /// Logs debug messages, if false, debug messages are not logged.
+        /// </summary>
         public static bool LogDebug { get; set; } = true;
 
-        public static LogOptions LogOptions { get; set; } = LogOptions.ImmediateWindow;
+        /// <summary>
+        /// Log options enum, decides where logging should output
+        /// </summary>
+        public static LogOutput LogOutput { get; set; } = LogOutput.ImmediateWindow;
 
+        /// <summary>
+        /// Logs a message
+        /// </summary>
+        /// <param name="o">The object</param>
+        /// <param name="logLevel">The log level of the message</param>
         public static void Log(object o, LogLevel logLevel = LogLevel.Debug)
         {
-            if (LogOptions == LogOptions.None) return;
+            if (LogOutput == LogOutput.None) return;
 
             DateTime now = DateTime.Now;
 
@@ -36,17 +68,17 @@ namespace Elementary
             }
             str += o;
 
-            if (LogOptions.HasFlag(LogOptions.Console))
+            if (LogOutput.HasFlag(LogOutput.Console))
             {
                 LogConsole(str, logLevel);
             }
 
-            if (LogOptions.HasFlag(LogOptions.ImmediateWindow))
+            if (LogOutput.HasFlag(LogOutput.ImmediateWindow))
             {
                 LogImmediate(str, logLevel);
             }
 
-            if (LogOptions.HasFlag(LogOptions.File))
+            if (LogOutput.HasFlag(LogOutput.File))
             {
                 LogFile(str, logLevel);
             }
