@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Elementary
 {
@@ -14,7 +13,12 @@ namespace Elementary
         /// <returns>True if the list contains the desired type, otherwise false</returns>
         public static bool ContainsType(this List<object> list, Type t)
         {
-            return list.Count(o => o.GetType() == t) > 0;
+            foreach (object item in list)
+            {
+                if (item.GetType() == t)
+                    return true;
+            }
+            return false;
         }
         /// <summary>
         /// Checks if a list contains a certain type.
@@ -24,7 +28,12 @@ namespace Elementary
         /// <returns>True if the list contains the desired type, otherwise false</returns>
         public static bool ContainsType<T>(this List<object> list)
         {
-            return list.Count(o => o is T) > 0;
+            foreach (object item in list)
+            {
+                if (item is T)
+                    return true;
+            }
+            return false;
         }
         /// <summary>
         /// Returns a random item in the list
