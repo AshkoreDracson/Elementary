@@ -3,7 +3,7 @@
 namespace Elementary
 {
     /*
-    Some functions are simple wrapper methods from System.Math, this ensures that you won't shouldn't need the two libraries as this could cause annoyance at worst. 
+    Most functions are simple wrapper methods from System.Math, this ensures that you won't shouldn't need the two libraries as this could cause annoyance at worst. 
     */
 
     public static class Math
