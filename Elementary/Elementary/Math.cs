@@ -552,7 +552,7 @@ namespace Elementary
         }
         public static float Random(float min, float max)
         {
-            return (float)(rnd.NextDouble().Remap(0.0f, 1.0f, min, max));
+            return ((float)rnd.NextDouble()).Remap(0.0f, 1.0f, min, max);
         }
         public static double Random(double min, double max)
         {
