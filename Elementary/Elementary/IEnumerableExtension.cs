@@ -5,8 +5,11 @@ namespace Elementary
 {
     public static class IEnumerableExtension
     {
-        public static IEnumerable<string> Combinations(string s, int length)
+        public static IEnumerable<string> Combinations(this string s, int length)
         {
+            if (s == null || s.Length <= 0)
+                throw new Exception("The specified string cannot be empty or null");
+
             if (length < 1)
                 throw new Exception("The length cannot be inferior to 1");
 
