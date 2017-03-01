@@ -1,7 +1,6 @@
 ﻿using Elementary;
 using System;
 using System.Threading;
-
 namespace Elementary_Test_Project
 {
     class Program

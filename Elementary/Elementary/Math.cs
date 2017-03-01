@@ -10,6 +10,20 @@ namespace Elementary
     {
         private static Random rnd;
 
+        private static int _seed;
+        public static int Seed
+        {
+            get
+            {
+                return _seed;
+            }
+            set
+            {
+                _seed = value;
+                rnd = new Random(value);
+            }
+        }
+
         /// <summary>
         /// e mathematical constant
         /// </summary>
@@ -21,7 +35,8 @@ namespace Elementary
 
         static Math()
         {
-            rnd = new Random();
+            _seed = (int)DateTime.Now.Ticks;
+            rnd = new Random(_seed);
         }
 
         public static sbyte Abs(this sbyte value)
@@ -556,7 +571,7 @@ namespace Elementary
         }
         public static double Random(double min, double max)
         {
-            return (rnd.NextDouble().Remap(0.0, 1.0, min, max));
+            return rnd.NextDouble().Remap(0.0, 1.0, min, max);
         }
         // Decimal random isn't perfect, it bases off as a double so precision in the lower numbers is lost.
         public static decimal Random(decimal min, decimal max)
@@ -576,15 +591,15 @@ namespace Elementary
 
         public static float Remap(this float value, float inputMin, float inputMax, float outputMin, float outputMax)
         {
-            return (value - inputMin) / (outputMin - inputMin) * (outputMax - inputMax) + inputMax;
+            return outputMin + (value - inputMin) * (outputMax - outputMin) / (inputMax - inputMin);
         }
         public static double Remap(this double value, double inputMin, double inputMax, double outputMin, double outputMax)
         {
-            return (value - inputMin) / (outputMin - inputMin) * (outputMax - inputMax) + inputMax;
+            return outputMin + (value - inputMin) * (outputMax - outputMin) / (inputMax - inputMin);
         }
         public static decimal Remap(this decimal value, decimal inputMin, decimal inputMax, decimal outputMin, decimal outputMax)
         {
-            return (value - inputMin) / (outputMin - inputMin) * (outputMax - inputMax) + inputMax;
+            return outputMin + (value - inputMin) * (outputMax - outputMin) / (inputMax - inputMin);
         }
 
         public static float Round(this float value)
