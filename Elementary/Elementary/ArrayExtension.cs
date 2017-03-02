@@ -70,7 +70,7 @@ namespace Elementary
         /// <returns>A random item fetched within the array</returns>
         public static T Random<T>(this T[] array)
         {
-            return array[Math.Random(array.Length)];
+            return array[Mathf.Random(array.Length)];
         }
     }
 }

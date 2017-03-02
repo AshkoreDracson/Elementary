@@ -43,7 +43,7 @@ namespace Elementary
         /// <returns>A random item fetched within the list</returns>
         public static T Random<T>(this List<T> list)
         {
-            return list[Math.Random(list.Count)];
+            return list[Mathf.Random(list.Count)];
         }
     }
 }
