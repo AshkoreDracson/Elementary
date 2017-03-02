@@ -6,7 +6,7 @@ namespace Elementary
     Most functions are simple wrapper methods from System.Math, this ensures that you won't shouldn't need the two libraries as this could cause annoyance at worst. 
     */
 
-    public static class Math
+    public static class Mathf
     {
         private static Random rnd;
 
@@ -33,7 +33,7 @@ namespace Elementary
         /// </summary>
         public const double PI = 3.1415926535897931;
 
-        static Math()
+        static Mathf()
         {
             _seed = (int)DateTime.Now.Ticks;
             rnd = new Random(_seed);
@@ -57,69 +57,69 @@ namespace Elementary
         }
         public static float Abs(this float value)
         {
-            return (value >= 0 ? value : -value);
+            return (value >= 0f ? value : -value);
         }
         public static double Abs(this double value)
         {
-            return (value >= 0 ? value : -value);
+            return (value >= 0.0 ? value : -value);
         }
         public static decimal Abs(this decimal value)
         {
-            return (value >= 0 ? value : -value);
+            return (value >= 0m ? value : -value);
         }
 
         public static float Acos(this float value)
         {
-            return (float)System.Math.Acos(value);
+            return (float)Math.Acos(value);
         }
         public static double Acos(this double value)
         {
-            return System.Math.Acos(value);
+            return Math.Acos(value);
         }
 
         public static float Asin(this float value)
         {
-            return (float)System.Math.Asin(value);
+            return (float)Math.Asin(value);
         }
         public static double Asin(this double value)
         {
-            return System.Math.Asin(value);
+            return Math.Asin(value);
         }
 
         public static float Atan(this float value)
         {
-            return (float)System.Math.Atan(value);
+            return (float)Math.Atan(value);
         }
         public static double Atan(this double value)
         {
-            return System.Math.Atan(value);
+            return Math.Atan(value);
         }
 
         public static float Atan2(this float x, float y)
         {
-            return (float)System.Math.Atan2(x, y);
+            return (float)Math.Atan2(x, y);
         }
         public static double Atan2(this double x, double y)
         {
-            return System.Math.Atan2(x, y);
+            return Math.Atan2(x, y);
         }
 
         public static long BigMul(this int a, int b)
         {
-            return System.Math.BigMul(a, b);
+            return Math.BigMul(a, b);
         }
 
         public static float Ceiling(this float value)
         {
-            return (float)System.Math.Ceiling(value);
+            return (float)Math.Ceiling(value);
         }
         public static double Ceiling(this double value)
         {
-            return System.Math.Ceiling(value);
+            return Math.Ceiling(value);
         }
         public static decimal Ceiling(this decimal value)
         {
-            return System.Math.Ceiling(value);
+            return Math.Ceiling(value);
         }
 
         public static sbyte Clamp(this sbyte value, sbyte min, sbyte max)
@@ -277,85 +277,219 @@ namespace Elementary
         }
         public static float Clamp01(this float value)
         {
-            if (value < 0)
-                return 0;
-            else if (value > 1)
-                return 1;
+            if (value < 0f)
+                return 0f;
+            else if (value > 1f)
+                return 1f;
             return value;
         }
         public static double Clamp01(this double value)
         {
-            if (value < 0)
-                return 0;
-            else if (value > 1)
-                return 1;
+            if (value < 0.0)
+                return 0.0;
+            else if (value > 1.0)
+                return 1.0;
             return value;
         }
         public static decimal Clamp01(this decimal value)
         {
-            if (value < 0)
-                return 0;
-            else if (value > 1)
-                return 1;
+            if (value < 0m)
+                return 0m;
+            else if (value > 1m)
+                return 1m;
+            return value;
+        }
+
+        public static sbyte ClampMin(this sbyte value, sbyte min)
+        {
+            if (value < min)
+                return min;
+            return value;
+        }
+        public static short ClampMin(this short value, short min)
+        {
+            if (value < min)
+                return min;
+            return value;
+        }
+        public static int ClampMin(this int value, int min)
+        {
+            if (value < min)
+                return min;
+            return value;
+        }
+        public static long ClampMin(this long value, long min)
+        {
+            if (value < min)
+                return min;
+            return value;
+        }
+        public static byte ClampMin(this byte value, byte min)
+        {
+            if (value < min)
+                return min;
+            return value;
+        }
+        public static ushort ClampMin(this ushort value, ushort min)
+        {
+            if (value < min)
+                return min;
+            return value;
+        }
+        public static uint ClampMin(this uint value, uint min)
+        {
+            if (value < min)
+                return min;
+            return value;
+        }
+        public static ulong ClampMin(this ulong value, ulong min)
+        {
+            if (value < min)
+                return min;
+            return value;
+        }
+        public static float ClampMin(this float value, float min)
+        {
+            if (value < min)
+                return min;
+            return value;
+        }
+        public static double ClampMin(this double value, double min)
+        {
+            if (value < min)
+                return min;
+            return value;
+        }
+        public static decimal ClampMin(this decimal value, decimal min)
+        {
+            if (value < min)
+                return min;
+            return value;
+        }
+
+        public static sbyte ClampMax(this sbyte value, sbyte max)
+        {
+            if (value > max)
+                return max;
+            return value;
+        }
+        public static short ClampMax(this short value, short max)
+        {
+            if (value > max)
+                return max;
+            return value;
+        }
+        public static int ClampMax(this int value, int max)
+        {
+            if (value > max)
+                return max;
+            return value;
+        }
+        public static long ClampMax(this long value, long max)
+        {
+            if (value > max)
+                return max;
+            return value;
+        }
+        public static byte ClampMax(this byte value, byte max)
+        {
+            if (value > max)
+                return max;
+            return value;
+        }
+        public static ushort ClampMax(this ushort value, ushort max)
+        {
+            if (value > max)
+                return max;
+            return value;
+        }
+        public static uint ClampMax(this uint value, uint max)
+        {
+            if (value > max)
+                return max;
+            return value;
+        }
+        public static ulong ClampMax(this ulong value, ulong max)
+        {
+            if (value > max)
+                return max;
+            return value;
+        }
+        public static float ClampMax(this float value, float max)
+        {
+            if (value > max)
+                return max;
+            return value;
+        }
+        public static double ClampMax(this double value, double max)
+        {
+            if (value > max)
+                return max;
+            return value;
+        }
+        public static decimal ClampMax(this decimal value, decimal max)
+        {
+            if (value > max)
+                return max;
             return value;
         }
 
         public static float Cos(this float value)
         {
-            return (float)System.Math.Cos(value);
+            return (float)Math.Cos(value);
         }
         public static double Cos(this double value)
         {
-            return System.Math.Cos(value);
+            return Math.Cos(value);
         }
 
         public static float Cosh(this float value)
         {
-            return (float)System.Math.Cosh(value);
+            return (float)Math.Cosh(value);
         }
         public static double Cosh(this double value)
         {
-            return System.Math.Cosh(value);
+            return Math.Cosh(value);
         }
 
         public static void DivRem(this int a, int b, out int result)
         {
-            System.Math.DivRem(a, b, out result);
+            Math.DivRem(a, b, out result);
         }
         public static void DivRem(this long a, long b, out long result)
         {
-            System.Math.DivRem(a, b, out result);
+            Math.DivRem(a, b, out result);
         }
 
         public static float Exp(this float value)
         {
-            return (float)System.Math.Exp(value);
+            return (float)Math.Exp(value);
         }
         public static double Exp(this double value)
         {
-            return System.Math.Exp(value);
+            return Math.Exp(value);
         }
 
         public static float Floor(this float value)
         {
-            return (float)System.Math.Floor(value);
+            return (float)Math.Floor(value);
         }
         public static double Floor(this double value)
         {
-            return System.Math.Floor(value);
+            return Math.Floor(value);
         }
         public static decimal Floor(this decimal value)
         {
-            return System.Math.Floor(value);
+            return Math.Floor(value);
         }
 
         public static float IEEERemainder(this float x, float y)
         {
-            return (float)System.Math.IEEERemainder(x, y);
+            return (float)Math.IEEERemainder(x, y);
         }
         public static double IEEERemainder(this double x, double y)
         {
-            return System.Math.IEEERemainder(x, y);
+            return Math.IEEERemainder(x, y);
         }
 
         public static float InverseLerp(float from, float to, float value)
@@ -373,28 +507,28 @@ namespace Elementary
 
         public static float Log(this float value)
         {
-            return (float)System.Math.Log(value);
+            return (float)Math.Log(value);
         }
         public static float Log(this float value, float newBase)
         {
-            return (float)System.Math.Log(value, newBase);
+            return (float)Math.Log(value, newBase);
         }
         public static double Log(this double value)
         {
-            return System.Math.Log(value);
+            return Math.Log(value);
         }
         public static double Log(this double value, double newBase)
         {
-            return System.Math.Log(value, newBase);
+            return Math.Log(value, newBase);
         }
 
         public static float Log10(this float value)
         {
-            return (float)System.Math.Log10(value);
+            return (float)Math.Log10(value);
         }
         public static double Log10(this double value)
         {
-            return System.Math.Log10(value);
+            return Math.Log10(value);
         }
 
         public static float Lerp(float from, float to, float t)
@@ -546,11 +680,11 @@ namespace Elementary
 
         public static float Pow(this float x, float y)
         {
-            return (float)System.Math.Pow(x, y);
+            return (float)Math.Pow(x, y);
         }
         public static double Pow(this double x, double y)
         {
-            return System.Math.Pow(x, y);
+            return Math.Pow(x, y);
         }
 
         public static int Random()
@@ -604,51 +738,51 @@ namespace Elementary
 
         public static float Round(this float value)
         {
-            return (float)System.Math.Round(value);
+            return (float)Math.Round(value);
         }
         public static float Round(this float value, int digits)
         {
-            return (float)System.Math.Round(value, digits);
+            return (float)Math.Round(value, digits);
         }
         public static float Round(this float value, MidpointRounding mode)
         {
-            return (float)System.Math.Round(value, (System.MidpointRounding)mode);
+            return (float)Math.Round(value, (System.MidpointRounding)mode);
         }
         public static float Round(this float value, int digits, MidpointRounding mode)
         {
-            return (float)System.Math.Round(value, digits, (System.MidpointRounding)mode);
+            return (float)Math.Round(value, digits, (System.MidpointRounding)mode);
         }
         public static double Round(this double value)
         {
-            return System.Math.Round(value);
+            return Math.Round(value);
         }
         public static double Round(this double value, int digits)
         {
-            return System.Math.Round(value, digits);
+            return Math.Round(value, digits);
         }
         public static double Round(this double value, MidpointRounding mode)
         {
-            return System.Math.Round(value, (System.MidpointRounding)mode);
+            return Math.Round(value, (System.MidpointRounding)mode);
         }
         public static double Round(this double value, int digits, MidpointRounding mode)
         {
-            return System.Math.Round(value, digits, (System.MidpointRounding)mode);
+            return Math.Round(value, digits, (System.MidpointRounding)mode);
         }
         public static decimal Round(this decimal value)
         {
-            return System.Math.Round(value);
+            return Math.Round(value);
         }
         public static decimal Round(this decimal value, int digits)
         {
-            return System.Math.Round(value, digits);
+            return Math.Round(value, digits);
         }
         public static decimal Round(this decimal value, MidpointRounding mode)
         {
-            return System.Math.Round(value, (System.MidpointRounding)mode);
+            return Math.Round(value, (System.MidpointRounding)mode);
         }
         public static decimal Round(this decimal value, int digits, MidpointRounding mode)
         {
-            return System.Math.Round(value, digits, (System.MidpointRounding)mode);
+            return Math.Round(value, digits, (System.MidpointRounding)mode);
         }
 
         public static sbyte Sign(this sbyte value)
@@ -685,85 +819,85 @@ namespace Elementary
         }
         public static sbyte Sign(this float value)
         {
-            if (value > 0)
+            if (value > 0f)
                 return 1;
-            else if (value < 0)
+            else if (value < 0f)
                 return -1;
             return 0;
         }
         public static sbyte Sign(this double value)
         {
-            if (value > 0)
+            if (value > 0.0)
                 return 1;
-            else if (value < 0)
+            else if (value < 0.0)
                 return -1;
             return 0;
         }
         public static sbyte Sign(this decimal value)
         {
-            if (value > 0)
+            if (value > 0m)
                 return 1;
-            else if (value < 0)
+            else if (value < 0m)
                 return -1;
             return 0;
         }
 
         public static float Sin(this float value)
         {
-            return (float)System.Math.Sin(value);
+            return (float)Math.Sin(value);
         }
         public static double Sin(this double value)
         {
-            return System.Math.Sin(value);
+            return Math.Sin(value);
         }
 
         public static float Sinh(this float value)
         {
-            return (float)System.Math.Sinh(value);
+            return (float)Math.Sinh(value);
         }
         public static double Sinh(this double value)
         {
-            return System.Math.Sinh(value);
+            return Math.Sinh(value);
         }
 
         public static float Sqrt(this float value)
         {
-            return (float)System.Math.Sqrt(value);
+            return (float)Math.Sqrt(value);
         }
         public static double Sqrt(this double value)
         {
-            return System.Math.Sqrt(value);
+            return Math.Sqrt(value);
         }
 
         public static float Tan(this float value)
         {
-            return (float)System.Math.Tan(value);
+            return (float)Math.Tan(value);
         }
         public static double Tan(this double value)
         {
-            return System.Math.Tan(value);
+            return Math.Tan(value);
         }
 
         public static float Tanh(this float value)
         {
-            return (float)System.Math.Tanh(value);
+            return (float)Math.Tanh(value);
         }
         public static double Tanh(this double value)
         {
-            return System.Math.Tanh(value);
+            return Math.Tanh(value);
         }
 
         public static float Truncate(this float value)
         {
-            return (float)System.Math.Truncate(value);
+            return (float)Math.Truncate(value);
         }
         public static double Truncate(this double value)
         {
-            return System.Math.Truncate(value);
+            return Math.Truncate(value);
         }
         public static decimal Truncate(this decimal value)
         {
-            return System.Math.Truncate(value);
+            return Math.Truncate(value);
         }
     }
 }

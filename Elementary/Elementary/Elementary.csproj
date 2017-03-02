@@ -67,7 +67,7 @@
     <Compile Include="LogLevel.cs" />
     <Compile Include="Logman.cs" />
     <Compile Include="LogOutput.cs" />
-    <Compile Include="Math.cs" />
+    <Compile Include="Mathf.cs" />
     <Compile Include="MidpointRounding.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
