@@ -11,6 +11,9 @@ namespace Elementary
         private static Random rnd;
 
         private static int _seed;
+        /// <summary>
+        /// The seed of the random number generator
+        /// </summary>
         public static int Seed
         {
             get
