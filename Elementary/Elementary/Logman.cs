@@ -58,6 +58,7 @@ namespace Elementary
         public static void Log(object o, LogLevel logLevel = LogLevel.Debug)
         {
             if (LogOutput == LogOutput.None) return;
+            if (logLevel == LogLevel.Debug && !LogDebug) return;
 
             DateTime now = DateTime.Now;
 
