@@ -122,6 +122,19 @@ namespace Elementary
             return Math.Ceiling(value);
         }
 
+        public static int CeilingToInt(this float value)
+        {
+            return (int)Math.Ceiling(value);
+        }
+        public static int CeilingToInt(this double value)
+        {
+            return (int)Math.Ceiling(value);
+        }
+        public static int CeilingToInt(this decimal value)
+        {
+            return (int)Math.Ceiling(value);
+        }
+
         public static sbyte Clamp(this sbyte value, sbyte min, sbyte max)
         {
             if (value < min)
@@ -483,6 +496,19 @@ namespace Elementary
             return Math.Floor(value);
         }
 
+        public static int FloorToInt(this float value)
+        {
+            return (int)Math.Floor(value);
+        }
+        public static int FloorToInt(this double value)
+        {
+            return (int)Math.Floor(value);
+        }
+        public static int FloorToInt(this decimal value)
+        {
+            return (int)Math.Floor(value);
+        }
+
         public static float IEEERemainder(this float x, float y)
         {
             return (float)Math.IEEERemainder(x, y);
@@ -783,6 +809,31 @@ namespace Elementary
         public static decimal Round(this decimal value, int digits, MidpointRounding mode)
         {
             return Math.Round(value, digits, (System.MidpointRounding)mode);
+        }
+
+        public static int RoundToInt(this float value)
+        {
+            return (int)Math.Round(value);
+        }
+        public static int RoundToInt(this float value, MidpointRounding mode)
+        {
+            return (int)Math.Round(value, (System.MidpointRounding)mode);
+        }
+        public static int RoundToInt(this double value)
+        {
+            return (int)Math.Round(value);
+        }
+        public static int RoundToInt(this double value, MidpointRounding mode)
+        {
+            return (int)Math.Round(value, (System.MidpointRounding)mode);
+        }
+        public static int RoundToInt(this decimal value)
+        {
+            return (int)Math.Round(value);
+        }
+        public static int RoundToInt(this decimal value, MidpointRounding mode)
+        {
+            return (int)Math.Round(value, (System.MidpointRounding)mode);
         }
 
         public static sbyte Sign(this sbyte value)
