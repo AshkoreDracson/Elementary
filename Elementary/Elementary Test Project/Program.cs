@@ -8,7 +8,7 @@ namespace Elementary_Test_Project
     {
         static void Main(string[] args)
         {
-            Logman.LogOutput = LogOutput.Console | LogOutput.ImmediateWindow | LogOutput.File;
+            Logman.LogOutput = LogOutput.Console | LogOutput.File;
             Logman.FileOutputPath = ".\\log.txt";
             Logman.Log("Test");
             Thread.Sleep(2000);

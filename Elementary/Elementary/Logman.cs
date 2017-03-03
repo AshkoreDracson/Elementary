@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.IO;
 using System.Text;
 
@@ -48,7 +47,7 @@ namespace Elementary
         /// <summary>
         /// Log options enum, decides where logging should output
         /// </summary>
-        public static LogOutput LogOutput { get; set; } = LogOutput.ImmediateWindow;
+        public static LogOutput LogOutput { get; set; } = LogOutput.Console;
 
         /// <summary>
         /// Logs a message
@@ -74,11 +73,6 @@ namespace Elementary
                 LogConsole(str, logLevel);
             }
 
-            if (LogOutput.HasFlag(LogOutput.ImmediateWindow))
-            {
-                LogImmediate(str, logLevel);
-            }
-
             if (LogOutput.HasFlag(LogOutput.File))
             {
                 LogFile(str, logLevel);
@@ -90,11 +84,6 @@ namespace Elementary
             ConsoleColor oldColor = SwitchColor(logLevel);
             Console.WriteLine(o);
             Console.ForegroundColor = oldColor;
-        }
-
-        static void LogImmediate(object o, LogLevel logLevel = LogLevel.Debug)
-        {
-            Debug.WriteLine(o);
         }
 
         static void LogFile(object o, LogLevel logLevel = LogLevel.Debug)
