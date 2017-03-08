@@ -1,5 +1,6 @@
 ﻿using Elementary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Linq;
 namespace Elementary_Unit_Test
 {
     [TestClass]
@@ -102,6 +103,22 @@ namespace Elementary_Unit_Test
 
             if (same)
                 Assert.Fail($"Different seed returns same results as another seed");
+        }
+    }
+
+    [TestClass]
+    [TestCategory("Elementary math tests")]
+    public class ElementaryUnitTest_Math
+    {
+        [TestMethod]
+        public void FibonacciIntegrity()
+        {
+            long[] expected = new long[10] { 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 };
+            int i = 0;
+            foreach (long fib in Mathf.Fibonacci.Take(10))
+            {
+                Assert.AreEqual(expected[i++], fib);
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Elementary
 {
@@ -10,6 +11,35 @@ namespace Elementary
     {
         private static Random rnd;
 
+        /// <summary>
+        /// Calculates the Fibonacci sequence
+        /// </summary>
+        public static IEnumerable<long> Fibonacci
+        {
+            get
+            {
+                long a = 0;
+                long b = 1;
+                int index = 0;
+                while (true)
+                {
+                    if (index <= 1)
+                    {
+                        yield return index;
+                    }
+                    else
+                    {
+                        long temp = a;
+                        a = b;
+                        b = temp + b;
+
+                        yield return b;
+                    }
+
+                    index++;
+                }
+            }
+        }
         private static int _seed;
         /// <summary>
         /// The seed of the random number generator
@@ -825,6 +855,55 @@ namespace Elementary
             if (value > max)
                 return max;
             return value;
+        }
+
+        /// <summary>
+        /// Calculates the Collatz Conjecture sequence of a specified number
+        /// </summary>
+        /// <param name="n">The number</param>
+        /// <returns>The Collatz Conjecture sequence of a specified number</returns>
+        public static IEnumerable<int> CollatzConjecture(int n)
+        {
+            if (n < 1)
+                throw new Exception("The specified number is inferior to 1");
+
+            while (true)
+            {
+                yield return n;
+
+                if (n % 2 == 0)
+                {
+                    n = n / 2;
+                }
+                else
+                {
+                    n = n * 3 + 1;
+                }
+            }
+        }
+        /// <summary>
+        /// Calculates the Collatz Conjecture sequence of a specified number
+        /// </summary>
+        /// <param name="n">The number</param>
+        /// <returns>The Collatz Conjecture sequence of a specified number</returns>
+        public static IEnumerable<long> CollatzConjectureLong(long n)
+        {
+            if (n < 1)
+                throw new Exception("The specified number is inferior to 1");
+
+            while (true)
+            {
+                yield return n;
+
+                if (n % 2 == 0)
+                {
+                    n = n / 2;
+                }
+                else
+                {
+                    n = n * 3 + 1;
+                }
+            }
         }
 
         /// <summary>
