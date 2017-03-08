@@ -9,6 +9,39 @@ namespace Elementary
 
     public static class Mathf
     {
+        /// <summary>
+        /// β mathematical constant
+        /// </summary>
+        public const double Bernstein = 0.280169499023869;
+        /// <summary>
+        /// e mathematical constant
+        /// </summary>
+        public const double E = 2.71828182845905;
+        /// <summary>
+        /// φ mathematical constant
+        /// </summary>
+        public const double GoldenRatio = 1.61803398874989;
+        /// <summary>
+        /// Ω mathematical constant
+        /// </summary>
+        public const double Omega = 0.567143290409783;
+        /// <summary>
+        /// π mathematical constant
+        /// </summary>
+        public const double Pi = 3.14159265358979;
+        /// <summary>
+        /// √2 mathematical constant
+        /// </summary>
+        public const double Pythagora = 1.41421356237310;
+        /// <summary>
+        /// τ mathematical constant
+        /// </summary>
+        public const double Tau = 6.28318530717959;
+        /// <summary>
+        /// √3 mathematical constant
+        /// </summary>
+        public const double Theodorus = 1.73205080756888;
+
         private static Random rnd;
 
         /// <summary>
@@ -85,15 +118,6 @@ namespace Elementary
                 rnd = new Random(value);
             }
         }
-
-        /// <summary>
-        /// e mathematical constant
-        /// </summary>
-        public const double E = 2.7182818284590541;
-        /// <summary>
-        /// π mathematical constant
-        /// </summary>
-        public const double PI = 3.1415926535897931;
 
         static Mathf()
         {
