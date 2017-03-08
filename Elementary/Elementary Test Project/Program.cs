@@ -8,6 +8,11 @@ namespace Elementary_Test_Project
     {
         static void Main(string[] args)
         {
+            LogTest();
+        }
+
+        static void LogTest()
+        {
             Logman.LogOutput = LogOutput.Console | LogOutput.File;
             Logman.FileOutputPath = ".\\log.txt";
             Logman.Log("Test");

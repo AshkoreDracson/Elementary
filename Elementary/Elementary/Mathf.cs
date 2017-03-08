@@ -14,7 +14,36 @@ namespace Elementary
         /// <summary>
         /// Calculates the Fibonacci sequence
         /// </summary>
-        public static IEnumerable<long> Fibonacci
+        public static IEnumerable<int> Fibonacci
+        {
+            get
+            {
+                int a = 0;
+                int b = 1;
+                int index = 0;
+                while (true)
+                {
+                    if (index <= 1)
+                    {
+                        yield return index;
+                    }
+                    else
+                    {
+                        int temp = a;
+                        a = b;
+                        b = temp + b;
+
+                        yield return b;
+                    }
+
+                    index++;
+                }
+            }
+        }
+        /// <summary>
+        /// Calculates the Fibonacci sequence with 64-bit integers
+        /// </summary>
+        public static IEnumerable<long> FibonacciLong
         {
             get
             {
@@ -886,9 +915,9 @@ namespace Elementary
         /// </summary>
         /// <param name="n">The number</param>
         /// <returns>The Collatz Conjecture sequence of a specified number</returns>
-        public static IEnumerable<long> CollatzConjectureLong(long n)
+        public static IEnumerable<long> CollatzConjecture(long n)
         {
-            if (n < 1)
+            if (n < 1L)
                 throw new Exception("The specified number is inferior to 1");
 
             while (true)
@@ -896,6 +925,78 @@ namespace Elementary
                 yield return n;
 
                 if (n % 2 == 0)
+                {
+                    n = n / 2;
+                }
+                else
+                {
+                    n = n * 3 + 1;
+                }
+            }
+        }
+        /// <summary>
+        /// Calculates the Collatz Conjecture sequence of a specified number
+        /// </summary>
+        /// <param name="n">The number</param>
+        /// <returns>The Collatz Conjecture sequence of a specified number</returns>
+        public static IEnumerable<float> CollatzConjecture(float n)
+        {
+            if (n < 1f)
+                throw new Exception("The specified number is inferior to 1");
+
+            while (true)
+            {
+                yield return n;
+
+                if (Math.Floor(n) % 2 == 0)
+                {
+                    n = n / 2;
+                }
+                else
+                {
+                    n = n * 3 + 1;
+                }
+            }
+        }
+        /// <summary>
+        /// Calculates the Collatz Conjecture sequence of a specified number
+        /// </summary>
+        /// <param name="n">The number</param>
+        /// <returns>The Collatz Conjecture sequence of a specified number</returns>
+        public static IEnumerable<double> CollatzConjecture(double n)
+        {
+            if (n < 1.00)
+                throw new Exception("The specified number is inferior to 1");
+
+            while (true)
+            {
+                yield return n;
+
+                if (Math.Floor(n) % 2 == 0)
+                {
+                    n = n / 2;
+                }
+                else
+                {
+                    n = n * 3 + 1;
+                }
+            }
+        }
+        /// <summary>
+        /// Calculates the Collatz Conjecture sequence of a specified number
+        /// </summary>
+        /// <param name="n">The number</param>
+        /// <returns>The Collatz Conjecture sequence of a specified number</returns>
+        public static IEnumerable<decimal> CollatzConjecture(decimal n)
+        {
+            if (n < 1m)
+                throw new Exception("The specified number is inferior to 1");
+
+            while (true)
+            {
+                yield return n;
+
+                if (Math.Floor(n) % 2 == 0)
                 {
                     n = n / 2;
                 }
