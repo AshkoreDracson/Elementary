@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Elementary
 {
@@ -47,24 +48,27 @@ namespace Elementary
         /// <summary>
         /// Calculates the Fibonacci sequence
         /// </summary>
-        public static IEnumerable<int> Fibonacci
+        public static IEnumerable<uint> Fibonacci
         {
             get
             {
-                int a = 0;
-                int b = 1;
-                int index = 0;
+                uint a = 0;
+                uint b = 1;
+                uint index = 0;
                 while (true)
                 {
-                    if (index <= 1)
+                    if (index <= 1u)
                     {
                         yield return index;
                     }
                     else
                     {
-                        int temp = a;
+                        uint temp = a;
                         a = b;
                         b = temp + b;
+
+                        if (a > b)
+                            break;
 
                         yield return b;
                     }
@@ -76,24 +80,27 @@ namespace Elementary
         /// <summary>
         /// Calculates the Fibonacci sequence with 64-bit integers
         /// </summary>
-        public static IEnumerable<long> FibonacciLong
+        public static IEnumerable<ulong> FibonacciLong
         {
             get
             {
-                long a = 0;
-                long b = 1;
-                int index = 0;
+                ulong a = 0;
+                ulong b = 1;
+                uint index = 0;
                 while (true)
                 {
-                    if (index <= 1)
+                    if (index <= 1u)
                     {
                         yield return index;
                     }
                     else
                     {
-                        long temp = a;
+                        ulong temp = a;
                         a = b;
                         b = temp + b;
+
+                        if (a > b)
+                            break;
 
                         yield return b;
                     }
@@ -102,6 +109,72 @@ namespace Elementary
                 }
             }
         }
+
+        /// <summary>
+        /// Calculates prime numbers
+        /// </summary>
+        public static IEnumerable<uint> Primes
+        {
+            get
+            {
+                List<uint> primes = new List<uint>();
+                for (uint i = 2; i <= uint.MaxValue; i++)
+                {
+                    bool isPrime = true;
+
+                    foreach (uint prime in primes)
+                    {
+                        if (prime * prime > i)
+                            break;
+
+                        if (i % prime == 0)
+                        {
+                            isPrime = false;
+                            break;
+                        }
+                    }
+
+                    if (isPrime)
+                    {
+                        primes.Add(i);
+                        yield return i;
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// Calculates prime numbers with 64-bit integers
+        /// </summary>
+        public static IEnumerable<ulong> PrimesLong
+        {
+            get
+            {
+                List<ulong> primes = new List<ulong>();
+                for (ulong i = 2; i <= ulong.MaxValue; i++)
+                {
+                    bool isPrime = true;
+
+                    foreach (uint prime in primes)
+                    {
+                        if (prime * prime > i)
+                            break;
+
+                        if (i % prime == 0)
+                        {
+                            isPrime = false;
+                            break;
+                        }
+                    }
+
+                    if (isPrime)
+                    {
+                        primes.Add(i);
+                        yield return i;
+                    }
+                }
+            }
+        }
+
         private static int _seed;
         /// <summary>
         /// The seed of the random number generator
@@ -1112,6 +1185,91 @@ namespace Elementary
         }
 
         /// <summary>
+        /// Calculates the factorial of a specified number
+        /// </summary>
+        /// <param name="a">The number</param>
+        /// <returns>The factorial of the specified number</returns>
+        public static int Factorial(this int a)
+        {
+            int n = 1;
+            for (int i = 1; i <= a; i++)
+            {
+                n *= i;
+            }
+            return n;
+        }
+        /// <summary>
+        /// Calculates the factorial of a specified number
+        /// </summary>
+        /// <param name="a">The number</param>
+        /// <returns>The factorial of the specified number</returns>
+        public static uint Factorial(this uint a)
+        {
+            uint n = 1;
+            for (uint i = 1; i <= a; i++)
+            {
+                n *= i;
+            }
+            return n;
+        }
+        /// <summary>
+        /// Calculates the factorial of a specified number
+        /// </summary>
+        /// <param name="a">The number</param>
+        /// <returns>The factorial of the specified number</returns>
+        public static long Factorial(this long a)
+        {
+            long n = 1;
+            for (long i = 1; i <= a; i++)
+            {
+                n *= i;
+            }
+            return n;
+        }
+        /// <summary>
+        /// Calculates the factorial of a specified number
+        /// </summary>
+        /// <param name="a">The number</param>
+        /// <returns>The factorial of the specified number</returns>
+        public static ulong Factorial(this ulong a)
+        {
+            ulong n = 1;
+            for (ulong i = 1; i <= a; i++)
+            {
+                n *= i;
+            }
+            return n;
+        }
+        /// <summary>
+        /// Calculates the factorial of a specified number
+        /// </summary>
+        /// <param name="a">The number</param>
+        /// <returns>The factorial of the specified number</returns>
+        public static float Factorial(this float a)
+        {
+            float n = 1;
+            for (float i = 1; i <= a; i++)
+            {
+                n *= i;
+            }
+            return n;
+        }
+        /// <summary>
+        /// Calculates the factorial of a specified number
+        /// </summary>
+        /// <param name="a">The number</param>
+        /// <returns>The factorial of the specified number</returns>
+        public static double Factorial(this double a)
+        {
+            double n = 1;
+            for (double i = 1; i <= a; i++)
+            {
+                n *= i;
+            }
+            return n;
+        }
+
+        /// <summary>
         /// Returns the largest integer less than or equal to the specified number
         /// </summary>
         /// <param name="value">The number</param>
@@ -1211,6 +1369,43 @@ namespace Elementary
         public static decimal InverseLerp(decimal from, decimal to, decimal value)
         {
             return (value - from) / (to - from);
+        }
+
+        /// <summary>
+        /// Determines if the specified number is prime
+        /// </summary>
+        /// <param name="a">The number</param>
+        /// <returns>True if the specified number is prime, otherwise false</returns>
+        public static bool IsPrime(this int a)
+        {
+            return Primes.TakeWhile((i) => i <= a).Contains((uint)a);
+        }
+        /// <summary>
+        /// Determines if the specified number is prime
+        /// </summary>
+        /// <param name="a">The number</param>
+        /// <returns>True if the specified number is prime, otherwise false</returns>
+        public static bool IsPrime(this uint a)
+        {
+            return Primes.TakeWhile((i) => i <= a).Contains(a);
+        }
+        /// <summary>
+        /// Determines if the specified number is prime
+        /// </summary>
+        /// <param name="a">The number</param>
+        /// <returns>True if the specified number is prime, otherwise false</returns>
+        public static bool IsPrime(this long a)
+        {
+            return PrimesLong.TakeWhile((i) => i <= (ulong)a).Contains((ulong)a);
+        }
+        /// <summary>
+        /// Determines if the specified number is prime
+        /// </summary>
+        /// <param name="a">The number</param>
+        /// <returns>True if the specified number is prime, otherwise false</returns>
+        public static bool IsPrime(this ulong a)
+        {
+            return PrimesLong.TakeWhile((i) => i <= a).Contains(a);
         }
 
         /// <summary>

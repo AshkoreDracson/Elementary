@@ -113,12 +113,24 @@ namespace Elementary_Unit_Test
         [TestMethod]
         public void FibonacciIntegrity()
         {
-            long[] expected = new long[10] { 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 };
+            ulong[] expected = new ulong[10] { 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 };
             int i = 0;
-            foreach (long fib in Mathf.Fibonacci.Take(10))
+            foreach (ulong fib in Mathf.Fibonacci.Take(10))
             {
                 Assert.AreEqual(expected[i++], fib);
             }
+        }
+
+        [TestMethod]
+        public void Primes()
+        {
+            Mathf.Primes.TakeWhile((i) => i < 1000000u);
+        }
+
+        [TestMethod]
+        public void PrimesLong()
+        {
+            Mathf.PrimesLong.TakeWhile((i) => i < 1000000ul);
         }
     }
 }
