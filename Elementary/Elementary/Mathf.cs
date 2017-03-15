@@ -175,6 +175,29 @@ namespace Elementary
             }
         }
 
+        // I use a pre-made list because perfect numbers are quite intensive to compute
+        private static readonly long[] _perfectNumbers = new long[]
+        {
+            6,
+            28,
+            496,
+            8128,
+            33550336,
+            8589869056,
+            137438691328,
+            2305843008139952128,
+        };
+        /// <summary>
+        /// Returns a list of perfect numbers (Numbers whose all divisor's sums equal the same number)
+        /// </summary>
+        public static IEnumerable<long> PerfectNumbers
+        {
+            get
+            {
+                return _perfectNumbers;
+            }
+        }
+
         private static int _seed;
         /// <summary>
         /// The seed of the random number generator
@@ -1406,6 +1429,43 @@ namespace Elementary
         public static bool IsPrime(this ulong a)
         {
             return PrimesLong.TakeWhile((i) => i <= a).Contains(a);
+        }
+
+        /// <summary>
+        /// Determines if the specified number is perfect
+        /// </summary>
+        /// <param name="a">The number</param>
+        /// <returns>True if the specified number is perfect, otherwise false</returns>
+        public static bool IsPerfect(this int a)
+        {
+            return PerfectNumbers.Contains(a);
+        }
+        /// <summary>
+        /// Determines if the specified number is perfect
+        /// </summary>
+        /// <param name="a">The number</param>
+        /// <returns>True if the specified number is perfect, otherwise false</returns>
+        public static bool IsPerfect(this uint a)
+        {
+            return PerfectNumbers.Contains(a);
+        }
+        /// <summary>
+        /// Determines if the specified number is perfect
+        /// </summary>
+        /// <param name="a">The number</param>
+        /// <returns>True if the specified number is perfect, otherwise false</returns>
+        public static bool IsPerfect(this long a)
+        {
+            return PerfectNumbers.Contains(a);
+        }
+        /// <summary>
+        /// Determines if the specified number is perfect
+        /// </summary>
+        /// <param name="a">The number</param>
+        /// <returns>True if the specified number is perfect, otherwise false</returns>
+        public static bool IsPerfect(this ulong a)
+        {
+            return PerfectNumbers.Contains((long)a);
         }
 
         /// <summary>
