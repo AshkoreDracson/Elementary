@@ -132,5 +132,17 @@ namespace Elementary_Unit_Test
         {
             Mathf.PrimesLong.TakeWhile((i) => i < 1000000ul);
         }
+
+        [TestMethod]
+        public void PrimesIntegrity()
+        {
+            int[] nums = { 5, 2, 0, 61, -10, -5, 911, 0 };
+            bool[] expected = { true, true, false, true, false, false, true, false };
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                Assert.IsTrue(nums[i].IsPrime() == expected[i]);
+            }
+        }
     }
 }
