@@ -43,6 +43,15 @@ namespace Elementary
         /// </summary>
         public const double Theodorus = 1.73205080756888;
 
+        /// <summary>
+        /// Degrees to radians multiplicator constant
+        /// </summary>
+        public const double Deg2Rad = (Pi * 2.0) / 360.0;
+        /// <summary>
+        /// Radians to degrees multiplicator constant
+        /// </summary>
+        public const double Rad2Deg = 360.0 / (Pi * 2.0);
+
         private static Random rnd;
 
         /// <summary>
