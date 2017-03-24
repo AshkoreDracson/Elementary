@@ -69,6 +69,7 @@
     <Compile Include="LogOutput.cs" />
     <Compile Include="Mathf.cs" />
     <Compile Include="MidpointRounding.cs" />
+    <Compile Include="Noise.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
