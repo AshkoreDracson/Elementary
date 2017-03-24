@@ -61,9 +61,9 @@ namespace Elementary
         {
             get
             {
-                uint a = 0;
-                uint b = 1;
-                uint index = 0;
+                uint a = 0u;
+                uint b = 1u;
+                uint index = 0u;
                 while (true)
                 {
                     if (index <= 1u)
@@ -93,9 +93,9 @@ namespace Elementary
         {
             get
             {
-                ulong a = 0;
-                ulong b = 1;
-                uint index = 0;
+                ulong a = 0ul;
+                ulong b = 1ul;
+                uint index = 0u;
                 while (true)
                 {
                     if (index <= 1u)
@@ -127,7 +127,7 @@ namespace Elementary
             get
             {
                 List<uint> primes = new List<uint>();
-                for (uint i = 2; i <= uint.MaxValue; i++)
+                for (uint i = 2u; i <= uint.MaxValue; i++)
                 {
                     bool isPrime = true;
 
@@ -159,7 +159,7 @@ namespace Elementary
             get
             {
                 List<ulong> primes = new List<ulong>();
-                for (ulong i = 2; i <= ulong.MaxValue; i++)
+                for (ulong i = 2ul; i <= ulong.MaxValue; i++)
                 {
                     bool isPrime = true;
 
@@ -187,14 +187,14 @@ namespace Elementary
         // I use a pre-made list because perfect numbers are quite intensive to compute
         private static readonly long[] _perfectNumbers = new long[]
         {
-            6,
-            28,
-            496,
-            8128,
-            33550336,
-            8589869056,
-            137438691328,
-            2305843008139952128,
+            6L,
+            28L,
+            496L,
+            8128L,
+            33550336L,
+            8589869056L,
+            137438691328L,
+            2305843008139952128L,
         };
         /// <summary>
         /// Returns a list of perfect numbers (Numbers whose all divisor's sums equal the same number)
@@ -264,7 +264,7 @@ namespace Elementary
         /// <returns>The absolute value of the number</returns>
         public static long Abs(this long value)
         {
-            return (value >= 0 ? value : -value);
+            return (value >= 0L ? value : -value);
         }
         /// <summary>
         /// Calculates the absolute value of a number
@@ -651,10 +651,10 @@ namespace Elementary
         /// <returns>The specified number clamped inside the 0-1 range</returns>
         public static long Clamp01(this long value)
         {
-            if (value < 0)
-                return 0;
-            else if (value > 1)
-                return 1;
+            if (value < 0L)
+                return 0L;
+            else if (value > 1L)
+                return 1L;
             return value;
         }
         /// <summary>
@@ -690,10 +690,10 @@ namespace Elementary
         /// <returns>The specified number clamped inside the 0-1 range</returns>
         public static uint Clamp01(this uint value)
         {
-            if (value < 0)
-                return 0;
-            else if (value > 1)
-                return 1;
+            if (value < 0u)
+                return 0u;
+            else if (value > 1u)
+                return 1u;
             return value;
         }
         /// <summary>
@@ -703,10 +703,10 @@ namespace Elementary
         /// <returns>The specified number clamped inside the 0-1 range</returns>
         public static ulong Clamp01(this ulong value)
         {
-            if (value < 0)
-                return 0;
-            else if (value > 1)
-                return 1;
+            if (value < 0ul)
+                return 0ul;
+            else if (value > 1ul)
+                return 1ul;
             return value;
         }
         /// <summary>
@@ -1053,13 +1053,13 @@ namespace Elementary
             {
                 yield return n;
 
-                if (n % 2 == 0)
+                if (n % 2L == 0L)
                 {
-                    n = n / 2;
+                    n = n / 2L;
                 }
                 else
                 {
-                    n = n * 3 + 1;
+                    n = n * 3L + 1L;
                 }
             }
         }
@@ -1077,13 +1077,13 @@ namespace Elementary
             {
                 yield return n;
 
-                if (Math.Floor(n) % 2 == 0)
+                if (Math.Floor(n) % 2f == 0f)
                 {
-                    n = n / 2;
+                    n = n / 2f;
                 }
                 else
                 {
-                    n = n * 3 + 1;
+                    n = n * 3f + 1f;
                 }
             }
         }
@@ -1094,20 +1094,20 @@ namespace Elementary
         /// <returns>The Collatz Conjecture sequence of a specified number</returns>
         public static IEnumerable<double> CollatzConjecture(double n)
         {
-            if (n < 1.00)
+            if (n < 1.0)
                 throw new Exception("The specified number is inferior to 1");
 
             while (true)
             {
                 yield return n;
 
-                if (Math.Floor(n) % 2 == 0)
+                if (Math.Floor(n) % 2.0 == 0.0)
                 {
-                    n = n / 2;
+                    n = n / 2.0;
                 }
                 else
                 {
-                    n = n * 3 + 1;
+                    n = n * 3.0 + 1.0;
                 }
             }
         }
@@ -1237,8 +1237,8 @@ namespace Elementary
         /// <returns>The factorial of the specified number</returns>
         public static uint Factorial(this uint a)
         {
-            uint n = 1;
-            for (uint i = 1; i <= a; i++)
+            uint n = 1u;
+            for (uint i = 1u; i <= a; i++)
             {
                 n *= i;
             }
@@ -1251,8 +1251,8 @@ namespace Elementary
         /// <returns>The factorial of the specified number</returns>
         public static long Factorial(this long a)
         {
-            long n = 1;
-            for (long i = 1; i <= a; i++)
+            long n = 1L;
+            for (long i = 1L; i <= a; i++)
             {
                 n *= i;
             }
@@ -1265,8 +1265,8 @@ namespace Elementary
         /// <returns>The factorial of the specified number</returns>
         public static ulong Factorial(this ulong a)
         {
-            ulong n = 1;
-            for (ulong i = 1; i <= a; i++)
+            ulong n = 1ul;
+            for (ulong i = 1ul; i <= a; i++)
             {
                 n *= i;
             }
@@ -1279,8 +1279,8 @@ namespace Elementary
         /// <returns>The factorial of the specified number</returns>
         public static float Factorial(this float a)
         {
-            float n = 1;
-            for (float i = 1; i <= a; i++)
+            float n = 1f;
+            for (float i = 1f; i <= a; i++)
             {
                 n *= i;
             }
@@ -1293,8 +1293,8 @@ namespace Elementary
         /// <returns>The factorial of the specified number</returns>
         public static double Factorial(this double a)
         {
-            double n = 1;
-            for (double i = 1; i <= a; i++)
+            double n = 1.0;
+            for (double i = 1.0; i <= a; i++)
             {
                 n *= i;
             }
@@ -2186,9 +2186,9 @@ namespace Elementary
         /// <returns>The sign of a number.</returns>
         public static sbyte Sign(this long value)
         {
-            if (value > 0)
+            if (value > 0L)
                 return 1;
-            else if (value < 0)
+            else if (value < 0L)
                 return -1;
             return 0;
         }
