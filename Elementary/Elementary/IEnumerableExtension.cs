@@ -19,5 +19,28 @@ namespace Elementary
 
             return q;
         }
+
+        public static IEnumerable<T> Shuffle<T>(this T[] o)
+        {
+            List<int> avaliableIndexes = Enumerable.Range(0, o.Length).ToList();
+            for (int i = 0; i < o.Length; i++)
+            {
+                int rndIndex = avaliableIndexes.Random();
+                avaliableIndexes.Remove(rndIndex);
+
+                yield return o[rndIndex];
+            }
+        }
+        public static IEnumerable<T> Shuffle<T>(this T o) where T : List<T>
+        {
+            List<int> avaliableIndexes = Enumerable.Range(0, o.Count).ToList();
+            for (int i = 0; i < o.Count; i++)
+            {
+                int rndIndex = avaliableIndexes.Random();
+                avaliableIndexes.Remove(rndIndex);
+
+                yield return o[rndIndex];
+            }
+        }
     }
 }
