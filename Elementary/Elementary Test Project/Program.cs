@@ -4,14 +4,14 @@ using System.Diagnostics;
 using System.Threading;
 namespace Elementary_Test_Project
 {
-    class Program
+    internal static class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
             LogTest();
         }
 
-        static void LogTest()
+        private static void LogTest()
         {
             Logman.LogOutput = LogOutput.Console | LogOutput.File;
             Logman.FileOutputPath = ".\\log.txt";

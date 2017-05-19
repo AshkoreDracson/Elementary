@@ -75,30 +75,30 @@ namespace Elementary
 
             if (LogOutput.HasFlag(LogOutput.File))
             {
-                LogFile(str, logLevel);
+                LogFile(str);
             }
         }
 
-        static void LogConsole(object o, LogLevel logLevel = LogLevel.Debug)
+        private static void LogConsole(object o, LogLevel logLevel = LogLevel.Debug)
         {
             ConsoleColor oldColor = SwitchColor(logLevel);
             Console.WriteLine(o);
             Console.ForegroundColor = oldColor;
         }
 
-        static void LogFile(object o, LogLevel logLevel = LogLevel.Debug)
+        private static void LogFile(object o)
         {
             if (_fileStream == null)
                 _fileStream = new FileStream(string.Format(FileOutputPath, DateTime.Now.ToString("yyyy-M-dd--HH-mm-ss")), FileMode.Create, FileAccess.Write);
 
-            byte[] bytes = Encoding.UTF8.GetBytes(o.ToString() + "\r\n");
+            byte[] bytes = Encoding.UTF8.GetBytes(o + "\r\n");
             _fileStream.Write(bytes, 0, bytes.Length);
             _fileStream.Flush();
         }
 
         static string GetDateTimeString(DateTime now)
         {
-            string[] strArr = new string[2] { null, null };
+            string[] strArr = { null, null };
 
             if (IncludeDate)
                 strArr[0] = now.ToShortDateString();
@@ -109,7 +109,7 @@ namespace Elementary
             return string.Join(" ", strArr).Trim();
         }
 
-        static ConsoleColor SwitchColor(LogLevel logLevel)
+        private static ConsoleColor SwitchColor(LogLevel logLevel)
         {
             ConsoleColor oldColor = Console.ForegroundColor;
 
@@ -126,8 +126,6 @@ namespace Elementary
                     break;
                 case LogLevel.Error:
                     Console.ForegroundColor = ErrorLogColor;
-                    break;
-                default:
                     break;
             }
 

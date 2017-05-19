@@ -127,7 +127,7 @@ namespace Elementary
             get
             {
                 List<uint> primes = new List<uint>();
-                for (uint i = 2u; i <= uint.MaxValue; i++)
+                for (uint i = 2u; i < uint.MaxValue; i++)
                 {
                     bool isPrime = true;
 
@@ -159,7 +159,7 @@ namespace Elementary
             get
             {
                 List<ulong> primes = new List<ulong>();
-                for (ulong i = 2ul; i <= ulong.MaxValue; i++)
+                for (ulong i = 2ul; i < ulong.MaxValue; i++)
                 {
                     bool isPrime = true;
 
@@ -175,18 +175,15 @@ namespace Elementary
                         }
                     }
 
-                    if (isPrime)
-                    {
-                        primes.Add(i);
-                        yield return i;
-                    }
+                    if (!isPrime) continue;
+                    primes.Add(i);
+                    yield return i;
                 }
             }
         }
 
         // I use a pre-made list because perfect numbers are quite intensive to compute
-        private static readonly long[] _perfectNumbers = new long[]
-        {
+        private static readonly long[] _perfectNumbers = {
             6L,
             28L,
             496L,
@@ -199,13 +196,7 @@ namespace Elementary
         /// <summary>
         /// Returns a list of perfect numbers (Numbers whose all divisor's sums equal the same number)
         /// </summary>
-        public static IEnumerable<long> PerfectNumbers
-        {
-            get
-            {
-                return _perfectNumbers;
-            }
-        }
+        public static IEnumerable<long> PerfectNumbers => _perfectNumbers;
 
         private static int _seed;
         /// <summary>
@@ -213,10 +204,7 @@ namespace Elementary
         /// </summary>
         public static int Seed
         {
-            get
-            {
-                return _seed;
-            }
+            get => _seed;
             set
             {
                 _seed = value;
@@ -664,9 +652,7 @@ namespace Elementary
         /// <returns>The specified number clamped inside the 0-1 range</returns>
         public static byte Clamp01(this byte value)
         {
-            if (value < 0)
-                return 0;
-            else if (value > 1)
+            if (value > 1)
                 return 1;
             return value;
         }
@@ -677,11 +663,7 @@ namespace Elementary
         /// <returns>The specified number clamped inside the 0-1 range</returns>
         public static ushort Clamp01(this ushort value)
         {
-            if (value < 0)
-                return 0;
-            else if (value > 1)
-                return 1;
-            return value;
+            return (ushort)(value > 1 ? 1 : value);
         }
         /// <summary>
         /// Clamps the specified number inside the 0-1 range
@@ -690,11 +672,7 @@ namespace Elementary
         /// <returns>The specified number clamped inside the 0-1 range</returns>
         public static uint Clamp01(this uint value)
         {
-            if (value < 0u)
-                return 0u;
-            else if (value > 1u)
-                return 1u;
-            return value;
+            return value > 1u ? 1u : value;
         }
         /// <summary>
         /// Clamps the specified number inside the 0-1 range
@@ -703,11 +681,7 @@ namespace Elementary
         /// <returns>The specified number clamped inside the 0-1 range</returns>
         public static ulong Clamp01(this ulong value)
         {
-            if (value < 0ul)
-                return 0ul;
-            else if (value > 1ul)
-                return 1ul;
-            return value;
+            return value > 1ul ? 1ul : value;
         }
         /// <summary>
         /// Clamps the specified number inside the 0-1 range
@@ -1077,7 +1051,7 @@ namespace Elementary
             {
                 yield return n;
 
-                if (Math.Floor(n) % 2f == 0f)
+                if (Math.Abs(Math.Floor(n) % 2f) < float.Epsilon)
                 {
                     n = n / 2f;
                 }
@@ -1101,7 +1075,7 @@ namespace Elementary
             {
                 yield return n;
 
-                if (Math.Floor(n) % 2.0 == 0.0)
+                if (Math.Abs(Math.Floor(n) % 2.0) < double.Epsilon)
                 {
                     n = n / 2.0;
                 }
@@ -1491,7 +1465,7 @@ namespace Elementary
         /// </summary>
         /// <param name="value">The number</param>
         /// <param name="newBase">The new base</param>
-        /// <returns>The natural (base e) logarithm of a specified number  in a specified base</returns
+        /// <returns>The natural (base e) logarithm of a specified number  in a specified base</returns>
         public static float Log(this float value, float newBase)
         {
             return (float)Math.Log(value, newBase);
@@ -1500,7 +1474,7 @@ namespace Elementary
         /// Returns the natural (base e) logarithm of a specified number
         /// </summary>
         /// <param name="value">The number</param>
-        /// <returns>The natural (base e) logarithm of a specified number</returns
+        /// <returns>The natural (base e) logarithm of a specified number</returns>
         public static double Log(this double value)
         {
             return Math.Log(value);
@@ -1510,7 +1484,7 @@ namespace Elementary
         /// </summary>
         /// <param name="value">The number</param>
         /// <param name="newBase">The new base</param>
-        /// <returns>The natural (base e) logarithm of a specified number in a specified base</returns
+        /// <returns>The natural (base e) logarithm of a specified number in a specified base</returns>
         public static double Log(this double value, double newBase)
         {
             return Math.Log(value, newBase);
@@ -2094,10 +2068,12 @@ namespace Elementary
         {
             return (int)Math.Round(value);
         }
+
         /// <summary>
         /// Rounds a number to the nearest integer. A parameter specifies how to round the value if it is midway between two other numbers
         /// </summary>
         /// <param name="value">The number</param>
+        /// <param name="mode">The midpoint rounding mode</param>
         /// <returns>A number rounded to the nearest integer</returns>
         public static int RoundToInt(this float value, MidpointRounding mode)
         {
@@ -2116,6 +2092,7 @@ namespace Elementary
         /// Rounds a number to the nearest integer. A parameter specifies how to round the value if it is midway between two other numbers
         /// </summary>
         /// <param name="value">The number</param>
+        /// <param name="mode">The midpoint rounding mode</param>
         /// <returns>A number rounded to the nearest integer</returns>
         public static int RoundToInt(this double value, MidpointRounding mode)
         {
@@ -2134,6 +2111,7 @@ namespace Elementary
         /// Rounds a number to the nearest integer. A parameter specifies how to round the value if it is midway between two other numbers
         /// </summary>
         /// <param name="value">The number</param>
+        /// <param name="mode">The midpoint rounding mode</param>
         /// <returns>A number rounded to the nearest integer</returns>
         public static int RoundToInt(this decimal value, MidpointRounding mode)
         {

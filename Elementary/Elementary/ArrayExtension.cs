@@ -22,15 +22,12 @@ namespace Elementary
                 }
                 return false;
             }
-            else
+            foreach (object item in array)
             {
-                foreach (object item in array)
-                {
-                    if (Equals(item, o))
-                        return true;
-                }
-                return false;
+                if (Equals(item, o))
+                    return true;
             }
+            return false;
         }
         /// <summary>
         /// Checks if an array contains a certain type.

@@ -6,13 +6,13 @@ namespace Elementary
 {
     public static class DependencyInjector
     {
-        static List<object> dependencies = new List<object>();
+        static readonly List<object> dependencies = new List<object>();
 
         /// <summary>
         /// Registers an object to the dependency injector.
         /// Any object instance containing an OnInject() method will get its corresponding parameters type injected with any matching object of said type.
         /// </summary>
-        /// <seealso cref="Inject(object)"/>
+        /// <seealso cref="Inject(object,bool)"/>
         /// <param name="o">The instance of the object to add to the dependency injector</param>
         public static void Register(object o)
         {
@@ -34,29 +34,32 @@ namespace Elementary
             if (baseType)
                 type = type.BaseType;
 
-            MethodInfo methodInfo = type.GetMethod("OnInject", BindingFlags.Instance | BindingFlags.NonPublic);
-
-            if (methodInfo == null) return false;
-
-            List<object> toInject = new List<object>();
-            ParameterInfo[] parameters = methodInfo.GetParameters();
-
-            if (parameters == null || parameters.Length <= 0) return false;
-
-            foreach (ParameterInfo paramInfo in parameters)
+            if (type != null)
             {
-                Type paramType = paramInfo.ParameterType;
-                foreach (object d in dependencies)
+                MethodInfo methodInfo = type.GetMethod("OnInject", BindingFlags.Instance | BindingFlags.NonPublic);
+
+                if (methodInfo == null) return false;
+
+                List<object> toInject = new List<object>();
+                ParameterInfo[] parameters = methodInfo.GetParameters();
+
+                if (parameters.Length <= 0) return false;
+
+                foreach (ParameterInfo paramInfo in parameters)
                 {
-                    if (d.GetType() == paramType && !toInject.ContainsType(d.GetType()))
-                        toInject.Add(d);
+                    Type paramType = paramInfo.ParameterType;
+                    foreach (object d in dependencies)
+                    {
+                        if (d.GetType() == paramType && !toInject.ContainsType(d.GetType()))
+                            toInject.Add(d);
+                    }
                 }
+
+                if (parameters.Length != toInject.Count)
+                    return false;
+
+                methodInfo.Invoke(o, toInject.ToArray());
             }
-
-            if (parameters.Length != toInject.Count)
-                return false;
-
-            methodInfo.Invoke(o, toInject.ToArray());
             return true;
         }
     }

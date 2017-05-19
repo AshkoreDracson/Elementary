@@ -1,5 +1,8 @@
-﻿namespace Elementary
+﻿using System;
+
+namespace Elementary
 {
+    [Flags]
     public enum LogOutput : byte
     {
         /// <summary>
