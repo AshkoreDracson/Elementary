@@ -5,7 +5,7 @@ namespace Elementary_Unit_Test
 {
     [TestClass]
     [TestCategory("Random number generation tests")]
-    public class ElementaryUnitTest_Random
+    public class ElementaryUnitTestRandom
     {
         [TestMethod]
         public void RandomFloatIntegrity()
@@ -94,7 +94,7 @@ namespace Elementary_Unit_Test
             for (int i = 0; i < nums.Length; i++)
             {
                 int rnd = Mathf.Random();
-                if (rnd != nums[i])
+                if (rnd != i)
                 {
                     same = false;
                     break;
@@ -102,18 +102,18 @@ namespace Elementary_Unit_Test
             }
 
             if (same)
-                Assert.Fail($"Different seed returns same results as another seed");
+                Assert.Fail("Different seed returns same results as another seed");
         }
     }
 
     [TestClass]
     [TestCategory("Elementary math tests")]
-    public class ElementaryUnitTest_Math
+    public class ElementaryUnitTestMath
     {
         [TestMethod]
         public void FibonacciIntegrity()
         {
-            ulong[] expected = new ulong[10] { 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 };
+            ulong[] expected = { 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 };
             int i = 0;
             foreach (ulong fib in Mathf.Fibonacci.Take(10))
             {
@@ -124,13 +124,13 @@ namespace Elementary_Unit_Test
         [TestMethod]
         public void Primes()
         {
-            Mathf.Primes.TakeWhile((i) => i < 1000000u);
+            Mathf.Primes.TakeWhile(i => i < 1000000u);
         }
 
         [TestMethod]
         public void PrimesLong()
         {
-            Mathf.PrimesLong.TakeWhile((i) => i < 1000000ul);
+            Mathf.PrimesLong.TakeWhile(i => i < 1000000ul);
         }
 
         [TestMethod]
