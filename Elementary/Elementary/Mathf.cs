@@ -4,9 +4,7 @@ using System.Linq;
 
 namespace Elementary
 {
-    /*
-    Most functions are simple wrapper methods from System.Math, this ensures that you won't shouldn't need the two libraries as this could cause annoyance at worst. 
-    */
+    // Most functions are simple wrapper methods from System.Math, this ensures that you won't shouldn't need the two libraries as this could cause annoyance at worst.
 
     public static class Mathf
     {
@@ -46,13 +44,13 @@ namespace Elementary
         /// <summary>
         /// Degrees to radians multiplicator constant
         /// </summary>
-        public const double Deg2Rad = (Pi * 2.0) / 360.0;
+        public const double Deg2Rad = Pi * 2.0 / 360.0;
         /// <summary>
         /// Radians to degrees multiplicator constant
         /// </summary>
         public const double Rad2Deg = 360.0 / (Pi * 2.0);
 
-        private static Random rnd;
+        private static Random _rnd;
 
         /// <summary>
         /// Calculates the Fibonacci sequence
@@ -136,18 +134,14 @@ namespace Elementary
                         if (prime * prime > i)
                             break;
 
-                        if (i % prime == 0)
-                        {
-                            isPrime = false;
-                            break;
-                        }
+                        if (i % prime != 0) continue;
+                        isPrime = false;
+                        break;
                     }
 
-                    if (isPrime)
-                    {
-                        primes.Add(i);
-                        yield return i;
-                    }
+                    if (!isPrime) continue;
+                    primes.Add(i);
+                    yield return i;
                 }
             }
         }
@@ -163,16 +157,14 @@ namespace Elementary
                 {
                     bool isPrime = true;
 
-                    foreach (uint prime in primes)
+                    foreach (ulong prime in primes)
                     {
                         if (prime * prime > i)
                             break;
 
-                        if (i % prime == 0)
-                        {
-                            isPrime = false;
-                            break;
-                        }
+                        if (i % prime != 0) continue;
+                        isPrime = false;
+                        break;
                     }
 
                     if (!isPrime) continue;
@@ -208,14 +200,14 @@ namespace Elementary
             set
             {
                 _seed = value;
-                rnd = new Random(value);
+                _rnd = new Random(value);
             }
         }
 
         static Mathf()
         {
             _seed = (int)DateTime.Now.Ticks;
-            rnd = new Random(_seed);
+            _rnd = new Random(_seed);
         }
 
         /// <summary>
@@ -243,7 +235,7 @@ namespace Elementary
         /// <returns>The absolute value of the number</returns>
         public static int Abs(this int value)
         {
-            return (value >= 0 ? value : -value);
+            return value >= 0 ? value : -value;
         }
         /// <summary>
         /// Calculates the absolute value of a number
@@ -252,7 +244,7 @@ namespace Elementary
         /// <returns>The absolute value of the number</returns>
         public static long Abs(this long value)
         {
-            return (value >= 0L ? value : -value);
+            return value >= 0L ? value : -value;
         }
         /// <summary>
         /// Calculates the absolute value of a number
@@ -261,7 +253,7 @@ namespace Elementary
         /// <returns>The absolute value of the number</returns>
         public static float Abs(this float value)
         {
-            return (value >= 0f ? value : -value);
+            return value >= 0f ? value : -value;
         }
         /// <summary>
         /// Calculates the absolute value of a number
@@ -270,7 +262,7 @@ namespace Elementary
         /// <returns>The absolute value of the number</returns>
         public static double Abs(this double value)
         {
-            return (value >= 0.0 ? value : -value);
+            return value >= 0.0 ? value : -value;
         }
         /// <summary>
         /// Calculates the absolute value of a number
@@ -279,7 +271,7 @@ namespace Elementary
         /// <returns>The absolute value of the number</returns>
         public static decimal Abs(this decimal value)
         {
-            return (value >= 0m ? value : -value);
+            return value >= 0m ? value : -value;
         }
 
         /// <summary>
@@ -438,7 +430,7 @@ namespace Elementary
         {
             if (value < min)
                 return min;
-            else if (value > max)
+            if (value > max)
                 return max;
             return value;
         }
@@ -453,7 +445,7 @@ namespace Elementary
         {
             if (value < min)
                 return min;
-            else if (value > max)
+            if (value > max)
                 return max;
             return value;
         }
@@ -468,7 +460,7 @@ namespace Elementary
         {
             if (value < min)
                 return min;
-            else if (value > max)
+            if (value > max)
                 return max;
             return value;
         }
@@ -483,7 +475,7 @@ namespace Elementary
         {
             if (value < min)
                 return min;
-            else if (value > max)
+            if (value > max)
                 return max;
             return value;
         }
@@ -498,7 +490,7 @@ namespace Elementary
         {
             if (value < min)
                 return min;
-            else if (value > max)
+            if (value > max)
                 return max;
             return value;
         }
@@ -513,7 +505,7 @@ namespace Elementary
         {
             if (value < min)
                 return min;
-            else if (value > max)
+            if (value > max)
                 return max;
             return value;
         }
@@ -528,7 +520,7 @@ namespace Elementary
         {
             if (value < min)
                 return min;
-            else if (value > max)
+            if (value > max)
                 return max;
             return value;
         }
@@ -543,7 +535,7 @@ namespace Elementary
         {
             if (value < min)
                 return min;
-            else if (value > max)
+            if (value > max)
                 return max;
             return value;
         }
@@ -558,7 +550,7 @@ namespace Elementary
         {
             if (value < min)
                 return min;
-            else if (value > max)
+            if (value > max)
                 return max;
             return value;
         }
@@ -573,7 +565,7 @@ namespace Elementary
         {
             if (value < min)
                 return min;
-            else if (value > max)
+            if (value > max)
                 return max;
             return value;
         }
@@ -588,7 +580,7 @@ namespace Elementary
         {
             if (value < min)
                 return min;
-            else if (value > max)
+            if (value > max)
                 return max;
             return value;
         }
@@ -602,7 +594,7 @@ namespace Elementary
         {
             if (value < 0)
                 return 0;
-            else if (value > 1)
+            if (value > 1)
                 return 1;
             return value;
         }
@@ -615,7 +607,7 @@ namespace Elementary
         {
             if (value < 0)
                 return 0;
-            else if (value > 1)
+            if (value > 1)
                 return 1;
             return value;
         }
@@ -628,7 +620,7 @@ namespace Elementary
         {
             if (value < 0)
                 return 0;
-            else if (value > 1)
+            if (value > 1)
                 return 1;
             return value;
         }
@@ -641,7 +633,7 @@ namespace Elementary
         {
             if (value < 0L)
                 return 0L;
-            else if (value > 1L)
+            if (value > 1L)
                 return 1L;
             return value;
         }
@@ -652,9 +644,7 @@ namespace Elementary
         /// <returns>The specified number clamped inside the 0-1 range</returns>
         public static byte Clamp01(this byte value)
         {
-            if (value > 1)
-                return 1;
-            return value;
+            return value > 1 ? (byte)1 : value;
         }
         /// <summary>
         /// Clamps the specified number inside the 0-1 range
@@ -692,7 +682,7 @@ namespace Elementary
         {
             if (value < 0f)
                 return 0f;
-            else if (value > 1f)
+            if (value > 1f)
                 return 1f;
             return value;
         }
@@ -705,7 +695,7 @@ namespace Elementary
         {
             if (value < 0.0)
                 return 0.0;
-            else if (value > 1.0)
+            if (value > 1.0)
                 return 1.0;
             return value;
         }
@@ -718,7 +708,7 @@ namespace Elementary
         {
             if (value < 0m)
                 return 0m;
-            else if (value > 1m)
+            if (value > 1m)
                 return 1m;
             return value;
         }
@@ -731,9 +721,7 @@ namespace Elementary
         /// <returns>The specified number clamped inside the specified range where the maximum range value is infinite</returns>
         public static sbyte ClampMin(this sbyte value, sbyte min)
         {
-            if (value < min)
-                return min;
-            return value;
+            return value < min ? min : value;
         }
         /// <summary>
         /// Clamps the specified number inside the specified range where the maximum range value is infinite
@@ -743,9 +731,7 @@ namespace Elementary
         /// <returns>The specified number clamped inside the specified range where the maximum range value is infinite</returns>
         public static short ClampMin(this short value, short min)
         {
-            if (value < min)
-                return min;
-            return value;
+            return value < min ? min : value;
         }
         /// <summary>
         /// Clamps the specified number inside the specified range where the maximum range value is infinite
@@ -755,9 +741,7 @@ namespace Elementary
         /// <returns>The specified number clamped inside the specified range where the maximum range value is infinite</returns>
         public static int ClampMin(this int value, int min)
         {
-            if (value < min)
-                return min;
-            return value;
+            return value < min ? min : value;
         }
         /// <summary>
         /// Clamps the specified number inside the specified range where the maximum range value is infinite
@@ -767,9 +751,7 @@ namespace Elementary
         /// <returns>The specified number clamped inside the specified range where the maximum range value is infinite</returns>
         public static long ClampMin(this long value, long min)
         {
-            if (value < min)
-                return min;
-            return value;
+            return value < min ? min : value;
         }
         /// <summary>
         /// Clamps the specified number inside the specified range where the maximum range value is infinite
@@ -779,9 +761,7 @@ namespace Elementary
         /// <returns>The specified number clamped inside the specified range where the maximum range value is infinite</returns>
         public static byte ClampMin(this byte value, byte min)
         {
-            if (value < min)
-                return min;
-            return value;
+            return value < min ? min : value;
         }
         /// <summary>
         /// Clamps the specified number inside the specified range where the maximum range value is infinite
@@ -791,9 +771,7 @@ namespace Elementary
         /// <returns>The specified number clamped inside the specified range where the maximum range value is infinite</returns>
         public static ushort ClampMin(this ushort value, ushort min)
         {
-            if (value < min)
-                return min;
-            return value;
+            return value < min ? min : value;
         }
         /// <summary>
         /// Clamps the specified number inside the specified range where the maximum range value is infinite
@@ -803,9 +781,7 @@ namespace Elementary
         /// <returns>The specified number clamped inside the specified range where the maximum range value is infinite</returns>
         public static uint ClampMin(this uint value, uint min)
         {
-            if (value < min)
-                return min;
-            return value;
+            return value < min ? min : value;
         }
         /// <summary>
         /// Clamps the specified number inside the specified range where the maximum range value is infinite
@@ -815,9 +791,7 @@ namespace Elementary
         /// <returns>The specified number clamped inside the specified range where the maximum range value is infinite</returns>
         public static ulong ClampMin(this ulong value, ulong min)
         {
-            if (value < min)
-                return min;
-            return value;
+            return value < min ? min : value;
         }
         /// <summary>
         /// Clamps the specified number inside the specified range where the maximum range value is infinite
@@ -827,9 +801,7 @@ namespace Elementary
         /// <returns>The specified number clamped inside the specified range where the maximum range value is infinite</returns>
         public static float ClampMin(this float value, float min)
         {
-            if (value < min)
-                return min;
-            return value;
+            return value < min ? min : value;
         }
         /// <summary>
         /// Clamps the specified number inside the specified range where the maximum range value is infinite
@@ -839,9 +811,7 @@ namespace Elementary
         /// <returns>The specified number clamped inside the specified range where the maximum range value is infinite</returns>
         public static double ClampMin(this double value, double min)
         {
-            if (value < min)
-                return min;
-            return value;
+            return value < min ? min : value;
         }
         /// <summary>
         /// Clamps the specified number inside the specified range where the maximum range value is infinite
@@ -851,9 +821,7 @@ namespace Elementary
         /// <returns>The specified number clamped inside the specified range where the maximum range value is infinite</returns>
         public static decimal ClampMin(this decimal value, decimal min)
         {
-            if (value < min)
-                return min;
-            return value;
+            return value < min ? min : value;
         }
 
         /// <summary>
@@ -864,9 +832,7 @@ namespace Elementary
         /// <returns>The specified number clamped inside the specified range where the minimum range value is negatively infinite</returns>
         public static sbyte ClampMax(this sbyte value, sbyte max)
         {
-            if (value > max)
-                return max;
-            return value;
+            return value > max ? max : value;
         }
         /// <summary>
         /// Clamps the specified number inside the specified range where the minimum range value is negatively infinite
@@ -876,9 +842,7 @@ namespace Elementary
         /// <returns>The specified number clamped inside the specified range where the minimum range value is negatively infinite</returns>
         public static short ClampMax(this short value, short max)
         {
-            if (value > max)
-                return max;
-            return value;
+            return value > max ? max : value;
         }
         /// <summary>
         /// Clamps the specified number inside the specified range where the minimum range value is negatively infinite
@@ -888,9 +852,7 @@ namespace Elementary
         /// <returns>The specified number clamped inside the specified range where the minimum range value is negatively infinite</returns>
         public static int ClampMax(this int value, int max)
         {
-            if (value > max)
-                return max;
-            return value;
+            return value > max ? max : value;
         }
         /// <summary>
         /// Clamps the specified number inside the specified range where the minimum range value is negatively infinite
@@ -900,9 +862,7 @@ namespace Elementary
         /// <returns>The specified number clamped inside the specified range where the minimum range value is negatively infinite</returns>
         public static long ClampMax(this long value, long max)
         {
-            if (value > max)
-                return max;
-            return value;
+            return value > max ? max : value;
         }
         /// <summary>
         /// Clamps the specified number inside the specified range where the minimum range value is negatively infinite
@@ -912,9 +872,7 @@ namespace Elementary
         /// <returns>The specified number clamped inside the specified range where the minimum range value is negatively infinite</returns>
         public static byte ClampMax(this byte value, byte max)
         {
-            if (value > max)
-                return max;
-            return value;
+            return value > max ? max : value;
         }
         /// <summary>
         /// Clamps the specified number inside the specified range where the minimum range value is negatively infinite
@@ -924,9 +882,7 @@ namespace Elementary
         /// <returns>The specified number clamped inside the specified range where the minimum range value is negatively infinite</returns>
         public static ushort ClampMax(this ushort value, ushort max)
         {
-            if (value > max)
-                return max;
-            return value;
+            return value > max ? max : value;
         }
         /// <summary>
         /// Clamps the specified number inside the specified range where the minimum range value is negatively infinite
@@ -936,9 +892,7 @@ namespace Elementary
         /// <returns>The specified number clamped inside the specified range where the minimum range value is negatively infinite</returns>
         public static uint ClampMax(this uint value, uint max)
         {
-            if (value > max)
-                return max;
-            return value;
+            return value > max ? max : value;
         }
         /// <summary>
         /// Clamps the specified number inside the specified range where the minimum range value is negatively infinite
@@ -948,9 +902,7 @@ namespace Elementary
         /// <returns>The specified number clamped inside the specified range where the minimum range value is negatively infinite</returns>
         public static ulong ClampMax(this ulong value, ulong max)
         {
-            if (value > max)
-                return max;
-            return value;
+            return value > max ? max : value;
         }
         /// <summary>
         /// Clamps the specified number inside the specified range where the minimum range value is negatively infinite
@@ -960,9 +912,7 @@ namespace Elementary
         /// <returns>The specified number clamped inside the specified range where the minimum range value is negatively infinite</returns>
         public static float ClampMax(this float value, float max)
         {
-            if (value > max)
-                return max;
-            return value;
+            return value > max ? max : value;
         }
         /// <summary>
         /// Clamps the specified number inside the specified range where the minimum range value is negatively infinite
@@ -972,9 +922,7 @@ namespace Elementary
         /// <returns>The specified number clamped inside the specified range where the minimum range value is negatively infinite</returns>
         public static double ClampMax(this double value, double max)
         {
-            if (value > max)
-                return max;
-            return value;
+            return value > max ? max : value;
         }
         /// <summary>
         /// Clamps the specified number inside the specified range where the minimum range value is negatively infinite
@@ -1384,7 +1332,7 @@ namespace Elementary
         /// <returns>True if the specified number is prime, otherwise false</returns>
         public static bool IsPrime(this int a)
         {
-            return Primes.TakeWhile((i) => i <= a).Contains((uint)a);
+            return Primes.TakeWhile(i => i <= a).Contains((uint)a);
         }
         /// <summary>
         /// Determines if the specified number is prime
@@ -1393,7 +1341,7 @@ namespace Elementary
         /// <returns>True if the specified number is prime, otherwise false</returns>
         public static bool IsPrime(this uint a)
         {
-            return Primes.TakeWhile((i) => i <= a).Contains(a);
+            return Primes.TakeWhile(i => i <= a).Contains(a);
         }
         /// <summary>
         /// Determines if the specified number is prime
@@ -1402,7 +1350,7 @@ namespace Elementary
         /// <returns>True if the specified number is prime, otherwise false</returns>
         public static bool IsPrime(this long a)
         {
-            return PrimesLong.TakeWhile((i) => i <= (ulong)a).Contains((ulong)a);
+            return PrimesLong.TakeWhile(i => i <= (ulong)a).Contains((ulong)a);
         }
         /// <summary>
         /// Determines if the specified number is prime
@@ -1411,7 +1359,7 @@ namespace Elementary
         /// <returns>True if the specified number is prime, otherwise false</returns>
         public static bool IsPrime(this ulong a)
         {
-            return PrimesLong.TakeWhile((i) => i <= a).Contains(a);
+            return PrimesLong.TakeWhile(i => i <= a).Contains(a);
         }
 
         /// <summary>
@@ -1542,9 +1490,7 @@ namespace Elementary
         /// <returns>The largest number between the two specified numbers</returns>
         public static sbyte Max(this sbyte a, sbyte b)
         {
-            if (a < b)
-                return b;
-            return a;
+            return a < b ? b : a;
         }
         /// <summary>
         /// Returns the largest number between the two specified numbers
@@ -1554,9 +1500,7 @@ namespace Elementary
         /// <returns>The largest number between the two specified numbers</returns>
         public static short Max(this short a, short b)
         {
-            if (a < b)
-                return b;
-            return a;
+            return a < b ? b : a;
         }
         /// <summary>
         /// Returns the largest number between the two specified numbers
@@ -1566,9 +1510,7 @@ namespace Elementary
         /// <returns>The largest number between the two specified numbers</returns>
         public static int Max(this int a, int b)
         {
-            if (a < b)
-                return b;
-            return a;
+            return a < b ? b : a;
         }
         /// <summary>
         /// Returns the largest number between the two specified numbers
@@ -1578,9 +1520,7 @@ namespace Elementary
         /// <returns>The largest number between the two specified numbers</returns>
         public static long Max(this long a, long b)
         {
-            if (a < b)
-                return b;
-            return a;
+            return a < b ? b : a;
         }
         /// <summary>
         /// Returns the largest number between the two specified numbers
@@ -1590,9 +1530,7 @@ namespace Elementary
         /// <returns>The largest number between the two specified numbers</returns>
         public static byte Max(this byte a, byte b)
         {
-            if (a < b)
-                return b;
-            return a;
+            return a < b ? b : a;
         }
         /// <summary>
         /// Returns the largest number between the two specified numbers
@@ -1602,9 +1540,7 @@ namespace Elementary
         /// <returns>The largest number between the two specified numbers</returns>
         public static ushort Max(this ushort a, ushort b)
         {
-            if (a < b)
-                return b;
-            return a;
+            return a < b ? b : a;
         }
         /// <summary>
         /// Returns the largest number between the two specified numbers
@@ -1614,9 +1550,7 @@ namespace Elementary
         /// <returns>The largest number between the two specified numbers</returns>
         public static uint Max(this uint a, uint b)
         {
-            if (a < b)
-                return b;
-            return a;
+            return a < b ? b : a;
         }
         /// <summary>
         /// Returns the largest number between the two specified numbers
@@ -1626,9 +1560,7 @@ namespace Elementary
         /// <returns>The largest number between the two specified numbers</returns>
         public static ulong Max(this ulong a, ulong b)
         {
-            if (a < b)
-                return b;
-            return a;
+            return a < b ? b : a;
         }
         /// <summary>
         /// Returns the largest number between the two specified numbers
@@ -1638,9 +1570,7 @@ namespace Elementary
         /// <returns>The largest number between the two specified numbers</returns>
         public static float Max(this float a, float b)
         {
-            if (a < b)
-                return b;
-            return a;
+            return a < b ? b : a;
         }
         /// <summary>
         /// Returns the largest number between the two specified numbers
@@ -1650,9 +1580,7 @@ namespace Elementary
         /// <returns>The largest number between the two specified numbers</returns>
         public static double Max(this double a, double b)
         {
-            if (a < b)
-                return b;
-            return a;
+            return a < b ? b : a;
         }
         /// <summary>
         /// Returns the largest number between the two specified numbers
@@ -1662,9 +1590,7 @@ namespace Elementary
         /// <returns>The largest number between the two specified numbers</returns>
         public static decimal Max(this decimal a, decimal b)
         {
-            if (a < b)
-                return b;
-            return a;
+            return a < b ? b : a;
         }
 
         /// <summary>
@@ -1675,9 +1601,7 @@ namespace Elementary
         /// <returns>The smallest number between the two specified numbers</returns>
         public static sbyte Min(this sbyte a, sbyte b)
         {
-            if (a < b)
-                return a;
-            return b;
+            return a < b ? a : b;
         }
         /// <summary>
         /// Returns the smallest number between the two specified numbers
@@ -1687,9 +1611,7 @@ namespace Elementary
         /// <returns>The smallest number between the two specified numbers</returns>
         public static short Min(this short a, short b)
         {
-            if (a < b)
-                return a;
-            return b;
+            return a < b ? a : b;
         }
         /// <summary>
         /// Returns the smallest number between the two specified numbers
@@ -1699,9 +1621,7 @@ namespace Elementary
         /// <returns>The smallest number between the two specified numbers</returns>
         public static int Min(this int a, int b)
         {
-            if (a < b)
-                return a;
-            return b;
+            return a < b ? a : b;
         }
         /// <summary>
         /// Returns the smallest number between the two specified numbers
@@ -1711,9 +1631,7 @@ namespace Elementary
         /// <returns>The smallest number between the two specified numbers</returns>
         public static long Min(this long a, long b)
         {
-            if (a < b)
-                return a;
-            return b;
+            return a < b ? a : b;
         }
         /// <summary>
         /// Returns the smallest number between the two specified numbers
@@ -1723,9 +1641,7 @@ namespace Elementary
         /// <returns>The smallest number between the two specified numbers</returns>
         public static byte Min(this byte a, byte b)
         {
-            if (a < b)
-                return a;
-            return b;
+            return a < b ? a : b;
         }
         /// <summary>
         /// Returns the smallest number between the two specified numbers
@@ -1735,9 +1651,7 @@ namespace Elementary
         /// <returns>The smallest number between the two specified numbers</returns>
         public static ushort Min(this ushort a, ushort b)
         {
-            if (a < b)
-                return a;
-            return b;
+            return a < b ? a : b;
         }
         /// <summary>
         /// Returns the smallest number between the two specified numbers
@@ -1747,9 +1661,7 @@ namespace Elementary
         /// <returns>The smallest number between the two specified numbers</returns>
         public static uint Min(this uint a, uint b)
         {
-            if (a < b)
-                return a;
-            return b;
+            return a < b ? a : b;
         }
         /// <summary>
         /// Returns the smallest number between the two specified numbers
@@ -1759,9 +1671,7 @@ namespace Elementary
         /// <returns>The smallest number between the two specified numbers</returns>
         public static ulong Min(this ulong a, ulong b)
         {
-            if (a < b)
-                return a;
-            return b;
+            return a < b ? a : b;
         }
         /// <summary>
         /// Returns the smallest number between the two specified numbers
@@ -1771,9 +1681,7 @@ namespace Elementary
         /// <returns>The smallest number between the two specified numbers</returns>
         public static float Min(this float a, float b)
         {
-            if (a < b)
-                return a;
-            return b;
+            return a < b ? a : b;
         }
         /// <summary>
         /// Returns the smallest number between the two specified numbers
@@ -1783,9 +1691,7 @@ namespace Elementary
         /// <returns>The smallest number between the two specified numbers</returns>
         public static double Min(this double a, double b)
         {
-            if (a < b)
-                return a;
-            return b;
+            return a < b ? a : b;
         }
         /// <summary>
         /// Returns the smallest number between the two specified numbers
@@ -1795,9 +1701,7 @@ namespace Elementary
         /// <returns>The smallest number between the two specified numbers</returns>
         public static decimal Min(this decimal a, decimal b)
         {
-            if (a < b)
-                return a;
-            return b;
+            return a < b ? a : b;
         }
 
         /// <summary>
@@ -1827,7 +1731,7 @@ namespace Elementary
         /// <returns>A random 32-bit integer</returns>
         public static int Random()
         {
-            return rnd.Next();
+            return _rnd.Next();
         }
         /// <summary>
         /// Returns a random 32-bit integer with a specified maximum value (exclusive)
@@ -1836,7 +1740,7 @@ namespace Elementary
         /// <returns>A random 32-bit integer with a specified maximum value (exclusive)</returns>
         public static int Random(int max)
         {
-            return rnd.Next(max);
+            return _rnd.Next(max);
         }
         /// <summary>
         /// Returns a random 32-bit integer with a specified minimum (inclusive) and maximum value (exclusive)
@@ -1846,7 +1750,7 @@ namespace Elementary
         /// <returns>A random 32-bit integer with a specified minimum (inclusive) and maximum value (exclusive)</returns>
         public static int Random(int min, int max)
         {
-            return rnd.Next(min, max);
+            return _rnd.Next(min, max);
         }
         /// <summary>
         /// Returns a random number with a specified minimum (exclusive) and maximum value (exclusive)
@@ -1856,7 +1760,7 @@ namespace Elementary
         /// <returns>A random number with a specified minimum (exclusive) and maximum value (exclusive)</returns>
         public static float Random(float min, float max)
         {
-            return ((float)rnd.NextDouble()).Remap(0.0f, 1.0f, min, max);
+            return ((float)_rnd.NextDouble()).Remap(0.0f, 1.0f, min, max);
         }
         /// <summary>
         /// Returns a random number with a specified minimum (exclusive) and maximum value (exclusive)
@@ -1866,7 +1770,7 @@ namespace Elementary
         /// <returns>A random number with a specified minimum (exclusive) and maximum value (exclusive)</returns>
         public static double Random(double min, double max)
         {
-            return rnd.NextDouble().Remap(0.0, 1.0, min, max);
+            return _rnd.NextDouble().Remap(0.0, 1.0, min, max);
         }
         /// <summary>
         /// Returns a random number with a specified minimum (exclusive) and maximum value (exclusive)
@@ -1878,7 +1782,7 @@ namespace Elementary
         public static decimal Random(decimal min, decimal max)
         {
             // Using Convert because recasting detects it as a double.
-            return Convert.ToDecimal(rnd.NextDouble()).Remap(0m, 1m, min, max);
+            return Convert.ToDecimal(_rnd.NextDouble()).Remap(0m, 1m, min, max);
         }
 
         /// <summary>
@@ -1887,7 +1791,7 @@ namespace Elementary
         /// <returns>A random 32-bit floating point number between 0.0 and 1.0</returns>
         public static float RandomFloat()
         {
-            return (float)rnd.NextDouble();
+            return (float)_rnd.NextDouble();
         }
         /// <summary>
         /// Returns a random 64-bit floating point number between 0.0 and 1.0
@@ -1895,7 +1799,7 @@ namespace Elementary
         /// <returns>A random 64-bit floating point number between 0.0 and 1.0</returns>
         public static double RandomDouble()
         {
-            return rnd.NextDouble();
+            return _rnd.NextDouble();
         }
 
         /// <summary>
@@ -2127,7 +2031,7 @@ namespace Elementary
         {
             if (value > 0)
                 return 1;
-            else if (value < 0)
+            if (value < 0)
                 return -1;
             return 0;
         }
@@ -2140,7 +2044,7 @@ namespace Elementary
         {
             if (value > 0)
                 return 1;
-            else if (value < 0)
+            if (value < 0)
                 return -1;
             return 0;
         }
@@ -2153,7 +2057,7 @@ namespace Elementary
         {
             if (value > 0)
                 return 1;
-            else if (value < 0)
+            if (value < 0)
                 return -1;
             return 0;
         }
@@ -2166,7 +2070,7 @@ namespace Elementary
         {
             if (value > 0L)
                 return 1;
-            else if (value < 0L)
+            if (value < 0L)
                 return -1;
             return 0;
         }
@@ -2179,7 +2083,7 @@ namespace Elementary
         {
             if (value > 0f)
                 return 1;
-            else if (value < 0f)
+            if (value < 0f)
                 return -1;
             return 0;
         }
@@ -2192,7 +2096,7 @@ namespace Elementary
         {
             if (value > 0.0)
                 return 1;
-            else if (value < 0.0)
+            if (value < 0.0)
                 return -1;
             return 0;
         }
@@ -2205,7 +2109,7 @@ namespace Elementary
         {
             if (value > 0m)
                 return 1;
-            else if (value < 0m)
+            if (value < 0m)
                 return -1;
             return 0;
         }
