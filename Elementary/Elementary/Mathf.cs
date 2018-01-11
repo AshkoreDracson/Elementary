@@ -5,7 +5,6 @@ using System.Linq;
 namespace Elementary
 {
     // Most functions are simple wrapper methods from System.Math, this ensures that you won't shouldn't need the two libraries as this could cause annoyance at worst.
-
     public static class Mathf
     {
         /// <summary>
@@ -417,6 +416,16 @@ namespace Elementary
         public static int CeilingToInt(this decimal value)
         {
             return (int)Math.Ceiling(value);
+        }
+
+        /// <summary>
+        /// Returns a boolean whetever the chance test has passed or not
+        /// </summary>
+        /// <param name="chance">The amount of chance</param>
+        /// <returns>A boolean whetever the chance test has passed or not</returns>
+        public static bool Chance(double chance)
+        {
+            return RandomDouble() < chance;
         }
 
         /// <summary>

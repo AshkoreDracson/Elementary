@@ -20,6 +20,8 @@ namespace Elementary
             return q;
         }
 
+        public static T Random<T>(this IEnumerable<T> o) => o.OrderBy(x => Mathf.Random()).FirstOrDefault();
+
         public static IEnumerable<T> Shuffle<T>(this T[] o)
         {
             List<int> avaliableIndexes = Enumerable.Range(0, o.Length).ToList();

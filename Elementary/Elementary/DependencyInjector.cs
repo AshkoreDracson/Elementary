@@ -6,7 +6,7 @@ namespace Elementary
 {
     public static class DependencyInjector
     {
-        static readonly List<object> dependencies = new List<object>();
+        private static readonly List<object> dependencies = new List<object>();
 
         /// <summary>
         /// Registers an object to the dependency injector.
