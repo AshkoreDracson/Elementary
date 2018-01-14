@@ -63,6 +63,7 @@
     <Compile Include="ArrayExtension.cs" />
     <Compile Include="DependencyInjector.cs" />
     <Compile Include="IEnumerableExtension.cs" />
+    <Compile Include="LimitedQueue.cs" />
     <Compile Include="ListExtension.cs" />
     <Compile Include="LogLevel.cs" />
     <Compile Include="Logman.cs" />
