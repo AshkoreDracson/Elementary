@@ -1,7 +1,7 @@
 # Elementary
 Library to add various useful extensions and code helpers.
 
-[**Nuget**](https://www.nuget.org/packages/Elementary/)
+[![NuGet](https://img.shields.io/nuget/v/Nuget.Core.svg)](https://www.nuget.org/packages/Elementary/)
 ### Features
 - Dependency Injector
 - Array extensions
@@ -10,3 +10,4 @@ Library to add various useful extensions and code helpers.
 - Reworked Math library with extra functions (Lerp, Remapping, etc...)
 - Noise class with Perlin noise (with octaves)
 - Fully working Logman, can print to debug window, console and a file at the same time!
+- And more!
