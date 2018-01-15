@@ -60,17 +60,17 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArrayExtension.cs" />
-    <Compile Include="DependencyInjector.cs" />
-    <Compile Include="IEnumerableExtension.cs" />
-    <Compile Include="LimitedQueue.cs" />
-    <Compile Include="ListExtension.cs" />
-    <Compile Include="LogLevel.cs" />
-    <Compile Include="Logman.cs" />
-    <Compile Include="LogOutput.cs" />
-    <Compile Include="Mathf.cs" />
-    <Compile Include="MidpointRounding.cs" />
-    <Compile Include="Noise.cs" />
+    <Compile Include="Extensions\ArrayExtension.cs" />
+    <Compile Include="Misc\DependencyInjector.cs" />
+    <Compile Include="Extensions\IEnumerableExtension.cs" />
+    <Compile Include="Misc\LimitedQueue.cs" />
+    <Compile Include="Extensions\ListExtension.cs" />
+    <Compile Include="Logging\LogLevel.cs" />
+    <Compile Include="Logging\Logman.cs" />
+    <Compile Include="Logging\LogOutput.cs" />
+    <Compile Include="Math\Mathf.cs" />
+    <Compile Include="Math\MidpointRounding.cs" />
+    <Compile Include="Math\Noise.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
