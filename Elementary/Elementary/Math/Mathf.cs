@@ -214,121 +214,90 @@ namespace Elementary
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The absolute value of the number</returns>
-        public static sbyte Abs(this sbyte value)
-        {
-            return (sbyte)(value >= 0 ? value : -value);
-        }
+        public static sbyte Abs(this sbyte value) => (sbyte)(value >= 0 ? value : -value);
         /// <summary>
         /// Calculates the absolute value of a number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The absolute value of the number</returns>
-        public static short Abs(this short value)
-        {
-            return (short)(value >= 0 ? value : -value);
-        }
+        public static short Abs(this short value) => (short)(value >= 0 ? value : -value);
+
         /// <summary>
         /// Calculates the absolute value of a number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The absolute value of the number</returns>
-        public static int Abs(this int value)
-        {
-            return value >= 0 ? value : -value;
-        }
+        public static int Abs(this int value) => value >= 0 ? value : -value;
+
         /// <summary>
         /// Calculates the absolute value of a number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The absolute value of the number</returns>
-        public static long Abs(this long value)
-        {
-            return value >= 0L ? value : -value;
-        }
+        public static long Abs(this long value) => value >= 0L ? value : -value;
+
         /// <summary>
         /// Calculates the absolute value of a number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The absolute value of the number</returns>
-        public static float Abs(this float value)
-        {
-            return value >= 0f ? value : -value;
-        }
+        public static float Abs(this float value) => value >= 0f ? value : -value;
+
         /// <summary>
         /// Calculates the absolute value of a number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The absolute value of the number</returns>
-        public static double Abs(this double value)
-        {
-            return value >= 0.0 ? value : -value;
-        }
+        public static double Abs(this double value) => value >= 0.0 ? value : -value;
+
         /// <summary>
         /// Calculates the absolute value of a number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The absolute value of the number</returns>
-        public static decimal Abs(this decimal value)
-        {
-            return value >= 0m ? value : -value;
-        }
+        public static decimal Abs(this decimal value) => value >= 0m ? value : -value;
 
         /// <summary>
         /// Returns the angle whose cosine is the specified number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The angle whose cosine is the specified number</returns>
-        public static float Acos(this float value)
-        {
-            return (float)Math.Acos(value);
-        }
+        public static float Acos(this float value) => (float)Math.Acos(value);
+
         /// <summary>
         /// Returns the angle whose cosine is the specified number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The angle whose cosine is the specified number</returns>
-        public static double Acos(this double value)
-        {
-            return Math.Acos(value);
-        }
+        public static double Acos(this double value) => Math.Acos(value);
 
         /// <summary>
         /// Returns the angle whose sine is the specified number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The angle whose sine is the specified number</returns>
-        public static float Asin(this float value)
-        {
-            return (float)Math.Asin(value);
-        }
+        public static float Asin(this float value) => (float)Math.Asin(value);
+
         /// <summary>
         /// Returns the angle whose sine is the specified number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The angle whose sine is the specified number</returns>
-        public static double Asin(this double value)
-        {
-            return Math.Asin(value);
-        }
+        public static double Asin(this double value) => Math.Asin(value);
 
         /// <summary>
         /// Returns the angle whose tangent is the specified number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The angle whose tangent is the specified number</returns>
-        public static float Atan(this float value)
-        {
-            return (float)Math.Atan(value);
-        }
+        public static float Atan(this float value) => (float)Math.Atan(value);
+
         /// <summary>
         /// Returns the angle whose tangent is the specified number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The angle whose tangent is the specified number</returns>
-        public static double Atan(this double value)
-        {
-            return Math.Atan(value);
-        }
+        public static double Atan(this double value) => Math.Atan(value);
 
         /// <summary>
         /// Returns the angle whose tangent is the quotient of two specified numbers
@@ -336,20 +305,15 @@ namespace Elementary
         /// <param name="x">The first number</param>
         /// <param name="y">The second number</param>
         /// <returns>The angle whose tangent is the quotient of two specified numbers</returns>
-        public static float Atan2(this float x, float y)
-        {
-            return (float)Math.Atan2(x, y);
-        }
+        public static float Atan2(this float x, float y) => (float)Math.Atan2(x, y);
+
         /// <summary>
         /// Returns the angle whose tangent is the quotient of two specified numbers
         /// </summary>
         /// <param name="x">The first number</param>
         /// <param name="y">The second number</param>
         /// <returns>The angle whose tangent is the quotient of two specified numbers</returns>
-        public static double Atan2(this double x, double y)
-        {
-            return Math.Atan2(x, y);
-        }
+        public static double Atan2(this double x, double y) => Math.Atan2(x, y);
 
         /// <summary>
         /// Produces the full product of two 32-bits numbers
@@ -357,76 +321,56 @@ namespace Elementary
         /// <param name="a">The first number</param>
         /// <param name="b">The second number</param>
         /// <returns>The full product of two 32-bits numbers</returns>
-        public static long BigMul(this int a, int b)
-        {
-            return Math.BigMul(a, b);
-        }
+        public static long BigMul(this int a, int b) => Math.BigMul(a, b);
 
         /// <summary>
         /// Returns the smallest integral value that is greater or equal to the specified number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The smallest integral value that is greater or equal to the specified number</returns>
-        public static float Ceiling(this float value)
-        {
-            return (float)Math.Ceiling(value);
-        }
+        public static float Ceiling(this float value) => (float)Math.Ceiling(value);
+
         /// <summary>
         /// Returns the smallest integral value that is greater or equal to the specified number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The smallest integral value that is greater or equal to the specified number</returns>
-        public static double Ceiling(this double value)
-        {
-            return Math.Ceiling(value);
-        }
+        public static double Ceiling(this double value) => Math.Ceiling(value);
+
         /// <summary>
         /// Returns the smallest integral value that is greater or equal to the specified number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The smallest integral value that is greater or equal to the specified number</returns>
-        public static decimal Ceiling(this decimal value)
-        {
-            return Math.Ceiling(value);
-        }
+        public static decimal Ceiling(this decimal value) => Math.Ceiling(value);
 
         /// <summary>
         /// Returns the smallest integral value that is greater or equal to the specified number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The smallest integral value that is greater or equal to the specified number casted to an integer</returns>
-        public static int CeilingToInt(this float value)
-        {
-            return (int)Math.Ceiling(value);
-        }
+        public static int CeilingToInt(this float value) => (int)Math.Ceiling(value);
+
         /// <summary>
         /// Returns the smallest integral value that is greater or equal to the specified number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The smallest integral value that is greater or equal to the specified number casted to an integer</returns>
-        public static int CeilingToInt(this double value)
-        {
-            return (int)Math.Ceiling(value);
-        }
+        public static int CeilingToInt(this double value) => (int)Math.Ceiling(value);
+
         /// <summary>
         /// Returns the smallest integral value that is greater or equal to the specified number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The smallest integral value that is greater or equal to the specified number casted to an integer</returns>
-        public static int CeilingToInt(this decimal value)
-        {
-            return (int)Math.Ceiling(value);
-        }
+        public static int CeilingToInt(this decimal value) => (int)Math.Ceiling(value);
 
         /// <summary>
         /// Returns a boolean whetever the chance test has passed or not
         /// </summary>
         /// <param name="chance">The amount of chance</param>
         /// <returns>A boolean whetever the chance test has passed or not</returns>
-        public static bool Chance(double chance)
-        {
-            return RandomDouble() < chance;
-        }
+        public static bool Chance(double chance) => RandomDouble() < chance;
 
         /// <summary>
         /// Clamps the specified number inside the specified range
@@ -651,37 +595,29 @@ namespace Elementary
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The specified number clamped inside the 0-1 range</returns>
-        public static byte Clamp01(this byte value)
-        {
-            return value > 1 ? (byte)1 : value;
-        }
+        public static byte Clamp01(this byte value) => value > 1 ? (byte)1 : value;
+
         /// <summary>
         /// Clamps the specified number inside the 0-1 range
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The specified number clamped inside the 0-1 range</returns>
-        public static ushort Clamp01(this ushort value)
-        {
-            return (ushort)(value > 1 ? 1 : value);
-        }
+        public static ushort Clamp01(this ushort value) => (ushort)(value > 1 ? 1 : value);
+
         /// <summary>
         /// Clamps the specified number inside the 0-1 range
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The specified number clamped inside the 0-1 range</returns>
-        public static uint Clamp01(this uint value)
-        {
-            return value > 1u ? 1u : value;
-        }
+        public static uint Clamp01(this uint value) => value > 1u ? 1u : value;
+
         /// <summary>
         /// Clamps the specified number inside the 0-1 range
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The specified number clamped inside the 0-1 range</returns>
-        public static ulong Clamp01(this ulong value)
-        {
-            return value > 1ul ? 1ul : value;
-        }
+        public static ulong Clamp01(this ulong value) => value > 1ul ? 1ul : value;
+
         /// <summary>
         /// Clamps the specified number inside the 0-1 range
         /// </summary>
@@ -728,110 +664,87 @@ namespace Elementary
         /// <param name="value">The number</param>
         /// /// <param name="min">The minimum value of the range</param>
         /// <returns>The specified number clamped inside the specified range where the maximum range value is infinite</returns>
-        public static sbyte ClampMin(this sbyte value, sbyte min)
-        {
-            return value < min ? min : value;
-        }
+        public static sbyte ClampMin(this sbyte value, sbyte min) => value < min ? min : value;
+
         /// <summary>
         /// Clamps the specified number inside the specified range where the maximum range value is infinite
         /// </summary>
         /// <param name="value">The number</param>
         /// /// <param name="min">The minimum value of the range</param>
         /// <returns>The specified number clamped inside the specified range where the maximum range value is infinite</returns>
-        public static short ClampMin(this short value, short min)
-        {
-            return value < min ? min : value;
-        }
+        public static short ClampMin(this short value, short min) => value < min ? min : value;
+
         /// <summary>
         /// Clamps the specified number inside the specified range where the maximum range value is infinite
         /// </summary>
         /// <param name="value">The number</param>
         /// /// <param name="min">The minimum value of the range</param>
         /// <returns>The specified number clamped inside the specified range where the maximum range value is infinite</returns>
-        public static int ClampMin(this int value, int min)
-        {
-            return value < min ? min : value;
-        }
+        public static int ClampMin(this int value, int min) => value < min ? min : value;
+
         /// <summary>
         /// Clamps the specified number inside the specified range where the maximum range value is infinite
         /// </summary>
         /// <param name="value">The number</param>
         /// /// <param name="min">The minimum value of the range</param>
         /// <returns>The specified number clamped inside the specified range where the maximum range value is infinite</returns>
-        public static long ClampMin(this long value, long min)
-        {
-            return value < min ? min : value;
-        }
+        public static long ClampMin(this long value, long min) => value < min ? min : value;
+
         /// <summary>
         /// Clamps the specified number inside the specified range where the maximum range value is infinite
         /// </summary>
         /// <param name="value">The number</param>
         /// /// <param name="min">The minimum value of the range</param>
         /// <returns>The specified number clamped inside the specified range where the maximum range value is infinite</returns>
-        public static byte ClampMin(this byte value, byte min)
-        {
-            return value < min ? min : value;
-        }
+        public static byte ClampMin(this byte value, byte min) => value < min ? min : value;
+
         /// <summary>
         /// Clamps the specified number inside the specified range where the maximum range value is infinite
         /// </summary>
         /// <param name="value">The number</param>
         /// /// <param name="min">The minimum value of the range</param>
         /// <returns>The specified number clamped inside the specified range where the maximum range value is infinite</returns>
-        public static ushort ClampMin(this ushort value, ushort min)
-        {
-            return value < min ? min : value;
-        }
+        public static ushort ClampMin(this ushort value, ushort min) => value < min ? min : value;
+
         /// <summary>
         /// Clamps the specified number inside the specified range where the maximum range value is infinite
         /// </summary>
         /// <param name="value">The number</param>
         /// /// <param name="min">The minimum value of the range</param>
         /// <returns>The specified number clamped inside the specified range where the maximum range value is infinite</returns>
-        public static uint ClampMin(this uint value, uint min)
-        {
-            return value < min ? min : value;
-        }
+        public static uint ClampMin(this uint value, uint min) => value < min ? min : value;
+
         /// <summary>
         /// Clamps the specified number inside the specified range where the maximum range value is infinite
         /// </summary>
         /// <param name="value">The number</param>
         /// /// <param name="min">The minimum value of the range</param>
         /// <returns>The specified number clamped inside the specified range where the maximum range value is infinite</returns>
-        public static ulong ClampMin(this ulong value, ulong min)
-        {
-            return value < min ? min : value;
-        }
+        public static ulong ClampMin(this ulong value, ulong min) => value < min ? min : value;
+
         /// <summary>
         /// Clamps the specified number inside the specified range where the maximum range value is infinite
         /// </summary>
         /// <param name="value">The number</param>
         /// /// <param name="min">The minimum value of the range</param>
         /// <returns>The specified number clamped inside the specified range where the maximum range value is infinite</returns>
-        public static float ClampMin(this float value, float min)
-        {
-            return value < min ? min : value;
-        }
+        public static float ClampMin(this float value, float min) => value < min ? min : value;
+
         /// <summary>
         /// Clamps the specified number inside the specified range where the maximum range value is infinite
         /// </summary>
         /// <param name="value">The number</param>
         /// /// <param name="min">The minimum value of the range</param>
         /// <returns>The specified number clamped inside the specified range where the maximum range value is infinite</returns>
-        public static double ClampMin(this double value, double min)
-        {
-            return value < min ? min : value;
-        }
+        public static double ClampMin(this double value, double min) => value < min ? min : value;
+
         /// <summary>
         /// Clamps the specified number inside the specified range where the maximum range value is infinite
         /// </summary>
         /// <param name="value">The number</param>
         /// /// <param name="min">The minimum value of the range</param>
         /// <returns>The specified number clamped inside the specified range where the maximum range value is infinite</returns>
-        public static decimal ClampMin(this decimal value, decimal min)
-        {
-            return value < min ? min : value;
-        }
+        public static decimal ClampMin(this decimal value, decimal min) => value < min ? min : value;
 
         /// <summary>
         /// Clamps the specified number inside the specified range where the minimum range value is negatively infinite
@@ -839,112 +752,87 @@ namespace Elementary
         /// <param name="value">The number</param>
         /// /// <param name="max">The maximum value of the range</param>
         /// <returns>The specified number clamped inside the specified range where the minimum range value is negatively infinite</returns>
-        public static sbyte ClampMax(this sbyte value, sbyte max)
-        {
-            return value > max ? max : value;
-        }
+        public static sbyte ClampMax(this sbyte value, sbyte max) => value > max ? max : value;
+
         /// <summary>
         /// Clamps the specified number inside the specified range where the minimum range value is negatively infinite
         /// </summary>
         /// <param name="value">The number</param>
         /// /// <param name="max">The maximum value of the range</param>
         /// <returns>The specified number clamped inside the specified range where the minimum range value is negatively infinite</returns>
-        public static short ClampMax(this short value, short max)
-        {
-            return value > max ? max : value;
-        }
+        public static short ClampMax(this short value, short max) => value > max ? max : value;
+
         /// <summary>
         /// Clamps the specified number inside the specified range where the minimum range value is negatively infinite
         /// </summary>
         /// <param name="value">The number</param>
         /// /// <param name="max">The maximum value of the range</param>
         /// <returns>The specified number clamped inside the specified range where the minimum range value is negatively infinite</returns>
-        public static int ClampMax(this int value, int max)
-        {
-            return value > max ? max : value;
-        }
+        public static int ClampMax(this int value, int max) => value > max ? max : value;
+
         /// <summary>
         /// Clamps the specified number inside the specified range where the minimum range value is negatively infinite
         /// </summary>
         /// <param name="value">The number</param>
         /// /// <param name="max">The maximum value of the range</param>
         /// <returns>The specified number clamped inside the specified range where the minimum range value is negatively infinite</returns>
-        public static long ClampMax(this long value, long max)
-        {
-            return value > max ? max : value;
-        }
+        public static long ClampMax(this long value, long max) => value > max ? max : value;
+
         /// <summary>
         /// Clamps the specified number inside the specified range where the minimum range value is negatively infinite
         /// </summary>
         /// <param name="value">The number</param>
         /// /// <param name="max">The maximum value of the range</param>
         /// <returns>The specified number clamped inside the specified range where the minimum range value is negatively infinite</returns>
-        public static byte ClampMax(this byte value, byte max)
-        {
-            return value > max ? max : value;
-        }
+        public static byte ClampMax(this byte value, byte max) => value > max ? max : value;
+
         /// <summary>
         /// Clamps the specified number inside the specified range where the minimum range value is negatively infinite
         /// </summary>
         /// <param name="value">The number</param>
         /// /// <param name="max">The maximum value of the range</param>
         /// <returns>The specified number clamped inside the specified range where the minimum range value is negatively infinite</returns>
-        public static ushort ClampMax(this ushort value, ushort max)
-        {
-            return value > max ? max : value;
-        }
+        public static ushort ClampMax(this ushort value, ushort max) => value > max ? max : value;
+
         /// <summary>
         /// Clamps the specified number inside the specified range where the minimum range value is negatively infinite
         /// </summary>
         /// <param name="value">The number</param>
         /// /// <param name="max">The maximum value of the range</param>
         /// <returns>The specified number clamped inside the specified range where the minimum range value is negatively infinite</returns>
-        public static uint ClampMax(this uint value, uint max)
-        {
-            return value > max ? max : value;
-        }
+        public static uint ClampMax(this uint value, uint max) => value > max ? max : value;
+
         /// <summary>
         /// Clamps the specified number inside the specified range where the minimum range value is negatively infinite
         /// </summary>
         /// <param name="value">The number</param>
         /// /// <param name="max">The maximum value of the range</param>
         /// <returns>The specified number clamped inside the specified range where the minimum range value is negatively infinite</returns>
-        public static ulong ClampMax(this ulong value, ulong max)
-        {
-            return value > max ? max : value;
-        }
+        public static ulong ClampMax(this ulong value, ulong max) => value > max ? max : value;
+
         /// <summary>
         /// Clamps the specified number inside the specified range where the minimum range value is negatively infinite
         /// </summary>
         /// <param name="value">The number</param>
         /// /// <param name="max">The maximum value of the range</param>
         /// <returns>The specified number clamped inside the specified range where the minimum range value is negatively infinite</returns>
-        public static float ClampMax(this float value, float max)
-        {
-            return value > max ? max : value;
-        }
+        public static float ClampMax(this float value, float max) => value > max ? max : value;
+
         /// <summary>
         /// Clamps the specified number inside the specified range where the minimum range value is negatively infinite
         /// </summary>
         /// <param name="value">The number</param>
         /// /// <param name="max">The maximum value of the range</param>
         /// <returns>The specified number clamped inside the specified range where the minimum range value is negatively infinite</returns>
-        public static double ClampMax(this double value, double max)
-        {
-            return value > max ? max : value;
-        }
+        public static double ClampMax(this double value, double max) => value > max ? max : value;
+
         /// <summary>
         /// Clamps the specified number inside the specified range where the minimum range value is negatively infinite
         /// </summary>
         /// <param name="value">The number</param>
         /// /// <param name="max">The maximum value of the range</param>
         /// <returns>The specified number clamped inside the specified range where the minimum range value is negatively infinite</returns>
-        public static decimal ClampMax(this decimal value, decimal max)
-        {
-            if (value > max)
-                return max;
-            return value;
-        }
+        public static decimal ClampMax(this decimal value, decimal max) => value > max ? max : value;
 
         /// <summary>
         /// Calculates the Collatz Conjecture sequence of a specified number
@@ -1072,38 +960,28 @@ namespace Elementary
         /// </summary>
         /// <param name="value">The angle</param>
         /// <returns>The cosine of the specified angle</returns>
-        public static float Cos(this float value)
-        {
-            return (float)Math.Cos(value);
-        }
+        public static float Cos(this float value) => (float)Math.Cos(value);
+
         /// <summary>
         /// Returns the cosine of the specified angle
         /// </summary>
         /// <param name="value">The angle</param>
         /// <returns>The cosine of the specified angle</returns>
-        public static double Cos(this double value)
-        {
-            return Math.Cos(value);
-        }
+        public static double Cos(this double value) => Math.Cos(value);
 
         /// <summary>
         /// Returns the hyperbolic cosine of the specified angle
         /// </summary>
         /// <param name="value">The angle</param>
         /// <returns>The hyperbolic cosine of the specified angle</returns>
-        public static float Cosh(this float value)
-        {
-            return (float)Math.Cosh(value);
-        }
+        public static float Cosh(this float value) => (float)Math.Cosh(value);
+
         /// <summary>
         /// Returns the hyperbolic cosine of the specified angle
         /// </summary>
         /// <param name="value">The angle</param>
         /// <returns>The hyperbolic cosine of the specified angle</returns>
-        public static double Cosh(this double value)
-        {
-            return Math.Cosh(value);
-        }
+        public static double Cosh(this double value) => Math.Cosh(value);
 
         /// <summary>
         /// Calculates the quotient of two 32-bits, and also returns the remainder in an output parameter
@@ -1112,10 +990,8 @@ namespace Elementary
         /// <param name="b">The second number</param>
         /// <param name="remainder">The out parameter for the remainder</param>
         /// <returns>The quotient of two 32-bits, and also returns the remainder in an output parameter</returns>
-        public static int DivRem(this int a, int b, out int remainder)
-        {
-            return Math.DivRem(a, b, out remainder);
-        }
+        public static int DivRem(this int a, int b, out int remainder) => Math.DivRem(a, b, out remainder);
+
         /// <summary>
         /// Calculates the quotient of two 64-bits, and also returns the remainder in an output parameter
         /// </summary>
@@ -1123,29 +999,21 @@ namespace Elementary
         /// <param name="b">The second number</param>
         /// <param name="remainder">The out parameter for the remainder</param>
         /// <returns>The quotient of two 64-bits, and also returns the remainder in an output parameter</returns>
-        public static long DivRem(this long a, long b, out long remainder)
-        {
-            return Math.DivRem(a, b, out remainder);
-        }
+        public static long DivRem(this long a, long b, out long remainder) => Math.DivRem(a, b, out remainder);
 
         /// <summary>
         /// Returns e raised to the specified power
         /// </summary>
         /// <param name="value">The power</param>
         /// <returns>e raised to the specified power</returns>
-        public static float Exp(this float value)
-        {
-            return (float)Math.Exp(value);
-        }
+        public static float Exp(this float value) => (float)Math.Exp(value);
+
         /// <summary>
         /// Returns e raised to the specified power
         /// </summary>
         /// <param name="value">The power</param>
         /// <returns>e raised to the specified power</returns>
-        public static double Exp(this double value)
-        {
-            return Math.Exp(value);
-        }
+        public static double Exp(this double value) => Math.Exp(value);
 
         /// <summary>
         /// Calculates the factorial of a specified number
@@ -1237,56 +1105,40 @@ namespace Elementary
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The largest integer less than or equal to the specified number</returns>
-        public static float Floor(this float value)
-        {
-            return (float)Math.Floor(value);
-        }
+        public static float Floor(this float value) => (float)Math.Floor(value);
+
         /// <summary>
         /// Returns the largest integer less than or equal to the specified number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The largest integer less than or equal to the specified number</returns>
-        public static double Floor(this double value)
-        {
-            return Math.Floor(value);
-        }
+        public static double Floor(this double value) => Math.Floor(value);
+
         /// <summary>
         /// Returns the largest integer less than or equal to the specified number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The largest integer less than or equal to the specified number</returns>
-        public static decimal Floor(this decimal value)
-        {
-            return Math.Floor(value);
-        }
+        public static decimal Floor(this decimal value) => Math.Floor(value);
 
         /// <summary>
         /// Returns the largest integer less than or equal to the specified number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The largest integer less than or equal to the specified number casted to an integer</returns>
-        public static int FloorToInt(this float value)
-        {
-            return (int)Math.Floor(value);
-        }
+        public static int FloorToInt(this float value) => (int)Math.Floor(value);
         /// <summary>
         /// Returns the largest integer less than or equal to the specified number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The largest integer less than or equal to the specified number casted to an integer</returns>
-        public static int FloorToInt(this double value)
-        {
-            return (int)Math.Floor(value);
-        }
+        public static int FloorToInt(this double value) => (int)Math.Floor(value);
         /// <summary>
         /// Returns the largest integer less than or equal to the specified number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The largest integer less than or equal to the specified number casted to an integer</returns>
-        public static int FloorToInt(this decimal value)
-        {
-            return (int)Math.Floor(value);
-        }
+        public static int FloorToInt(this decimal value) => (int)Math.Floor(value);
 
         /// <summary>
         /// Returns the remainder resulting from the division of a specified number by another specified number
@@ -1294,202 +1146,136 @@ namespace Elementary
         /// <param name="x">The first number</param>
         /// <param name="y">The second number</param>
         /// <returns>The remainder resulting from the division of a specified number by another specified number</returns>
-        public static float IEEERemainder(this float x, float y)
-        {
-            return (float)Math.IEEERemainder(x, y);
-        }
+        public static float IEEERemainder(this float x, float y) => (float)Math.IEEERemainder(x, y);
         /// <summary>
         /// Returns the remainder resulting from the division of a specified number by another specified number
         /// </summary>
         /// <param name="x">The first number</param>
         /// <param name="y">The second number</param>
         /// <returns>The remainder resulting from the division of a specified number by another specified number</returns>
-        public static double IEEERemainder(this double x, double y)
-        {
-            return Math.IEEERemainder(x, y);
-        }
+        public static double IEEERemainder(this double x, double y) => Math.IEEERemainder(x, y);
 
         /// <summary>
         /// Calculates the linear parameter t that produces the interpolant value within the range [from, to]
         /// </summary>
         /// <returns>The linear parameter t that produces the interpolant value within the range [from, to]</returns>
-        public static float InverseLerp(float from, float to, float value)
-        {
-            return (value - from) / (to - from);
-        }
+        public static float InverseLerp(float from, float to, float value) => (value - from) / (to - from);
         /// <summary>
         /// Calculates the linear parameter t that produces the interpolant value within the range [from, to]
         /// </summary>
         /// <returns>The linear parameter t that produces the interpolant value within the range [from, to]</returns>
-        public static double InverseLerp(double from, double to, double value)
-        {
-            return (value - from) / (to - from);
-        }
+        public static double InverseLerp(double from, double to, double value) => (value - from) / (to - from);
         /// <summary>
         /// Calculates the linear parameter t that produces the interpolant value within the range [from, to]
         /// </summary>
         /// <returns>The linear parameter t that produces the interpolant value within the range [from, to]</returns>
-        public static decimal InverseLerp(decimal from, decimal to, decimal value)
-        {
-            return (value - from) / (to - from);
-        }
+        public static decimal InverseLerp(decimal from, decimal to, decimal value) => (value - from) / (to - from);
 
         /// <summary>
         /// Determines if the specified number is prime
         /// </summary>
         /// <param name="a">The number</param>
         /// <returns>True if the specified number is prime, otherwise false</returns>
-        public static bool IsPrime(this int a)
-        {
-            return Primes.TakeWhile(i => i <= a).Contains((uint)a);
-        }
+        public static bool IsPrime(this int a) => Primes.TakeWhile(i => i <= a).Contains((uint)a);
         /// <summary>
         /// Determines if the specified number is prime
         /// </summary>
         /// <param name="a">The number</param>
         /// <returns>True if the specified number is prime, otherwise false</returns>
-        public static bool IsPrime(this uint a)
-        {
-            return Primes.TakeWhile(i => i <= a).Contains(a);
-        }
+        public static bool IsPrime(this uint a) => Primes.TakeWhile(i => i <= a).Contains(a);
         /// <summary>
         /// Determines if the specified number is prime
         /// </summary>
         /// <param name="a">The number</param>
         /// <returns>True if the specified number is prime, otherwise false</returns>
-        public static bool IsPrime(this long a)
-        {
-            return PrimesLong.TakeWhile(i => i <= (ulong)a).Contains((ulong)a);
-        }
+        public static bool IsPrime(this long a) => PrimesLong.TakeWhile(i => i <= (ulong)a).Contains((ulong)a);
         /// <summary>
         /// Determines if the specified number is prime
         /// </summary>
         /// <param name="a">The number</param>
         /// <returns>True if the specified number is prime, otherwise false</returns>
-        public static bool IsPrime(this ulong a)
-        {
-            return PrimesLong.TakeWhile(i => i <= a).Contains(a);
-        }
+        public static bool IsPrime(this ulong a) => PrimesLong.TakeWhile(i => i <= a).Contains(a);
 
         /// <summary>
         /// Determines if the specified number is perfect
         /// </summary>
         /// <param name="a">The number</param>
         /// <returns>True if the specified number is perfect, otherwise false</returns>
-        public static bool IsPerfect(this int a)
-        {
-            return PerfectNumbers.Contains(a);
-        }
+        public static bool IsPerfect(this int a) => PerfectNumbers.Contains(a);
         /// <summary>
         /// Determines if the specified number is perfect
         /// </summary>
         /// <param name="a">The number</param>
         /// <returns>True if the specified number is perfect, otherwise false</returns>
-        public static bool IsPerfect(this uint a)
-        {
-            return PerfectNumbers.Contains(a);
-        }
+        public static bool IsPerfect(this uint a) => PerfectNumbers.Contains(a);
         /// <summary>
         /// Determines if the specified number is perfect
         /// </summary>
         /// <param name="a">The number</param>
         /// <returns>True if the specified number is perfect, otherwise false</returns>
-        public static bool IsPerfect(this long a)
-        {
-            return PerfectNumbers.Contains(a);
-        }
+        public static bool IsPerfect(this long a) => PerfectNumbers.Contains(a);
         /// <summary>
         /// Determines if the specified number is perfect
         /// </summary>
         /// <param name="a">The number</param>
         /// <returns>True if the specified number is perfect, otherwise false</returns>
-        public static bool IsPerfect(this ulong a)
-        {
-            return PerfectNumbers.Contains((long)a);
-        }
+        public static bool IsPerfect(this ulong a) => PerfectNumbers.Contains((long)a);
 
         /// <summary>
         /// Returns the natural (base e) logarithm of a specified number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The natural (base e) logarithm of a specified number</returns>
-        public static float Log(this float value)
-        {
-            return (float)Math.Log(value);
-        }
+        public static float Log(this float value) => (float)Math.Log(value);
         /// <summary>
         /// Returns the natural (base e) logarithm of a specified number in a specified base
         /// </summary>
         /// <param name="value">The number</param>
         /// <param name="newBase">The new base</param>
         /// <returns>The natural (base e) logarithm of a specified number  in a specified base</returns>
-        public static float Log(this float value, float newBase)
-        {
-            return (float)Math.Log(value, newBase);
-        }
+        public static float Log(this float value, float newBase) => (float)Math.Log(value, newBase);
         /// <summary>
         /// Returns the natural (base e) logarithm of a specified number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The natural (base e) logarithm of a specified number</returns>
-        public static double Log(this double value)
-        {
-            return Math.Log(value);
-        }
+        public static double Log(this double value) => Math.Log(value);
         /// <summary>
         /// Returns the natural (base e) logarithm of a specified number in a specified base
         /// </summary>
         /// <param name="value">The number</param>
         /// <param name="newBase">The new base</param>
         /// <returns>The natural (base e) logarithm of a specified number in a specified base</returns>
-        public static double Log(this double value, double newBase)
-        {
-            return Math.Log(value, newBase);
-        }
+        public static double Log(this double value, double newBase) => Math.Log(value, newBase);
 
         /// <summary>
         /// Returns the base 10 logarithm of a specified number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The base 10 logarithm of a specified number</returns>
-        public static float Log10(this float value)
-        {
-            return (float)Math.Log10(value);
-        }
+        public static float Log10(this float value) => (float)Math.Log10(value);
         /// <summary>
         /// Returns the base 10 logarithm of a specified number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The base 10 logarithm of a specified number</returns>
-        public static double Log10(this double value)
-        {
-            return Math.Log10(value);
-        }
+        public static double Log10(this double value) => Math.Log10(value);
 
         /// <summary>
         /// Linearly interpolates between from and to by t.
         /// </summary>
         /// <returns>The interpolated number result between the two number values.</returns>
-        public static float Lerp(float from, float to, float t)
-        {
-            return from + (to - from) * t;
-        }
+        public static float Lerp(float from, float to, float t) => from + (to - from) * t;
         /// <summary>
         /// Linearly interpolates between from and to by t.
         /// </summary>
         /// <returns>The interpolated number result between the two number values.</returns>
-        public static double Lerp(double from, double to, double t)
-        {
-            return from + (to - from) * t;
-        }
+        public static double Lerp(double from, double to, double t) => from + (to - from) * t;
         /// <summary>
         /// Linearly interpolates between from and to by t.
         /// </summary>
         /// <returns>The interpolated number result between the two number values.</returns>
-        public static decimal Lerp(decimal from, decimal to, decimal t)
-        {
-            return from + (to - from) * t;
-        }
+        public static decimal Lerp(decimal from, decimal to, decimal t) => from + (to - from) * t;
 
         /// <summary>
         /// Returns the largest number between the two specified numbers
@@ -1497,110 +1283,77 @@ namespace Elementary
         /// <param name="a">The first number</param>
         /// <param name="b">The second number</param>
         /// <returns>The largest number between the two specified numbers</returns>
-        public static sbyte Max(this sbyte a, sbyte b)
-        {
-            return a < b ? b : a;
-        }
+        public static sbyte Max(this sbyte a, sbyte b) => a < b ? b : a;
         /// <summary>
         /// Returns the largest number between the two specified numbers
         /// </summary>
         /// <param name="a">The first number</param>
         /// <param name="b">The second number</param>
         /// <returns>The largest number between the two specified numbers</returns>
-        public static short Max(this short a, short b)
-        {
-            return a < b ? b : a;
-        }
+        public static short Max(this short a, short b) => a < b ? b : a;
         /// <summary>
         /// Returns the largest number between the two specified numbers
         /// </summary>
         /// <param name="a">The first number</param>
         /// <param name="b">The second number</param>
         /// <returns>The largest number between the two specified numbers</returns>
-        public static int Max(this int a, int b)
-        {
-            return a < b ? b : a;
-        }
+        public static int Max(this int a, int b) => a < b ? b : a;
         /// <summary>
         /// Returns the largest number between the two specified numbers
         /// </summary>
         /// <param name="a">The first number</param>
         /// <param name="b">The second number</param>
         /// <returns>The largest number between the two specified numbers</returns>
-        public static long Max(this long a, long b)
-        {
-            return a < b ? b : a;
-        }
+        public static long Max(this long a, long b) => a < b ? b : a;
         /// <summary>
         /// Returns the largest number between the two specified numbers
         /// </summary>
         /// <param name="a">The first number</param>
         /// <param name="b">The second number</param>
         /// <returns>The largest number between the two specified numbers</returns>
-        public static byte Max(this byte a, byte b)
-        {
-            return a < b ? b : a;
-        }
+        public static byte Max(this byte a, byte b) => a < b ? b : a;
         /// <summary>
         /// Returns the largest number between the two specified numbers
         /// </summary>
         /// <param name="a">The first number</param>
         /// <param name="b">The second number</param>
         /// <returns>The largest number between the two specified numbers</returns>
-        public static ushort Max(this ushort a, ushort b)
-        {
-            return a < b ? b : a;
-        }
+        public static ushort Max(this ushort a, ushort b) => a < b ? b : a;
         /// <summary>
         /// Returns the largest number between the two specified numbers
         /// </summary>
         /// <param name="a">The first number</param>
         /// <param name="b">The second number</param>
         /// <returns>The largest number between the two specified numbers</returns>
-        public static uint Max(this uint a, uint b)
-        {
-            return a < b ? b : a;
-        }
+        public static uint Max(this uint a, uint b) => a < b ? b : a;
         /// <summary>
         /// Returns the largest number between the two specified numbers
         /// </summary>
         /// <param name="a">The first number</param>
         /// <param name="b">The second number</param>
         /// <returns>The largest number between the two specified numbers</returns>
-        public static ulong Max(this ulong a, ulong b)
-        {
-            return a < b ? b : a;
-        }
+        public static ulong Max(this ulong a, ulong b) => a < b ? b : a;
         /// <summary>
         /// Returns the largest number between the two specified numbers
         /// </summary>
         /// <param name="a">The first number</param>
         /// <param name="b">The second number</param>
         /// <returns>The largest number between the two specified numbers</returns>
-        public static float Max(this float a, float b)
-        {
-            return a < b ? b : a;
-        }
+        public static float Max(this float a, float b) => a < b ? b : a;
         /// <summary>
         /// Returns the largest number between the two specified numbers
         /// </summary>
         /// <param name="a">The first number</param>
         /// <param name="b">The second number</param>
         /// <returns>The largest number between the two specified numbers</returns>
-        public static double Max(this double a, double b)
-        {
-            return a < b ? b : a;
-        }
+        public static double Max(this double a, double b) => a < b ? b : a;
         /// <summary>
         /// Returns the largest number between the two specified numbers
         /// </summary>
         /// <param name="a">The first number</param>
         /// <param name="b">The second number</param>
         /// <returns>The largest number between the two specified numbers</returns>
-        public static decimal Max(this decimal a, decimal b)
-        {
-            return a < b ? b : a;
-        }
+        public static decimal Max(this decimal a, decimal b) => a < b ? b : a;
 
         /// <summary>
         /// Returns the smallest number between the two specified numbers
@@ -1608,110 +1361,77 @@ namespace Elementary
         /// <param name="a">The first number</param>
         /// <param name="b">The second number</param>
         /// <returns>The smallest number between the two specified numbers</returns>
-        public static sbyte Min(this sbyte a, sbyte b)
-        {
-            return a < b ? a : b;
-        }
+        public static sbyte Min(this sbyte a, sbyte b) => a < b ? a : b;
         /// <summary>
         /// Returns the smallest number between the two specified numbers
         /// </summary>
         /// <param name="a">The first number</param>
         /// <param name="b">The second number</param>
         /// <returns>The smallest number between the two specified numbers</returns>
-        public static short Min(this short a, short b)
-        {
-            return a < b ? a : b;
-        }
+        public static short Min(this short a, short b) => a < b ? a : b;
         /// <summary>
         /// Returns the smallest number between the two specified numbers
         /// </summary>
         /// <param name="a">The first number</param>
         /// <param name="b">The second number</param>
         /// <returns>The smallest number between the two specified numbers</returns>
-        public static int Min(this int a, int b)
-        {
-            return a < b ? a : b;
-        }
+        public static int Min(this int a, int b) => a < b ? a : b;
         /// <summary>
         /// Returns the smallest number between the two specified numbers
         /// </summary>
         /// <param name="a">The first number</param>
         /// <param name="b">The second number</param>
         /// <returns>The smallest number between the two specified numbers</returns>
-        public static long Min(this long a, long b)
-        {
-            return a < b ? a : b;
-        }
+        public static long Min(this long a, long b) => a < b ? a : b;
         /// <summary>
         /// Returns the smallest number between the two specified numbers
         /// </summary>
         /// <param name="a">The first number</param>
         /// <param name="b">The second number</param>
         /// <returns>The smallest number between the two specified numbers</returns>
-        public static byte Min(this byte a, byte b)
-        {
-            return a < b ? a : b;
-        }
+        public static byte Min(this byte a, byte b) => a < b ? a : b;
         /// <summary>
         /// Returns the smallest number between the two specified numbers
         /// </summary>
         /// <param name="a">The first number</param>
         /// <param name="b">The second number</param>
         /// <returns>The smallest number between the two specified numbers</returns>
-        public static ushort Min(this ushort a, ushort b)
-        {
-            return a < b ? a : b;
-        }
+        public static ushort Min(this ushort a, ushort b) => a < b ? a : b;
         /// <summary>
         /// Returns the smallest number between the two specified numbers
         /// </summary>
         /// <param name="a">The first number</param>
         /// <param name="b">The second number</param>
         /// <returns>The smallest number between the two specified numbers</returns>
-        public static uint Min(this uint a, uint b)
-        {
-            return a < b ? a : b;
-        }
+        public static uint Min(this uint a, uint b) => a < b ? a : b;
         /// <summary>
         /// Returns the smallest number between the two specified numbers
         /// </summary>
         /// <param name="a">The first number</param>
         /// <param name="b">The second number</param>
         /// <returns>The smallest number between the two specified numbers</returns>
-        public static ulong Min(this ulong a, ulong b)
-        {
-            return a < b ? a : b;
-        }
+        public static ulong Min(this ulong a, ulong b) => a < b ? a : b;
         /// <summary>
         /// Returns the smallest number between the two specified numbers
         /// </summary>
         /// <param name="a">The first number</param>
         /// <param name="b">The second number</param>
         /// <returns>The smallest number between the two specified numbers</returns>
-        public static float Min(this float a, float b)
-        {
-            return a < b ? a : b;
-        }
+        public static float Min(this float a, float b) => a < b ? a : b;
         /// <summary>
         /// Returns the smallest number between the two specified numbers
         /// </summary>
         /// <param name="a">The first number</param>
         /// <param name="b">The second number</param>
         /// <returns>The smallest number between the two specified numbers</returns>
-        public static double Min(this double a, double b)
-        {
-            return a < b ? a : b;
-        }
+        public static double Min(this double a, double b) => a < b ? a : b;
         /// <summary>
         /// Returns the smallest number between the two specified numbers
         /// </summary>
         /// <param name="a">The first number</param>
         /// <param name="b">The second number</param>
         /// <returns>The smallest number between the two specified numbers</returns>
-        public static decimal Min(this decimal a, decimal b)
-        {
-            return a < b ? a : b;
-        }
+        public static decimal Min(this decimal a, decimal b) => a < b ? a : b;
 
         /// <summary>
         /// Returns a specified number raised to the specified power
@@ -1719,68 +1439,47 @@ namespace Elementary
         /// <param name="x">The first number</param>
         /// <param name="y">The second number</param>
         /// <returns>A specified number raised to the specified power</returns>
-        public static float Pow(this float x, float y)
-        {
-            return (float)Math.Pow(x, y);
-        }
+        public static float Pow(this float x, float y) => (float)Math.Pow(x, y);
         /// <summary>
         /// Returns a specified number raised to the specified power
         /// </summary>
         /// <param name="x">The first number</param>
         /// <param name="y">The second number</param>
         /// <returns>A specified number raised to the specified power</returns>
-        public static double Pow(this double x, double y)
-        {
-            return Math.Pow(x, y);
-        }
+        public static double Pow(this double x, double y) => Math.Pow(x, y);
 
         /// <summary>
         /// Returns a random 32-bit integer
         /// </summary>
         /// <returns>A random 32-bit integer</returns>
-        public static int Random()
-        {
-            return _rnd.Next();
-        }
+        public static int Random() => _rnd.Next();
         /// <summary>
         /// Returns a random 32-bit integer with a specified maximum value (exclusive)
         /// </summary>
         /// <param name="max">The maximum value</param>
         /// <returns>A random 32-bit integer with a specified maximum value (exclusive)</returns>
-        public static int Random(int max)
-        {
-            return _rnd.Next(max);
-        }
+        public static int Random(int max) => _rnd.Next(max);
         /// <summary>
         /// Returns a random 32-bit integer with a specified minimum (inclusive) and maximum value (exclusive)
         /// </summary>
         /// <param name="min">The minimum value</param>
         /// <param name="max">The maximum value</param>
         /// <returns>A random 32-bit integer with a specified minimum (inclusive) and maximum value (exclusive)</returns>
-        public static int Random(int min, int max)
-        {
-            return _rnd.Next(min, max);
-        }
+        public static int Random(int min, int max) => _rnd.Next(min, max);
         /// <summary>
         /// Returns a random number with a specified minimum (exclusive) and maximum value (exclusive)
         /// </summary>
         /// <param name="min">The minimum value</param>
         /// <param name="max">The maximum value</param>
         /// <returns>A random number with a specified minimum (exclusive) and maximum value (exclusive)</returns>
-        public static float Random(float min, float max)
-        {
-            return ((float)_rnd.NextDouble()).Remap(0.0f, 1.0f, min, max);
-        }
+        public static float Random(float min, float max) => ((float)_rnd.NextDouble()).Remap(0.0f, 1.0f, min, max);
         /// <summary>
         /// Returns a random number with a specified minimum (exclusive) and maximum value (exclusive)
         /// </summary>
         /// <param name="min">The minimum value</param>
         /// <param name="max">The maximum value</param>
         /// <returns>A random number with a specified minimum (exclusive) and maximum value (exclusive)</returns>
-        public static double Random(double min, double max)
-        {
-            return _rnd.NextDouble().Remap(0.0, 1.0, min, max);
-        }
+        public static double Random(double min, double max) => _rnd.NextDouble().Remap(0.0, 1.0, min, max);
         /// <summary>
         /// Returns a random number with a specified minimum (exclusive) and maximum value (exclusive)
         /// </summary>
@@ -1788,28 +1487,20 @@ namespace Elementary
         /// <param name="max">The maximum value</param>
         /// <returns>A random number with a specified minimum (exclusive) and maximum value (exclusive)</returns>
         // Decimal random isn't perfect, it bases off as a double so precision in the lower numbers is lost.
-        public static decimal Random(decimal min, decimal max)
-        {
+        public static decimal Random(decimal min, decimal max) =>
             // Using Convert because recasting detects it as a double.
-            return Convert.ToDecimal(_rnd.NextDouble()).Remap(0m, 1m, min, max);
-        }
+            Convert.ToDecimal(_rnd.NextDouble()).Remap(0m, 1m, min, max);
 
         /// <summary>
         /// Returns a random 32-bit floating point number between 0.0 and 1.0
         /// </summary>
         /// <returns>A random 32-bit floating point number between 0.0 and 1.0</returns>
-        public static float RandomFloat()
-        {
-            return (float)_rnd.NextDouble();
-        }
+        public static float RandomFloat() => (float)_rnd.NextDouble();
         /// <summary>
         /// Returns a random 64-bit floating point number between 0.0 and 1.0
         /// </summary>
         /// <returns>A random 64-bit floating point number between 0.0 and 1.0</returns>
-        public static double RandomDouble()
-        {
-            return _rnd.NextDouble();
-        }
+        public static double RandomDouble() => _rnd.NextDouble();
 
         /// <summary>
         /// Remaps a specified number from a range to another
@@ -1820,10 +1511,7 @@ namespace Elementary
         /// <param name="outputMin">The minimum value of the second range</param>
         /// <param name="outputMax">The maximum value of the second range</param>
         /// <returns>A specified number remapped from a range to another</returns>
-        public static float Remap(this float value, float inputMin, float inputMax, float outputMin, float outputMax)
-        {
-            return outputMin + (value - inputMin) * (outputMax - outputMin) / (inputMax - inputMin);
-        }
+        public static float Remap(this float value, float inputMin, float inputMax, float outputMin, float outputMax) => outputMin + (value - inputMin) * (outputMax - outputMin) / (inputMax - inputMin);
         /// <summary>
         /// Remaps a specified number from a range to another
         /// </summary>
@@ -1833,10 +1521,7 @@ namespace Elementary
         /// <param name="outputMin">The minimum value of the second range</param>
         /// <param name="outputMax">The maximum value of the second range</param>
         /// <returns>A specified number remapped from a range to another</returns>
-        public static double Remap(this double value, double inputMin, double inputMax, double outputMin, double outputMax)
-        {
-            return outputMin + (value - inputMin) * (outputMax - outputMin) / (inputMax - inputMin);
-        }
+        public static double Remap(this double value, double inputMin, double inputMax, double outputMin, double outputMax) => outputMin + (value - inputMin) * (outputMax - outputMin) / (inputMax - inputMin);
         /// <summary>
         /// Remaps a specified number from a range to another
         /// </summary>
@@ -1846,40 +1531,28 @@ namespace Elementary
         /// <param name="outputMin">The minimum value of the second range</param>
         /// <param name="outputMax">The maximum value of the second range</param>
         /// <returns>A specified number remapped from a range to another</returns>
-        public static decimal Remap(this decimal value, decimal inputMin, decimal inputMax, decimal outputMin, decimal outputMax)
-        {
-            return outputMin + (value - inputMin) * (outputMax - outputMin) / (inputMax - inputMin);
-        }
+        public static decimal Remap(this decimal value, decimal inputMin, decimal inputMax, decimal outputMin, decimal outputMax) => outputMin + (value - inputMin) * (outputMax - outputMin) / (inputMax - inputMin);
 
         /// <summary>
         /// Rounds a number to the nearest integral number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>A number to the nearest integral number</returns>
-        public static float Round(this float value)
-        {
-            return (float)Math.Round(value);
-        }
+        public static float Round(this float value) => (float)Math.Round(value);
         /// <summary>
         /// Rounds a number to a specified number of fractional digits
         /// </summary>
         /// <param name="value">The number</param>
         /// <param name="digits">The amount of digits</param>
         /// <returns>A number to a specified number of fractional digits</returns>
-        public static float Round(this float value, int digits)
-        {
-            return (float)Math.Round(value, digits);
-        }
+        public static float Round(this float value, int digits) => (float)Math.Round(value, digits);
         /// <summary>
         /// Rounds a number to the nearest integral number. A parameter specifies how to round the value if it is midway between two other numbers
         /// </summary>
         /// <param name="value">The number</param>
         /// <param name="mode">The rounding mode</param>
         /// <returns>A number to the nearest integral number</returns>
-        public static float Round(this float value, MidpointRounding mode)
-        {
-            return (float)Math.Round(value, (System.MidpointRounding)mode);
-        }
+        public static float Round(this float value, MidpointRounding mode) => (float)Math.Round(value, (System.MidpointRounding)mode);
         /// <summary>
         /// Rounds a number to a specified number of fractional digits. A parameter specifies how to round the value if it is midway between two other numbers
         /// </summary>
@@ -1887,39 +1560,27 @@ namespace Elementary
         /// <param name="digits">The amount of digits</param>
         /// <param name="mode">The rounding mode</param>
         /// <returns>A number to a specified number of fractional digits</returns>
-        public static float Round(this float value, int digits, MidpointRounding mode)
-        {
-            return (float)Math.Round(value, digits, (System.MidpointRounding)mode);
-        }
+        public static float Round(this float value, int digits, MidpointRounding mode) => (float)Math.Round(value, digits, (System.MidpointRounding)mode);
         /// <summary>
         /// Rounds a number to the nearest integral number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>A number to the nearest integral number</returns>
-        public static double Round(this double value)
-        {
-            return Math.Round(value);
-        }
+        public static double Round(this double value) => Math.Round(value);
         /// <summary>
         /// Rounds a number to a specified number of fractional digits
         /// </summary>
         /// <param name="value">The number</param>
         /// <param name="digits">The amount of digits</param>
         /// <returns>A number to a specified number of fractional digits</returns>
-        public static double Round(this double value, int digits)
-        {
-            return Math.Round(value, digits);
-        }
+        public static double Round(this double value, int digits) => Math.Round(value, digits);
         /// <summary>
         /// Rounds a number to the nearest integral number. A parameter specifies how to round the value if it is midway between two other numbers
         /// </summary>
         /// <param name="value">The number</param>
         /// <param name="mode">The rounding mode</param>
         /// <returns>A number to the nearest integral number</returns>
-        public static double Round(this double value, MidpointRounding mode)
-        {
-            return Math.Round(value, (System.MidpointRounding)mode);
-        }
+        public static double Round(this double value, MidpointRounding mode) => Math.Round(value, (System.MidpointRounding)mode);
         /// <summary>
         /// Rounds a number to a specified number of fractional digits. A parameter specifies how to round the value if it is midway between two other numbers
         /// </summary>
@@ -1927,39 +1588,27 @@ namespace Elementary
         /// <param name="digits">The amount of digits</param>
         /// <param name="mode">The rounding mode</param>
         /// <returns>A number to a specified number of fractional digits</returns>
-        public static double Round(this double value, int digits, MidpointRounding mode)
-        {
-            return Math.Round(value, digits, (System.MidpointRounding)mode);
-        }
+        public static double Round(this double value, int digits, MidpointRounding mode) => Math.Round(value, digits, (System.MidpointRounding)mode);
         /// <summary>
         /// Rounds a number to the nearest integral number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>A number to the nearest integral number</returns>
-        public static decimal Round(this decimal value)
-        {
-            return Math.Round(value);
-        }
+        public static decimal Round(this decimal value) => Math.Round(value);
         /// <summary>
         /// Rounds a number to a specified number of fractional digits
         /// </summary>
         /// <param name="value">The number</param>
         /// <param name="digits">The amount of digits</param>
         /// <returns>A number to a specified number of fractional digits</returns>
-        public static decimal Round(this decimal value, int digits)
-        {
-            return Math.Round(value, digits);
-        }
+        public static decimal Round(this decimal value, int digits) => Math.Round(value, digits);
         /// <summary>
         /// Rounds a number to the nearest integral number. A parameter specifies how to round the value if it is midway between two other numbers
         /// </summary>
         /// <param name="value">The number</param>
         /// <param name="mode">The rounding mode</param>
         /// <returns>A number to the nearest integral number</returns>
-        public static decimal Round(this decimal value, MidpointRounding mode)
-        {
-            return Math.Round(value, (System.MidpointRounding)mode);
-        }
+        public static decimal Round(this decimal value, MidpointRounding mode) => Math.Round(value, (System.MidpointRounding)mode);
         /// <summary>
         /// Rounds a number to a specified number of fractional digits. A parameter specifies how to round the value if it is midway between two other numbers
         /// </summary>
@@ -1967,20 +1616,14 @@ namespace Elementary
         /// <param name="digits">The amount of digits</param>
         /// <param name="mode">The rounding mode</param>
         /// <returns>A number to a specified number of fractional digits</returns>
-        public static decimal Round(this decimal value, int digits, MidpointRounding mode)
-        {
-            return Math.Round(value, digits, (System.MidpointRounding)mode);
-        }
+        public static decimal Round(this decimal value, int digits, MidpointRounding mode) => Math.Round(value, digits, (System.MidpointRounding)mode);
 
         /// <summary>
         /// Rounds a number to the nearest integer
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>A number rounded to the nearest integer</returns>
-        public static int RoundToInt(this float value)
-        {
-            return (int)Math.Round(value);
-        }
+        public static int RoundToInt(this float value) => (int)Math.Round(value);
 
         /// <summary>
         /// Rounds a number to the nearest integer. A parameter specifies how to round the value if it is midway between two other numbers
@@ -1988,48 +1631,33 @@ namespace Elementary
         /// <param name="value">The number</param>
         /// <param name="mode">The midpoint rounding mode</param>
         /// <returns>A number rounded to the nearest integer</returns>
-        public static int RoundToInt(this float value, MidpointRounding mode)
-        {
-            return (int)Math.Round(value, (System.MidpointRounding)mode);
-        }
+        public static int RoundToInt(this float value, MidpointRounding mode) => (int)Math.Round(value, (System.MidpointRounding)mode);
         /// <summary>
         /// Rounds a number to the nearest integer
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>A number rounded to the nearest integer</returns>
-        public static int RoundToInt(this double value)
-        {
-            return (int)Math.Round(value);
-        }
+        public static int RoundToInt(this double value) => (int)Math.Round(value);
         /// <summary>
         /// Rounds a number to the nearest integer. A parameter specifies how to round the value if it is midway between two other numbers
         /// </summary>
         /// <param name="value">The number</param>
         /// <param name="mode">The midpoint rounding mode</param>
         /// <returns>A number rounded to the nearest integer</returns>
-        public static int RoundToInt(this double value, MidpointRounding mode)
-        {
-            return (int)Math.Round(value, (System.MidpointRounding)mode);
-        }
+        public static int RoundToInt(this double value, MidpointRounding mode) => (int)Math.Round(value, (System.MidpointRounding)mode);
         /// <summary>
         /// Rounds a number to the nearest integer
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>A number rounded to the nearest integer</returns>
-        public static int RoundToInt(this decimal value)
-        {
-            return (int)Math.Round(value);
-        }
+        public static int RoundToInt(this decimal value) => (int)Math.Round(value);
         /// <summary>
         /// Rounds a number to the nearest integer. A parameter specifies how to round the value if it is midway between two other numbers
         /// </summary>
         /// <param name="value">The number</param>
         /// <param name="mode">The midpoint rounding mode</param>
         /// <returns>A number rounded to the nearest integer</returns>
-        public static int RoundToInt(this decimal value, MidpointRounding mode)
-        {
-            return (int)Math.Round(value, (System.MidpointRounding)mode);
-        }
+        public static int RoundToInt(this decimal value, MidpointRounding mode) => (int)Math.Round(value, (System.MidpointRounding)mode);
 
         /// <summary>
         /// Returns the sign of a number. 1 for positive, -1 for negative, 0 for zero
@@ -2128,150 +1756,102 @@ namespace Elementary
         /// </summary>
         /// <param name="value">The angle</param>
         /// <returns>The sine of the specified angle</returns>
-        public static float Sin(this float value)
-        {
-            return (float)Math.Sin(value);
-        }
+        public static float Sin(this float value) => (float)Math.Sin(value);
         /// <summary>
         /// Returns the sine of the specified angle
         /// </summary>
         /// <param name="value">The angle</param>
         /// <returns>The sine of the specified angle</returns>
-        public static double Sin(this double value)
-        {
-            return Math.Sin(value);
-        }
+        public static double Sin(this double value) => Math.Sin(value);
 
         /// <summary>
         /// Returns the hyperbolic sine of the specified angle
         /// </summary>
         /// <param name="value">The angle</param>
         /// <returns>The hyperbolic sine of the specified angle</returns>
-        public static float Sinh(this float value)
-        {
-            return (float)Math.Sinh(value);
-        }
+        public static float Sinh(this float value) => (float)Math.Sinh(value);
         /// <summary>
         /// Returns the hyperbolic sine of the specified angle
         /// </summary>
         /// <param name="value">The angle</param>
         /// <returns>The hyperbolic sine of the specified angle</returns>
-        public static double Sinh(this double value)
-        {
-            return Math.Sinh(value);
-        }
+        public static double Sinh(this double value) => Math.Sinh(value);
 
         /// <summary>
         /// Returns the square-root of a specified number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The square-root of a specified number</returns>
-        public static float Sqrt(this float value)
-        {
-            return (float)Math.Sqrt(value);
-        }
+        public static float Sqrt(this float value) => (float)Math.Sqrt(value);
         /// <summary>
         /// Returns the square-root of a specified number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The square-root of a specified number</returns>
-        public static double Sqrt(this double value)
-        {
-            return Math.Sqrt(value);
-        }
+        public static double Sqrt(this double value) => Math.Sqrt(value);
 
         /// <summary>
         /// Returns the tangent of the specified angle
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The tangent of the specified angle</returns>
-        public static float Tan(this float value)
-        {
-            return (float)Math.Tan(value);
-        }
+        public static float Tan(this float value) => (float)Math.Tan(value);
         /// <summary>
         /// Returns the tangent of the specified angle
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The tangent of the specified angle</returns>
-        public static double Tan(this double value)
-        {
-            return Math.Tan(value);
-        }
+        public static double Tan(this double value) => Math.Tan(value);
 
         /// <summary>
         /// Returns the hyperbolic tangent of the specified angle
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The hyperbolic tangent of the specified angle</returns>
-        public static float Tanh(this float value)
-        {
-            return (float)Math.Tanh(value);
-        }
+        public static float Tanh(this float value) => (float)Math.Tanh(value);
         /// <summary>
         /// Returns the hyperbolic tangent of the specified angle
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The hyperbolic tangent of the specified angle</returns>
-        public static double Tanh(this double value)
-        {
-            return Math.Tanh(value);
-        }
+        public static double Tanh(this double value) => Math.Tanh(value);
 
         /// <summary>
         /// Calculates the integral-part of a specified number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The integral-part of a specified number</returns>
-        public static float Truncate(this float value)
-        {
-            return (float)Math.Truncate(value);
-        }
+        public static float Truncate(this float value) => (float)Math.Truncate(value);
         /// <summary>
         /// Calculates the integral-part of a specified number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The integral-part of a specified number</returns>
-        public static double Truncate(this double value)
-        {
-            return Math.Truncate(value);
-        }
+        public static double Truncate(this double value) => Math.Truncate(value);
         /// <summary>
         /// Calculates the integral-part of a specified number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The integral-part of a specified number</returns>
-        public static decimal Truncate(this decimal value)
-        {
-            return Math.Truncate(value);
-        }
+        public static decimal Truncate(this decimal value) => Math.Truncate(value);
 
         /// <summary>
         /// Calculates the integral-part of a specified number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The integral-part of a specified number</returns>
-        public static int TruncateToInt(this float value)
-        {
-            return (int)Math.Truncate(value);
-        }
+        public static int TruncateToInt(this float value) => (int)Math.Truncate(value);
         /// <summary>
         /// Calculates the integral-part of a specified number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The integral-part of a specified number</returns>
-        public static int TruncateToInt(this double value)
-        {
-            return (int)Math.Truncate(value);
-        }
+        public static int TruncateToInt(this double value) => (int)Math.Truncate(value);
         /// <summary>
         /// Calculates the integral-part of a specified number
         /// </summary>
         /// <param name="value">The number</param>
         /// <returns>The integral-part of a specified number</returns>
-        public static int TruncateToInt(this decimal value)
-        {
-            return (int)Math.Truncate(value);
-        }
+        public static int TruncateToInt(this decimal value) => (int)Math.Truncate(value);
     }
 }

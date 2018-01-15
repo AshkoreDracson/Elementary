@@ -6,11 +6,11 @@ namespace Elementary
     public static class ListExtension
     {
         /// <summary>
-        /// Checks if a list contains a certain type.
+        /// Checks if a <see cref="List{T}"/> contains a certain type.
         /// </summary>
         /// <param name="list">The list</param>
         /// <param name="t">The type</param>
-        /// <returns>True if the list contains the desired type, otherwise false</returns>
+        /// <returns>True if the <see cref="List{T}"/> contains the desired type, otherwise false</returns>
         public static bool ContainsType(this List<object> list, Type t)
         {
             foreach (object item in list)
@@ -21,11 +21,11 @@ namespace Elementary
             return false;
         }
         /// <summary>
-        /// Checks if a list contains a certain type.
+        /// Checks if a <see cref="List{T}"/> contains a certain type.
         /// </summary>
         /// <typeparam name="T">The type</typeparam>
         /// <param name="list">The list</param>
-        /// <returns>True if the list contains the desired type, otherwise false</returns>
+        /// <returns>True if the <see cref="List{T}"/> contains the desired type, otherwise false</returns>
         public static bool ContainsType<T>(this List<object> list)
         {
             foreach (object item in list)
@@ -36,14 +36,11 @@ namespace Elementary
             return false;
         }
         /// <summary>
-        /// Returns a random item in the list
+        /// Returns a random item in the <see cref="List{T}"/>
         /// </summary>
         /// <typeparam name="T">The type</typeparam>
         /// <param name="list">The list</param>
-        /// <returns>A random item fetched within the list</returns>
-        public static T Random<T>(this List<T> list)
-        {
-            return list[Mathf.Random(list.Count)];
-        }
+        /// <returns>A random item fetched within the <see cref="List{T}"/></returns>
+        public static T Random<T>(this List<T> list) => list[Mathf.Random(list.Count)];
     }
 }

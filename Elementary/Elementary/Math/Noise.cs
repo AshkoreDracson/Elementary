@@ -129,9 +129,6 @@
             return t * t * t * (t * (t * 6 - 15) + 10);         // 6t^5 - 15t^4 + 10t^3
         }
 
-        private static double Lerp(double a, double b, double x)
-        {
-            return Mathf.Lerp(a, b, x);
-        }
+        private static double Lerp(double a, double b, double x) => Mathf.Lerp(a, b, x);
     }
 }
