@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -25,8 +26,9 @@ namespace Elementary
             }
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Gets the number of elements contained in the <see cref="LimitedQueue{T}"/>
+        /// Gets the number of elements contained in the <see cref="T:Elementary.LimitedQueue`1" />
         /// </summary>
         public int Count => _queue.Count;
 
@@ -115,10 +117,11 @@ namespace Elementary
         /// <returns>The array with the elements of the <see cref="LimitedQueue{T}"/></returns>
         public T[] ToArray() => _queue.ToArray();
 
+        /// <inheritdoc />
         /// <summary>
-        /// Returns an enumerator that iterates through the <see cref="LimitedQueue{T}"/>
+        /// Returns an enumerator that iterates through the <see cref="T:Elementary.LimitedQueue`1" />
         /// </summary>
-        /// <returns>An enumerator that iterates through the <see cref="LimitedQueue{T}"/></returns>
+        /// <returns>An enumerator that iterates through the <see cref="T:Elementary.LimitedQueue`1" /></returns>
         public IEnumerator<T> GetEnumerator() => _queue.GetEnumerator();
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }

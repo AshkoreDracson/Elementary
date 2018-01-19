@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\ArrayExtension.cs" />
+    <Compile Include="Extensions\ComparableExtension.cs" />
     <Compile Include="Misc\DependencyInjector.cs" />
     <Compile Include="Extensions\IEnumerableExtension.cs" />
     <Compile Include="Misc\LimitedQueue.cs" />
