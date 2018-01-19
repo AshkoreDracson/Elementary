@@ -4,7 +4,7 @@ using System.Linq;
 namespace Elementary_Unit_Test
 {
     [TestClass]
-    [TestCategory("Random number generation tests")]
+    [TestCategory("Random Number Generation Tests")]
     public class ElementaryUnitTestRandom
     {
         [TestMethod]
@@ -107,7 +107,7 @@ namespace Elementary_Unit_Test
     }
 
     [TestClass]
-    [TestCategory("Elementary math tests")]
+    [TestCategory("Elementary Math Tests")]
     public class ElementaryUnitTestMath
     {
         [TestMethod]
@@ -143,6 +143,55 @@ namespace Elementary_Unit_Test
             {
                 Assert.IsTrue(nums[i].IsPrime() == expected[i]);
             }
+        }
+    }
+
+    [TestClass]
+    [TestCategory("Elementary LimitedQueue<T> Tests")]
+    public class ElementaryUnitTestLimitedQueue
+    {
+        [TestMethod]
+        public void QueueIntegrity()
+        {
+            LimitedQueue<int> queue = new LimitedQueue<int>(5);
+
+            queue.Enqueue(5);
+            queue.Enqueue(2);
+            queue.Enqueue(-6);
+
+            Assert.IsTrue(queue.Count == 3);
+
+            queue.Dequeue();
+
+            Assert.IsTrue(queue.Count == 2);
+
+            queue.Enqueue(0);
+            queue.Enqueue(0);
+            queue.Enqueue(0);
+            queue.Enqueue(0);
+
+            int[] expected = { -6, 0, 0, 0, 0 };
+            int index = 0;
+
+            foreach (int i in queue)
+            {
+                Assert.AreEqual(expected[index++], i);
+            }
+
+            queue.Dequeue();
+            int peekedInt = queue.Peek();
+
+            Assert.IsTrue(queue.Count == 4);
+            Assert.IsTrue(peekedInt == 0);
+            Assert.IsTrue(queue[3] == 0);
+
+            queue.Capacity = 2;
+
+            Assert.IsTrue(queue.Count == queue.Capacity);
+
+            queue.Clear();
+            
+            Assert.IsTrue(queue.Count == 0);
         }
     }
 }
