@@ -7,7 +7,7 @@ namespace Elementary
 {
     public class LimitedQueue<T> : IEnumerable<T>
     {
-        private Queue<T> _queue;
+        private readonly Queue<T> _queue;
 
         private int _capacity;
         /// <summary>
@@ -26,7 +26,6 @@ namespace Elementary
             }
         }
 
-        /// <inheritdoc />
         /// <summary>
         /// Gets the number of elements contained in the <see cref="T:Elementary.LimitedQueue`1" />
         /// </summary>
