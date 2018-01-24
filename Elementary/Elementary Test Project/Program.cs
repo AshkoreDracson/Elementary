@@ -2,13 +2,17 @@
 using System;
 using System.Diagnostics;
 using System.Threading;
+using System.Windows.Forms;
+using Elementary.Forms;
+
 namespace Elementary_Test_Project
 {
     internal static class Program
     {
+        [STAThread]
         private static void Main()
         {
-            LogTest();
+            FilterTest();
         }
 
         private static void LogTest()
@@ -26,6 +30,18 @@ namespace Elementary_Test_Project
             Logman.Log("This is an error message", LogLevel.Error);
             Console.ReadKey();
             Process.Start(".\\log.txt");
+        }
+
+        private static void FilterTest()
+        {
+            FilterCollection fc = new FilterCollection(
+                new FilterItem("EXE File", "*.exe"), 
+                new FilterItem("DLL File", "*.dll"), 
+                new FilterItem("Image Files", "*.jpg", "*.png", "*.bmp", "*.gif")
+            );
+
+            OpenFileDialog ofd = new OpenFileDialog {Filter = fc.Filter};
+            ofd.ShowDialog();
         }
     }
 }

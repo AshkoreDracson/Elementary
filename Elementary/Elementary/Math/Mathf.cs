@@ -205,8 +205,11 @@ namespace Elementary
 
         static Mathf()
         {
-            _seed = (int)DateTime.Now.Ticks;
-            _rnd = new Random(_seed);
+            unchecked
+            {
+                _seed = (int)DateTime.Now.Ticks;
+                _rnd = new Random(_seed);
+            }
         }
 
         /// <summary>

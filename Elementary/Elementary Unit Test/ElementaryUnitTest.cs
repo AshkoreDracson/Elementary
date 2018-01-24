@@ -124,13 +124,23 @@ namespace Elementary_Unit_Test
         [TestMethod]
         public void Primes()
         {
-            Mathf.Primes.TakeWhile(i => i < 1000000u);
+            uint[] expected = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29 };
+            int i = 0;
+            foreach (uint prime in Mathf.Primes.Take(10))
+            {
+                Assert.IsTrue(expected[i++] == prime);
+            }
         }
 
         [TestMethod]
         public void PrimesLong()
         {
-            Mathf.PrimesLong.TakeWhile(i => i < 1000000ul);
+            ulong[] expected = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29 };
+            int i = 0;
+            foreach (ulong prime in Mathf.PrimesLong.Take(10))
+            {
+                Assert.IsTrue(expected[i++] == prime);
+            }
         }
 
         [TestMethod]
@@ -192,6 +202,35 @@ namespace Elementary_Unit_Test
             queue.Clear();
             
             Assert.IsTrue(queue.Count == 0);
+        }
+    }
+
+    [TestClass]
+    [TestCategory("Elementary IComparable<T> Extensions Tests")]
+    public class ElementaryUnitTestComparableExtension
+    {
+        [TestMethod]
+        public void RangeIntegrity()
+        {
+            Assert.IsTrue(5.InRange(0, 10));
+            Assert.IsTrue(3.14f.InRange(0, 10));
+            Assert.IsTrue(3.141.InRange(0, 10));
+            Assert.IsTrue(8.125789541m.InRange(0, 10));
+            Assert.IsTrue(0f.InRange(0, 10));
+            Assert.IsTrue(10f.InRange(0, 10));
+
+            Assert.IsFalse((-10).InRange(0, 10));
+            Assert.IsFalse(100f.InRange(0, 10));
+            Assert.IsFalse(10.00001.InRange(0, 10));
+            Assert.IsFalse(int.MaxValue.InRange(0, 10));
+
+            Assert.IsTrue(5.InRangeExclusive(0, 10));
+            Assert.IsTrue(2.InRangeExclusive(0, 10));
+
+            Assert.IsFalse((-1).InRangeExclusive(0, 10));
+            Assert.IsFalse(12.InRangeExclusive(0, 10));
+            Assert.IsFalse(0.InRangeExclusive(0, 10));
+            Assert.IsFalse(10.InRangeExclusive(0, 10));
         }
     }
 }
