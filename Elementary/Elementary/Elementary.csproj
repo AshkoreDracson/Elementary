@@ -63,6 +63,8 @@
   <ItemGroup>
     <Compile Include="Extensions\ArrayExtension.cs" />
     <Compile Include="Extensions\ComparableExtension.cs" />
+    <Compile Include="Extensions\ConsoleExtension.cs" />
+    <Compile Include="Extensions\StringExtension.cs" />
     <Compile Include="Forms\FilterCollection.cs" />
     <Compile Include="Forms\FilterItem.cs" />
     <Compile Include="Misc\DependencyInjector.cs" />

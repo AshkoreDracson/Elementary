@@ -12,7 +12,7 @@ namespace Elementary_Test_Project
         [STAThread]
         private static void Main()
         {
-            FilterTest();
+            LogTest();
         }
 
         private static void LogTest()
@@ -20,7 +20,7 @@ namespace Elementary_Test_Project
             Logman.LogOutput = LogOutput.Console | LogOutput.File;
             Logman.FileOutputPath = ".\\log.txt";
             Logman.Log("Test");
-            Thread.Sleep(2000);
+            Thread.Sleep(1000);
             Logman.Log("This is another test");
             Thread.Sleep(1000);
             Logman.Log("This is an information message", LogLevel.Information);
@@ -28,6 +28,18 @@ namespace Elementary_Test_Project
             Logman.Log("This is a warning message", LogLevel.Warning);
             Thread.Sleep(1000);
             Logman.Log("This is an error message", LogLevel.Error);
+            Thread.Sleep(1000);
+            Console.WriteLine(ConsoleExtension.CreateTable(
+                new []{ 10, 40 },
+                new string[5, 2]
+                {
+                    { " ID", " Name" },
+                    { "0001", "John Doe" },
+                    { "0002", "Mary Jane" },
+                    { "0004", "Walter White" },
+                    { "0005", "Anthony Dumarc" }
+                }
+                ));
             Console.ReadKey();
             Process.Start(".\\log.txt");
         }
