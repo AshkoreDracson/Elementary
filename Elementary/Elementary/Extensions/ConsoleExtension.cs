@@ -6,6 +6,12 @@ namespace Elementary
 {
     public static class ConsoleExtension
     {
+        /// <summary>
+        /// Creates a table suitable for display in <see cref="Console"/>
+        /// </summary>
+        /// <param name="width">The total width of the table</param>
+        /// <param name="items">The items in this table</param>
+        /// <returns>The generated <see cref="string"/> representing the table</returns>
         public static string CreateTable(int width, params string[] items)
         {
             if (items == null) throw new ArgumentNullException(nameof(items));
@@ -27,6 +33,12 @@ namespace Elementary
 
             return sb.ToString();
         }
+        /// <summary>
+        /// Creates a table suitable for display in <see cref="Console"/>
+        /// </summary>
+        /// <param name="widths">The width of each column in the table</param>
+        /// <param name="items">The items in this table</param>
+        /// <returns>The generated <see cref="string"/> representing the table</returns>
         public static string CreateTable(int[] widths, string[,] items)
         {
             if (widths == null) throw new ArgumentNullException(nameof(widths));

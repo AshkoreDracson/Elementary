@@ -6,6 +6,9 @@ namespace Elementary
     public class ConsoleProgressBar : IDisposable
     {
         private float _progress;
+        /// <summary>
+        /// The current progress of this progress bar, ranging from 0.0 to 1.0
+        /// </summary>
         public float Progress
         {
             get => _progress;
@@ -21,8 +24,14 @@ namespace Elementary
             }
         }
 
+        /// <summary>
+        /// Has the progress bar completed its progress?
+        /// </summary>
         public bool Completed => Progress >= 1f;
 
+        /// <summary>
+        /// The max update interval for the progress bar
+        /// </summary>
         public TimeSpan MaxUpdateInterval { get; set; } = TimeSpan.FromMilliseconds(50);
 
         protected virtual string Animation => @"|/-\";
