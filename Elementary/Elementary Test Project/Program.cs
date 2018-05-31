@@ -1,6 +1,8 @@
 ﻿using Elementary;
 using System;
 using System.Diagnostics;
+using System.IO;
+using System.Net;
 using System.Threading;
 using System.Windows.Forms;
 using Elementary.Forms;
@@ -31,7 +33,7 @@ namespace Elementary_Test_Project
             Thread.Sleep(1000);
             Console.WriteLine(ConsoleExtension.CreateTable(
                 new []{ 10, 40 },
-                new string[5, 2]
+                new [,]
                 {
                     { " ID", " Name" },
                     { "0001", "John Doe" },
@@ -42,6 +44,11 @@ namespace Elementary_Test_Project
                 ));
             Console.ReadKey();
             Process.Start(".\\log.txt");
+        }
+
+        private static void Wb_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private static void FilterTest()

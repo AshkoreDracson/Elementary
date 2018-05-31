@@ -67,6 +67,7 @@
     <Compile Include="Extensions\StringExtension.cs" />
     <Compile Include="Forms\FilterCollection.cs" />
     <Compile Include="Forms\FilterItem.cs" />
+    <Compile Include="Misc\ConsoleProgressBar.cs" />
     <Compile Include="Misc\DependencyInjector.cs" />
     <Compile Include="Extensions\IEnumerableExtension.cs" />
     <Compile Include="Misc\LimitedQueue.cs" />
