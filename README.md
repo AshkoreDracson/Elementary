@@ -1,7 +1,7 @@
 # Elementary
 Library to add various useful extensions and code helpers.
 
-[![NuGet](https://img.shields.io/badge/nuget-1.0.4.0-blue.svg)](https://www.nuget.org/packages/Elementary/)
+[![NuGet](https://img.shields.io/badge/nuget-1.0.5.0-blue.svg)](https://www.nuget.org/packages/Elementary/)
 ### Features
 - Dependency Injector
 - Array extensions
